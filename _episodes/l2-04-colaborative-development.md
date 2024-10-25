@@ -20,14 +20,6 @@ keypoints:
 This final episode is just a single exercise in which you will put into practice all the
 knowledge acquired so far.
 
-> ## Enabling issues in forks
->
-> By default, when you fork a repository, Issues are disabled. To enable
-> them go to `Settings` in the upper right corner, then to `General` in the
-> left panel and, finally, scroll down to the `Features` section. There
-> click the Issues tickbox to enable them.
-{: .callout}
-
 > ## Making a book of recipes
 >
 > Together with some colleagues, you are writing a book of recipes for sauces
