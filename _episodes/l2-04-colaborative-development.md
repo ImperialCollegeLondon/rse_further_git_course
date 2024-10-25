@@ -49,6 +49,10 @@ knowledge acquired so far.
 >
 > - Create a new release, let's say `1.0.0`, as the starting point of the book.
 >
+> **Forking and cloning** (Contributor's task):
+>
+> - Fork the Administrator's repository and clone it locally.
+>
 > **Creating new issues** (to be done by everyone):
 >
 > - Open new issues with recipes for sauces you would like to have in the book.
@@ -63,7 +67,6 @@ knowledge acquired so far.
 >
 > **Working on a branch, pushing the changes, and opening a PR** (Contributor's tasks):
 >
-> - Fork the Administrator's repository and clone it locally.
 > - Create a branch and work on the recipes you have been assigned. Practice the concepts learnt in previous episodes about making the changes locally and pushing those changes back to the remote repository.
 > - When ready, open a PR to the Administrator's repo and request their review.
 >
