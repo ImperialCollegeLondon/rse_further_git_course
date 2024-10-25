@@ -75,10 +75,6 @@ knowledge acquired so far.
 > **Creating a new release** (Administrator's task):
 >
 > - When all the recipes by the Contributors are added, create a new release.
->
-> These exercises can be repeated with the other members of the group acting
-> now as administrators and choosing a different topic for the recipes (eg
->. pasta, roasts, cocktails, etc.).
 {: .challenge}
 
 ## Bonus: Keeping your fork in sync with the original repo
