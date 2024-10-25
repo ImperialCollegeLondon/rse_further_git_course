@@ -44,14 +44,16 @@ knowledge acquired so far.
 >
 >   <div style="clear: both;"></div>
 >
-> - Set the owner of the new repository as your own GitHub username and the name of the repository the same ("book_of_recipes").
-> - Set the description as "Repository for the exercises of the Grad School Git Course".
-> - Make sure to select the "Public" option for your reppsitory's visibility and final click on "Create repository".
-> - Pass the link to the repo to your colleagues, who will be the contributors.
+> - Set the owner of the new repository to your own GitHub username.
+> - Set the name of the repository to "book_of_recipes".
+> - Set the description to something like "Repository for the exercises of the Grad School Git Course".
+> - Make sure to select the "Public" option for your repsitory's visibility.
+> - Click on "Create repository".
+> - Pass the link for your repo to the other group members, who will be the contributors.
 >
 > Now, start collaborating!
 >
-> **Create a new release** (Administrator's task)
+> **Create a new release** (Administrator's task):
 >
 > - Create a new release, let's say `1.0.0`, as the starting point of the book.
 >
@@ -80,7 +82,7 @@ knowledge acquired so far.
 >
 > **Creating a new release** (Administrator's task):
 >
-> - When all the recipes by the Contributor's are added, create a new release.
+> - When all the recipes by the Contributors are added, create a new release.
 >
 > These exercises can be repeated with the other members of the group acting
 > now as administrators and choosing a different topic for the recipes (eg

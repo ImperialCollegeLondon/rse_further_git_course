@@ -143,8 +143,7 @@ Pull requests can be created by visiting the `Pull request` tab in the repositor
 >
 > 1. Create a new branch, make some changes and push the branch to the remote repository.
 > 2. Create a pull request with a suitable title and description to merge the branch containing your changes into the main branch.
-{: .callout}
-
+>
 >> ## Solution
 >>
 >> 1. `$ git branch more_avocados`
@@ -181,6 +180,7 @@ The third and final step in the workflow is to create a pull request. This is do
 Another difference with pull requests from forked repositories is that you can allow anyone with push access to the upstream repository to make changes to your pull request. This is done by selecting **Allow edits from maintainers**.
 
 > As with the **shared repository model**, Atlassian has a nice [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow) example if you want a deeper dive.
+{: .callout}
 
 ### Requesting reviewers
 
