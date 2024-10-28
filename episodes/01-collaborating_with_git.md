@@ -104,3 +104,5 @@ Coding as a team presents a number of challenges and opportunities. Both Git and
 GitHub were specifically designed to help you mitigate those challenges and
 embrace those opportunities. In the rest of this course we'll be looking in
 detail at the range of functionality that is touched on above.
+
+{% include links.md %}
