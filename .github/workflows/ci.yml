@@ -9,5 +9,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Build handout
+
+      - name: Check lesson content
+        run: make lesson-check
+
+      - name: Try to build handout
+        if: always()
         run: make handouts
