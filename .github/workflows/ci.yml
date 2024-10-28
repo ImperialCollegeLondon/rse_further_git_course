@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install Jekyll
+        run: gem install jekyll --user-install
+
       - name: Check lesson content
         run: make lesson-check
 
