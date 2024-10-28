@@ -47,7 +47,7 @@ It is not rare that, while you are working on some feature, you need to check so
 else in another branch. Very often this is the case when you want to try some
 contributor's code as part of a pull request review process (see next episodes). You
 can commit the work you are doing, but if it is not in a state ready to be committed,
-what would you do?
+what would you do? Or you start working on a branch only to realise that it is not the one that you were planning to work on?
 
 `git stash` is the answer. It lets you put your current, uncommitted work aside in a
 special state, turning the working directory back to the way it was in the last commit.
@@ -153,7 +153,7 @@ The next level of complexity rewriting history is `reset`: it lets you redo the 
 last few) commit(s) you made so you can incorporate more changes, fix an error you have
 spotted and that is worth incorporating as part of that commit and not as a separate one
 or just improve your commit message. Unlike `git revert`, `git reset` will
-retrospectively alter your commit history, so should **not** be used where you have
+retrospectively alter your commit history, so it should **not** be used when you have
 already shared work with collaborators.
 
 ```sh
@@ -198,10 +198,10 @@ git reset --hard COMMIT_HASH
 >
 > - `reset` uses brute force, potentially with destructive consequences, to
 >   make those changes and is suitable only if the work has not been shared with others
->   already. Use when you want to get rid of recent work you're not happy with and start
+>   already. Use it when you want to get rid of recent work you're not happy with and start
 >   all over again.
 > - `revert` is more lightweight and surgical, to target specific changes and creating
->   new commits to history. Use when code has already been shared with others or when
+>   new commits to history. Use it when code has already been shared with others or when
 >   changes are small and clearly isolated.
 {: .callout}
 
