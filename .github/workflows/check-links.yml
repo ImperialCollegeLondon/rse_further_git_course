@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: 0 0 * * 1 # midnight every Monday
   push:
-    branches: [main]
+    branches: [gh-pages]
   pull_request:
   workflow_dispatch:
 
