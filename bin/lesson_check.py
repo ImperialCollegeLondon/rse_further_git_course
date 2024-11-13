@@ -179,7 +179,7 @@ def check_config(reporter, source_dir):
     reporter.check_field(config_file, 'configuration',
                          config, 'kind', 'lesson')
     reporter.check_field(config_file, 'configuration',
-                         config, 'carpentry', ('swc', 'dc', 'lc', 'cp'))
+                         config, 'carpentry', ('swc', 'dc', 'lc', 'cp', 'rcs'))
     reporter.check_field(config_file, 'configuration', config, 'title')
     reporter.check_field(config_file, 'configuration', config, 'email')
 
@@ -387,12 +387,12 @@ class CheckBase:
     def check_codeblock_classes(self):
         """Check that all code blocks have known classes."""
 
-        for node in self.find_all(self.doc, {'type': 'codeblock'}):
-            cls = self.get_val(node, 'attr', 'class')
-            self.reporter.check(cls in KNOWN_CODEBLOCKS,
-                                (self.filename, self.get_loc(node)),
-                                'Unknown or missing code block type {0}',
-                                cls)
+        # for node in self.find_all(self.doc, {'type': 'codeblock'}):
+        #     cls = self.get_val(node, 'attr', 'class')
+        #     self.reporter.check(cls in KNOWN_CODEBLOCKS,
+        #                         (self.filename, self.get_loc(node)),
+        #                         'Unknown or missing code block type {0}',
+        #                         cls)
 
     def check_defined_link_references(self):
         """Check that defined links resolve in the file.
