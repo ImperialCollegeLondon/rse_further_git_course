@@ -29,7 +29,7 @@ git switch main
 git stage ingredients.md
 git commit -m "Reduce salt"
 git switch experiment
-# change line to 3 tsp in ingredients.md
+# change line to 3 tsp salt in ingredients.md
 git stage ingredients.md
 git commit -m "Added salt to balance coriander"
 git graph
@@ -37,7 +37,7 @@ git graph
 {: .commands}
 ```
 * d5fb141 (HEAD -> experiment) Added salt to balance coriander
-| * 7477632 (main) reduce salt
+| * 7477632 (main) Reduce salt
 | *   567307e Merge branch 'experiment'
 | |\
 | |/
@@ -97,6 +97,7 @@ Unmerged paths:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+{: .output}
 
 This suggests how we can get out of this state. If we want to give up on this
 merge and try it again later then we can use `git merge --abort`. This will
