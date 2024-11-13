@@ -151,14 +151,12 @@ git graph
 *   e361d2b (HEAD -> main) Merged experiment into main
 |\
 | * d5fb141 (experiment) Added salt to balance coriander
-* | 7477632 reduce salt
+* | 7477632 Reduce salt
 * |   567307e Merge branch 'experiment'
-|\ \
-| |/
+|\|
 | * 9a4b298 Reduced the amount of coriander
 * |   40070a5 Merge branch 'experiment'
-|\ \
-| |/
+|\|
 | * 96fe069 try with some coriander
 * | d4ca89f Corrected typo in ingredients.md
 |/
@@ -190,6 +188,36 @@ git graph
 >
 > NB: If the two sets of changes you made *aren't* incompatible (e.g. you changed
 > separate parts of the file) you will not get a merge conflict!
+>
+> > ## Solution
+> >
+> > ```
+> > git switch -c experiment2
+> > # make changes to ingredients.md (say 1/2 lime)
+> > git stage ingredients.md
+> > git commit -m "Reduced lime"
+> > git switch main
+> > # make changes to the same line in ingredients.md (say 1/4 lime)
+> > git stage ingredients.md
+> > git commit -m "Reduce lime to balance coriander"
+> > git merge --no-edit experiment2
+> > ```
+> > {: .commands}
+> > This should give rise to a merge conflict:
+> > ```
+> > Auto-merging ingredients.md
+> > CONFLICT (content): Merge conflict in ingredients.md
+> > Automatic merge failed; fix conflicts and then commit the result.
+> > ```
+> > Resolve the conflicts. Then stage the file again, and view the graph:
+> > ```
+> > git stage ingredients.md
+> > git commit -m "Merged experiment2 into main"
+> > git graph
+> > ```
+> > {: .commands}
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 {% include links.md %}
