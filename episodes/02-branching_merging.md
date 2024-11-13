@@ -150,10 +150,10 @@ git graph
 ```
 {: .commands}
 ```
-* ddef60e (HEAD -> main) Revert "Added instruction to enjoy"
-* 8bfd0ff Added 1/2 onion to ingredients
-* 2bf7ece Added instruction to enjoy
-* ae3255a Adding ingredients and instructions
+* 09c9b3b (HEAD -> main, origin/main) Revert "Added instruction to enjoy"
+* 366f4b5 Added 1/2 onion to ingredients
+* 1171d94 Added instruction to enjoy
+* 6ff8aa5 adding ingredients and instructions
 ```
 {: .output}
 
