@@ -89,7 +89,7 @@ Pull requests can be created by visiting the `Pull request` tab in the repositor
 
 > ## Changing *head* and *base* branch
 >
->By default, pull requests are based on the parent repository's default branch. You can change both the parent repository and the branch in the drop-down lists. It's important to select the correct order here; the *head branch* contains the changes you would like to make, the *base branch* is where you want the changes to be applied. The arrow between the drop-downs is a useful indicator for the direction of the "pull".
+> By default, pull requests are based on the parent repository's default branch. You can change both the parent repository and the branch in the drop-down lists. It's important to select the correct order here; the *head branch* contains the changes you would like to make, the *base branch* is where you want the changes to be applied. The arrow between the drop-downs is a useful indicator for the direction of the "pull".
 {: .callout}
 
 > ## Now you try
@@ -103,7 +103,7 @@ Pull requests can be created by visiting the `Pull request` tab in the repositor
 >>
 >> 1. `$ git branch more_avocados`
 >> 2. `$ git switch more_avocados`
->> 3. `$ # make, stage and commit changes`
+>> 3. `$ # make, stage, commit, and push the changes`
 >> 4. On GitHub.com, navigate to your repository and choose your branch which contains your changes from the "Branch" menu.
 >> ![Choose branch]({{ site.baseurl }}/fig/choose_branch.png "Choose branch"){:class="img-responsive"}
 >> 5. From the "Contribute" drop-down menu, choose the "Open pull request" button.
