@@ -270,29 +270,6 @@ git graph
 ![Git collaborative]({{ site.baseurl }}/fig/branch5.png
 "Repository with one commit on main and experiment branches"){:class="img-responsive"}
 
-## Summary
-
-Let us pause for a moment and summarise what we have just learned:
-
-```sh
-git branch               # see where we are
-git branch <name>        # create branch <name>
-git switch <name>        # switch to branch <name>
-```
-
-Since the following command combo is so frequent:
-
-```sh
-git branch <name>        # create branch <name>
-git switch <name>        # switch to branch <name>
-```
-
-There is a shortcut for it:
-
-```sh
-git switch -c <name>     # create branch <name> and switch to it
-```
-
 ## Merging
 
 Now that we have our two separate tracks of work they need to be combined back
@@ -383,7 +360,26 @@ repository.
 
 ## Summary
 
-Let us pause for a moment and recapitulate what we have just learned:
+Let us pause for a moment and recapitulate what we have learned:
+
+```sh
+git branch               # see where we are
+git branch <name>        # create branch <name>
+git switch <name>        # switch to branch <name>
+```
+
+Since the following command combo is so frequent:
+
+```sh
+git branch <name>        # create branch <name>
+git switch <name>        # switch to branch <name>
+```
+
+There is a shortcut for it:
+
+```sh
+git switch -c <name>     # create branch <name> and switch to it
+```
 
 ```sh
 git merge <name>         # merge branch <name> (to current branch)
