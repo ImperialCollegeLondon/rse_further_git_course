@@ -304,6 +304,7 @@ git merge --no-edit experiment
 ```
 {: .commands}
 ```
+Auto-merging ingredients.md
 Merge made by the 'ort' strategy.
  ingredients.md | 1 +
  1 file changed, 1 insertion(+)
