@@ -190,3 +190,5 @@ git graph
 > NB: If the two sets of changes you made *aren't* incompatible (e.g. you changed
 > separate parts of the file) you will not get a merge conflict!
 {: .challenge}
+
+{% include links.md %}
