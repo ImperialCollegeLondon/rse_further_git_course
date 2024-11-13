@@ -73,6 +73,58 @@ To https://github.com/username/recipe.git
 ```
 {: .output}
 
+> ## Now you try
+>
+> You should now be on the `main` branch. Try switching to the `spicy`
+> branch and pushing changes to it.
+>
+> 1. Check the current branch using `git branch`.
+> 1. If the current branch is `main`, then switch to `spicy` using `git switch spicy`.
+> 1. Push changes to the `spicy` branch using `git push`.
+>
+> > ## Solution
+> >
+> > ```
+> > git branch
+> > git switch spicy
+> > git push
+> > ```
+> > {: .commands}
+> > This should give rise to an error that the current branch `spicy` has no upstream branch:
+> > ```
+> > fatal: The current branch spicy has no upstream branch.
+> > To push the current branch and set the remote as upstream, use
+> >
+> >     git push --set-upstream origin spicy
+> >
+> > To have this happen automatically for branches without a tracking
+> > upstream, see 'push.autoSetupRemote' in 'git help config'.
+> > ```
+> > Push again by setting the upstream:
+> > ```
+> > git push --set-upstream origin spicy
+> > ```
+> > {: .commands}
+> > ```
+> > Enumerating objects: 5, done.
+> > Counting objects: 100% (5/5), done.
+> > Delta compression using up to 8 threads
+> > Compressing objects: 100% (3/3), done.
+> > Writing objects: 100% (3/3), 347 bytes | 347.00 KiB/s, done.
+> > Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+> > remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+> > remote:
+> > remote: Create a pull request for 'spicy' on GitHub by visiting:
+> > remote:      https://github.com/username/recipe/pull/new/spicy
+> > remote:
+> > To https://github.com/username/recipe.git
+> >  * [new branch]      spicy -> spicy
+> > branch 'spicy' set up to track 'origin/spicy'.
+> > ```
+> > {: .output}
+> {: .solution}
+{: .challenge}
+
 ## Pulling
 
 * Opposite to `push`, `pull` brings changes in the upstream branch to the local branch.
