@@ -1,5 +1,5 @@
 ---
-title: "Multiple branches in remotes"
+title: "Pulling and Pushing"
 teaching: 10
 exercises: 5
 questions:
@@ -40,6 +40,38 @@ in sync.
  branch, you have to `checkout` that branch first.
 * If the upstream branch has changes you do not have in the local branch, the
  command will fail, requesting you to pull those changes first.
+
+Let's try to push changes to the `main` branch. First make sure you are on the `main` branch.
+
+```sh
+git switch main
+```
+{: .commands}
+```
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 6 commits.
+  (use "git push" to publish your local commits)
+```
+{: .output}
+
+Notice that git is suggesting you to use `git push` to publish your local commits. Let's do that:
+
+```sh
+git push
+```
+{: .commands}
+```
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (18/18), 1.83 KiB | 938.00 KiB/s, done.
+Total 18 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+To https://github.com/username/recipe.git
+   57d4505..d10e1e9  main -> main
+```
+{: .output}
 
 ## Pulling
 
