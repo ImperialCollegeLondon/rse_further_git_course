@@ -224,7 +224,7 @@ git graph
 
 Let us pause for a moment and summarise what we have learned:
 
-- You might come across situations where incompatible set of changes
+- You might come across situations where incompatible sets of changes
 need to be combined.
 - If you don't want to perform a merge (or try it again later) then
 you can use `git merge --abort`.
