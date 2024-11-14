@@ -14,10 +14,9 @@ keypoints:
 - Using `git pull` will bring changes in the upstream branch to the local branch.
 ---
 
-## Multiple branches in remotes
+## Multiple remote branches
 
-The same way you might have different branches in your local repository, you could
-manage different branches in your remote - the same branches or different ones.
+Just as you can have multiple local branches, you can also have multiple remote branches. These may or may not be upstreams for your local branches.
 
 As a reminder, remote and local repositories are not automatically synchronised, but
 rather it is a manual process done via `git pull` and `git push` commands. This
@@ -90,7 +89,7 @@ To https://github.com/username/recipe.git
 > > git push
 > > ```
 > > {: .commands}
-> > This should give rise to an error that the current branch `spicy` has no upstream branch:
+> > This should give an error that the current branch `spicy` has no upstream branch:
 > > ```
 > > fatal: The current branch spicy has no upstream branch.
 > > To push the current branch and set the remote as upstream, use
