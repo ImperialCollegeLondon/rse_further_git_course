@@ -1,6 +1,6 @@
 ---
 title: "Managing contributions to code"
-teaching: 25
+teaching: 15
 exercises: 10
 questions:
 - "How do I keep my local branches in sync with the remote branches?"
@@ -48,51 +48,6 @@ keypoints:
 > [**Pull Requests**](https://docs.github.com/en/pull-requests) allow for easily reviewing collaborators' changes.
 {: .discussion}
 
-## Multiple branches in remotes
-
-The same way you might have different branches in your local repository, you could
-manage different branches in your remote - the same branches or different ones.
-
-As a reminder, remote and local repositories are not automatically synchronised, but
-rather it is a manual process done via `git pull` and `git push` commands. This
-synchronisation needs to be done **branch by branch** with all of those you want to keep
-in sync.
-
-### Pushing
-
-* Its basic use is to synchronise **any committed changes** in your current
- branch to its upstream branch: `git push`.
-* Changes in the staging area will not be synchronised.
-![Git collaborative]({{ site.baseurl }}/fig/push.png "Push a branch
-."){:class="img-responsive"}
-* If the current branch has no upstream yet, you can configure one by doing
-`git push -u origin BRANCH_NAME`, as done with `main` in the exercise
- above.
-![Git collaborative]({{ site.baseurl }}/fig/push_u.png "Push a branch without
- upstream yet."){:class="img-responsive"}
-* `push` only operates on your current branch. If you want to push another
- branch, you have to `checkout` that branch first.
-* If the upstream branch has changes you do not have in the local branch, the
- command will fail, requesting you to pull those changes first.
-
-## Pulling
-
-* Opposite to `push`, `pull` brings changes in the upstream branch to the local branch.
-* You can check if there are any changes to synchronise in the upstream branch by
-  running `git fetch`, which only checks if there are changes, and then `git status` to
-  see how your local and remote branch compare in terms of commit history.
-* It's best to make sure your repository is in a clean state with no staged or unstaged
-  changes.
-* If the local and upstream branches have diverged - have different commit history - the
-  command will attempt to merge both. If there are conflicts, you will need deal with
-  them in the same way described above.
-* You can get a new branch existing only in `origin` directly with `git switch
-  BRANCH_NAME` without the need of creating the branch locally and then pulling the
-  remote.
-
-![Git collaborative]({{ site.baseurl }}/fig/pull.png "Pull remote changes")
-{:class="img-responsive"}
-
 ## Pull Requests
 
 Pull requests are a GitHub feature which allows collaborators tell each other about changes that have been pushed to a branch in a repository. Similar to **issues**, an open pull request can contain discussions about the requested changes and allows collaborators to review proposed amendments and follow-up commits before changes are either rejected or accepted and merged into the base branch.
@@ -134,7 +89,7 @@ Pull requests can be created by visiting the `Pull request` tab in the repositor
 
 > ## Changing *head* and *base* branch
 >
->By default, pull requests are based on the parent repository's default branch. You can change both the parent repository and the branch in the drop-down lists. It's important to select the correct order here; the *head branch* contains the changes you would like to make, the *base branch* is where you want the changes to be applied. The arrow between the drop-downs is a useful indicator for the direction of the "pull".
+> By default, pull requests are based on the parent repository's default branch. You can change both the parent repository and the branch in the drop-down lists. It's important to select the correct order here; the *head branch* contains the changes you would like to make, the *base branch* is where you want the changes to be applied. The arrow between the drop-downs is a useful indicator for the direction of the "pull".
 {: .callout}
 
 > ## Now you try
@@ -148,7 +103,7 @@ Pull requests can be created by visiting the `Pull request` tab in the repositor
 >>
 >> 1. `$ git branch more_avocados`
 >> 2. `$ git switch more_avocados`
->> 3. `$ # make, stage and commit changes`
+>> 3. `$ # make, stage, commit, and push the changes`
 >> 4. On GitHub.com, navigate to your repository and choose your branch which contains your changes from the "Branch" menu.
 >> ![Choose branch]({{ site.baseurl }}/fig/choose_branch.png "Choose branch"){:class="img-responsive"}
 >> 5. From the "Contribute" drop-down menu, choose the "Open pull request" button.

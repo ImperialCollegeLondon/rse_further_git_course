@@ -1,7 +1,7 @@
 ---
 title: "Collaborative development"
 teaching: 5
-exercises: 35
+exercises: 30
 questions:
 - "How do I put into practice all the previous knowledge at once?"
 - "What caveats might I find in a real collaborative scenario?"

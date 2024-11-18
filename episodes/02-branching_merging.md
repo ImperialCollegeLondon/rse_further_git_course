@@ -96,10 +96,10 @@ interface" or "fixing bug in matrix inversion algorithm".
 > If you then type `git log --oneline`, you should see something like:
 >
 > ```
-> 09c9b3b (HEAD -> main, origin/main) Revert "Added instruction to enjoy"
-> 366f4b5 Added 1/2 onion to ingredients
-> 1171d94 Added instruction to enjoy
-> 6ff8aa5 adding ingredients and instructions
+> ddef60e (HEAD -> main, origin/main) Revert "Added instruction to enjoy"
+> 8bfd0ff Added 1/2 onion to ingredients
+> 2bf7ece Added instruction to enjoy
+> ae3255a Adding ingredients and instructions
 > ```
 > {: .output}
 >
@@ -150,7 +150,7 @@ git graph
 ```
 {: .commands}
 ```
-* ddef60e (HEAD -> main) Revert "Added instruction to enjoy"
+* ddef60e (HEAD -> main, origin/main) Revert "Added instruction to enjoy"
 * 8bfd0ff Added 1/2 onion to ingredients
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions
@@ -270,29 +270,6 @@ git graph
 ![Git collaborative]({{ site.baseurl }}/fig/branch5.png
 "Repository with one commit on main and experiment branches"){:class="img-responsive"}
 
-## Summary
-
-Let us pause for a moment and summarise what we have just learned:
-
-```sh
-git branch               # see where we are
-git branch <name>        # create branch <name>
-git switch <name>        # switch to branch <name>
-```
-
-Since the following command combo is so frequent:
-
-```sh
-git branch <name>        # create branch <name>
-git switch <name>        # switch to branch <name>
-```
-
-There is a shortcut for it:
-
-```sh
-git switch -c <name>     # create branch <name> and switch to it
-```
-
 ## Merging
 
 Now that we have our two separate tracks of work they need to be combined back
@@ -304,6 +281,7 @@ git merge --no-edit experiment
 ```
 {: .commands}
 ```
+Auto-merging ingredients.md
 Merge made by the 'ort' strategy.
  ingredients.md | 1 +
  1 file changed, 1 insertion(+)
@@ -382,7 +360,26 @@ repository.
 
 ## Summary
 
-Let us pause for a moment and recapitulate what we have just learned:
+Let us pause for a moment and recap what we have learned:
+
+```sh
+git branch               # see where we are
+git branch <name>        # create branch <name>
+git switch <name>        # switch to branch <name>
+```
+
+Since the following command combo is so frequent:
+
+```sh
+git branch <name>        # create branch <name>
+git switch <name>        # switch to branch <name>
+```
+
+There is a shortcut for it:
+
+```sh
+git switch -c <name>     # create branch <name> and switch to it
+```
 
 ```sh
 git merge <name>         # merge branch <name> (to current branch)
