@@ -360,7 +360,7 @@ repository.
 
 ## Summary
 
-Let us pause for a moment and recapitulate what we have learned:
+Let us pause for a moment and recap what we have learned:
 
 ```sh
 git branch               # see where we are

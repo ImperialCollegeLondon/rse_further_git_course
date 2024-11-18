@@ -212,7 +212,7 @@ git graph
 > > Resolve the conflicts. Then stage the file again, and view the graph:
 > > ```
 > > git stage ingredients.md
-> > git commit -m "Merged experiment2 into main"
+> > git commit
 > > git graph
 > > ```
 > > {: .commands}
