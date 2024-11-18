@@ -103,7 +103,7 @@ To https://github.com/username/recipe.git
 > > ```
 > > Push again by setting the upstream:
 > > ```
-> > git push --u origin spicy
+> > git push -u origin spicy
 > > ```
 > > {: .commands}
 > > ```
