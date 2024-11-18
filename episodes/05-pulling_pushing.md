@@ -135,9 +135,8 @@ To https://github.com/username/recipe.git
 * If the local and upstream branches have diverged - have different commit history - the
   command will attempt to merge both. If there are conflicts, you will need deal with
   them in the same way described above.
-* You can get a new branch existing only in `origin` directly with `git switch
-  BRANCH_NAME` without the need of creating the branch locally and then pulling the
-  remote.
+* You can get a new branch that exists only in `origin` directly with `git switch
+  BRANCH_NAME` which will automatically create a local branch with the same name
 
 ![Git collaborative]({{ site.baseurl }}/fig/pull.png "Pull remote changes")
 {:class="img-responsive"}
