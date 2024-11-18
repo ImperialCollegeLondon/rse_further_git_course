@@ -12,6 +12,7 @@ keypoints:
 - With `git push` you can push any committed changes in your current branch to its upstream branch.
 - If the current branch has no upstream yet, you can configure one by doing `git push -u origin BRANCH_NAME`.
 - Using `git pull` will bring changes in the upstream branch to the local branch.
+- If the local and upstream branches have diverged (have different commit history), then `git pull` will attempt to merge both. If there are conflicts, you will have to resolve them.
 ---
 
 ## Multiple remote branches
