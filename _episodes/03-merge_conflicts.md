@@ -29,7 +29,7 @@ git switch main
 git stage ingredients.md
 git commit -m "Reduce salt"
 git switch experiment
-# change line to 3 tsp in ingredients.md
+# change line to 3 tsp salt in ingredients.md
 git stage ingredients.md
 git commit -m "Added salt to balance coriander"
 git graph
@@ -37,7 +37,7 @@ git graph
 {: .commands}
 ```
 * d5fb141 (HEAD -> experiment) Added salt to balance coriander
-| * 7477632 (main) reduce salt
+| * 7477632 (main) Reduce salt
 | *   567307e Merge branch 'experiment'
 | |\
 | |/
@@ -97,6 +97,7 @@ Unmerged paths:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+{: .output}
 
 This suggests how we can get out of this state. If we want to give up on this
 merge and try it again later then we can use `git merge --abort`. This will
@@ -150,14 +151,12 @@ git graph
 *   e361d2b (HEAD -> main) Merged experiment into main
 |\
 | * d5fb141 (experiment) Added salt to balance coriander
-* | 7477632 reduce salt
+* | 7477632 Reduce salt
 * |   567307e Merge branch 'experiment'
-|\ \
-| |/
+|\|
 | * 9a4b298 Reduced the amount of coriander
 * |   40070a5 Merge branch 'experiment'
-|\ \
-| |/
+|\|
 | * 96fe069 try with some coriander
 * | d4ca89f Corrected typo in ingredients.md
 |/
@@ -189,6 +188,49 @@ git graph
 >
 > NB: If the two sets of changes you made *aren't* incompatible (e.g. you changed
 > separate parts of the file) you will not get a merge conflict!
+>
+> > ## Solution
+> >
+> > ```
+> > git switch -c experiment2
+> > # make changes to ingredients.md (say 1/2 lime)
+> > git stage ingredients.md
+> > git commit -m "Reduced lime"
+> > git switch main
+> > # make changes to the same line in ingredients.md (say 1/4 lime)
+> > git stage ingredients.md
+> > git commit -m "Reduce lime to balance coriander"
+> > git merge --no-edit experiment2
+> > ```
+> > {: .commands}
+> > This should give rise to a merge conflict:
+> > ```
+> > Auto-merging ingredients.md
+> > CONFLICT (content): Merge conflict in ingredients.md
+> > Automatic merge failed; fix conflicts and then commit the result.
+> > ```
+> > Resolve the conflicts. Then stage the file again, and view the graph:
+> > ```
+> > git stage ingredients.md
+> > git commit
+> > git graph
+> > ```
+> > {: .commands}
+> > {: .output}
+> {: .solution}
 {: .challenge}
+
+## Summary
+
+Let us pause for a moment and summarise what we have learned:
+
+- You might come across situations where incompatible sets of changes
+need to be combined.
+- If you don't want to perform a merge (or try it again later) then
+you can use `git merge --abort`.
+- To resolve a merge conflict, edit the conflicted file into the state
+that you would like to keep, then stage and commit it.
+- In the conflicted file, the tags `<<<<<<< HEAD`, `=======`
+and `>>>>>>> branch-name` indicate which branch each version came from.
 
 {% include links.md %}
