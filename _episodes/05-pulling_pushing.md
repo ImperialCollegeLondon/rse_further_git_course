@@ -31,8 +31,9 @@ in sync.
 ![Git collaborative]({{ site.baseurl }}/fig/push.png "Push a branch
 ."){:class="img-responsive"}
 * If the current branch has no upstream yet, you can configure one by doing
-`git push -u origin BRANCH_NAME`, as done with `main` in the exercise
- above.
+`git push --set-upstream origin BRANCH_NAME`, as done with `main` in the example
+ below. The `--set-upstream` flag can be replaced by a shortcut `-u`. So you can
+ use `git push -u origin BRANCH_NAME` instead.
 ![Git collaborative]({{ site.baseurl }}/fig/push_u.png "Push a branch without
  upstream yet."){:class="img-responsive"}
 * `push` only operates on your current branch. If you want to push another
@@ -101,7 +102,7 @@ To https://github.com/username/recipe.git
 > > ```
 > > Push again by setting the upstream:
 > > ```
-> > git push --set-upstream origin spicy
+> > git push --u origin spicy
 > > ```
 > > {: .commands}
 > > ```
