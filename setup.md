@@ -159,6 +159,22 @@ Please follow the relevant instructions depending on your operating system.
 > {: .output}
 {: .solution}
 
+> ## Warning for Linux and macOS users
+>
+> Before you move onto this exercise, you should run the following command:
+>
+> ```
+> $ git config --global core.autocrlf input
+> ```
+>
+> This will stop git recording changes to line endings, which can -- depending on which
+> text editor you're using -- result in git erroneously thinking every line in a file
+> has changed.
+>
+> For a longer explanation of why this may be needed, see [GitHub's comprehensive
+> explanation here](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings).
+{: .callout}
+
 ## Configure Git to use your preferred text editor
 
 Many Git commands require you to provide input via a text editor (though you can often skip this step with additional command-line arguments). For example, running `git commit` by itself will open a text editor to allow you to enter a commit message. Depending on your OS and how you installed Git, the text editor Git will use can be any number of things, but is likely to be either [nano] or [vim], which are both terminal-based editors. It is best to configure your preferred editor explicitly (if you are using editor for the first time, it is advisable to use nano).
