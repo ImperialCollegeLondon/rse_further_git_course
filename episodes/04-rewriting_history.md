@@ -147,6 +147,22 @@ Note that this will replace the previous commit with a new one -- the commit has
 be different -- so this approach must not be used if the commit was already pushed to
 the remote repository and shared with collaborators.
 
+> ## Edit commit message with your editor
+>
+> If you run `git commit` without either the `--no-edit` or `-m` flags, it will open a
+> text editor to allow you to enter a commit message. If you are using the `--amend`
+> flag, the text editor will contain the commit message for the commit you are amending.
+>
+> You can edit the commit message in your text editor however you like, then, when you
+> have finished, save and exit. For longer commit messages, the convention is to provide
+> a short, one-line summary on the first line, followed by an empty line, then by a more
+> detailed description.
+>
+<!-- markdownlint-disable-next-line -->
+> For details on how to choose which text editor Git will use, see [the setup
+> instructions][lesson-setup].
+{: .challenge}
+
 ### Reset
 
 The next level of complexity rewriting history is `reset`: it lets you redo the last (or
