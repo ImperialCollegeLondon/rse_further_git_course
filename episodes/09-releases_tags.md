@@ -98,25 +98,27 @@ Git tags provide a way to give human-readable names to specific commits. We will
 go through how to add and remove tags to your repository.
 
 Firstly, remind yourself what the history for your `recipe` repository looks like with
-`git log`. Mine looks like this:
+`git graph`. Mine looks like this:
 
 ```
-git log --oneline
+git graph
 ```
 {: .commands}
 ```
-a34042b (HEAD -> spicy) Chillies added to the mix
-d10e1e9 (main) Guacamole must be served cold
-5344d8f Revert "Added 1/2 onion to ingredients"
-fe0d257 Merge branch 'experiment'
-99b2352 Reduced the amount of coriander
-2c2d0e2 Merge branch 'experiment'
-6a2a76f Corrected typo in ingredients.md
-d9043d2 try with some coriander
-57d4505 (origin/main) Revert "Added instruction to enjoy"
-5cb4883 Added 1/2 onion to ingredients
-43536f3 Added instruction to enjoy
-745fb8b adding ingredients and instructions
+* a34042b (HEAD -> spicy) Chillies added to the mix
+* d10e1e9 (main) Guacamole must be served cold
+* 5344d8f Revert "Added 1/2 onion to ingredients"
+*  fe0d257 Merge branch 'experiment'
+* 99b2352 Reduced the amount of coriander
+* 2c2d0e2 Merge branch 'experiment'
+|\
+* | 6a2a76f Corrected typo in ingredients.md
+| * d9043d2 try with some coriander
+|/
+* 57d4505 (origin/main) Revert "Added instruction to enjoy"
+* 5cb4883 Added 1/2 onion to ingredients
+* 43536f3 Added instruction to enjoy
+* 745fb8b adding ingredients and instructions
 ```
 {: .output}
 
@@ -130,12 +132,14 @@ for a future date by giving it the tag "tasty".  You can do this like so:
 ```
 git tag tasty [commit hash]
 ```
+{: .commands}
 
 In my case, I ran:
 
 ```
 git tag tasty 5cb4883
 ```
+{: .commands}
 
 You can list the tags for your repo by running `git tag` without any arguments:
 
@@ -195,6 +199,7 @@ Let's try again using the `--detach` option:
 ```
 git switch --detach tasty
 ```
+{: .commands}
 ```
 HEAD is now at 5cb4883 Added 1/2 onion to ingredients
 ```
@@ -206,6 +211,7 @@ repos than human beings, and you can reattach it by simply checking out a branch
 ```
 git switch main
 ```
+{: .commands}
 
 Assume now that you have decided that you no longer want this tag (perhaps on eating, it
 turned out not to be tasty after all). You can delete the tag like so:
