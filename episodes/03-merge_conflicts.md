@@ -148,7 +148,7 @@ git graph
 ```
 {: .commands}
 ```
-*   e361d2b (HEAD -> main) Merge branch 'experiment' into main
+*   e361d2b (HEAD -> main) Merge branch 'experiment'
 |\
 | * d5fb141 (experiment) Added salt to balance coriander
 * | 7477632 Reduce salt
