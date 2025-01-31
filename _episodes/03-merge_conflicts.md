@@ -143,12 +143,12 @@ Now stage, commit and check the result:
 
 ```sh
 git stage ingredients.md
-git commit -m "Merged experiment into main"
+git commit --no-edit
 git graph
 ```
 {: .commands}
 ```
-*   e361d2b (HEAD -> main) Merged experiment into main
+*   e361d2b (HEAD -> main) Merge branch 'experiment'
 |\
 | * d5fb141 (experiment) Added salt to balance coriander
 * | 7477632 Reduce salt
