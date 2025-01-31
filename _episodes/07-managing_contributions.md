@@ -115,6 +115,8 @@ Pull requests can be created by visiting the `Pull request` tab in the repositor
 > {: .solution}
 {: .challenge}
 
+> ## Dive deeper
+>
 > For a deeper dive into this "feature branch workflow", have a read of the Atlassian example - [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 {: .callout}
 
@@ -134,6 +136,8 @@ The third and final step in the workflow is to create a pull request. This is do
 
 Another difference with pull requests from forked repositories is that you can allow anyone with push access to the upstream repository to make changes to your pull request. This is done by selecting **Allow edits from maintainers**.
 
+> ## Dive deeper
+>
 > As with the **shared repository model**, Atlassian has a nice [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow) example if you want a deeper dive.
 {: .callout}
 
