@@ -130,12 +130,14 @@ for a future date by giving it the tag "tasty".  You can do this like so:
 ```
 git tag tasty [commit hash]
 ```
+{: .commands}
 
 In my case, I ran:
 
 ```
 git tag tasty 5cb4883
 ```
+{: .commands}
 
 You can list the tags for your repo by running `git tag` without any arguments:
 
