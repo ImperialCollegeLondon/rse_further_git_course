@@ -201,8 +201,8 @@ Workflow Syntax][step-syntax].
 Once those two steps have completed, the CI run is finished. What happens next
 depends on what happened during the job steps. If any step did not finish successfully,
 but instead generated an error, then the CI run is considered to have failed. Successful
-CI runs are marked in the GitHub UI with a green dot next to the commit; failed runs
-have a red dot.
+CI runs are marked in the GitHub UI with a green tick next to the commit; failed runs
+have a red cross.
 
 > ## Adding CI to Your Recipe
 >
