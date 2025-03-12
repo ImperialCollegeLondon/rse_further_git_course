@@ -4,7 +4,6 @@ teaching: 10
 exercises: 5
 questions:
 - "How do I keep my local branches in sync with the remote branches?"
-- "What is the difference between forking and branching?"
 objectives:
 - Push changes to a remote repository.
 - Pull changes from a remote repository.
