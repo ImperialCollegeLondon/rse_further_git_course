@@ -234,7 +234,7 @@ have a red cross.
 > 1. Stage and commit `ci.yml` then push the repository to GitHub.
 > 1. Your first CI run should have been triggered! Quickly, go to your repository on
 >    GitHub and select the `Actions` tab. You should see a workflow with a glowing amber
->    dot next to the commit messaged you provided. This means that the workflow is
+>    dot next to the commit message you provided. This means that the workflow is
 >    running.
 > 1. Click on the commit message. You now get a breakdown of the individual jobs within
 >    your workflow. It's only one job in this case - `markdownlint` - click on it to see
