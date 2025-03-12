@@ -290,10 +290,12 @@ Let's see how to create a branch protection rule and how this changes the behavi
 PR's:
 
 1. Go to the `Settings` tab and select `Branches` from the left-hand side.
-1. Select `Add branch protection rule`.
-1. Set `main` as the `Branch name pattern` and check the boxes for `Require a pull
-   request before merging` and `Require status checks to pass before merging`.
-1. In the extra options that appear beneath the status checks checkbox, check `Require
+1. Select `Add classic branch protection rule`.
+1. Set `main` as the `Branch name pattern`. Check the box for `Require a pull
+   request before merging` and in the options that appear below it, you can select
+   the number of approvals required for merging (default is 1). 
+1. Also check the box for `Require status checks to pass before merging`.
+   In the extra options that appear beneath, check `Require
    branches to be up to date before merging`. Using the search bar, find and select the
    names of any CI jobs that must pass to allow merging.
 1. Scroll down and press `Create`. GitHub may ask you to confirm your password.
