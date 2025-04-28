@@ -39,7 +39,7 @@ knowledge acquired so far.
 > - Set the owner of the new repository to your own GitHub username.
 > - Set the name of the repository to "book_of_recipes".
 > - Set the description to something like "Repository for the exercises of the Grad School Git Course".
-> - Make sure to select the "Public" option for your repsitory's visibility.
+> - Make sure to select the "Public" option for your repository's visibility.
 > - Click on "Create repository".
 > - Pass the link for your repo to the other group members, who will be the contributors.
 >
