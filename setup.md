@@ -19,15 +19,17 @@ title: Setup
 
 If you **have** completed our [Introduction to using Git and GitHub for software
 development][intro-course] course, you should have a `recipe` repository in your
-GitHub account that will be used in this course. Make sure you have a clone of
-that repo in your local home directory.
+GitHub account that will be used in this course. Specifically, in the lesson on
+[Committing and History][commit-history] from the Introduction course, we discuss
+how to set up the `recipe` repository. Make sure you have a clone of that repo in
+your local home directory.
 
 If you **have not** completed the intro course:
 
 - Download [this zip archive](code/recipe_with_history.zip) that contains the `recipe`
 repo with some previous commit history that will be used in the session.
 - Extract it into your home directory.
-- Create a repository on your personal GitHub account and set it as the remote for this
+- [Create a repository][commit-history] on your personal GitHub account and set it as the remote for this
 `recipe` repository you have locally.
 
 > ## Important
@@ -188,5 +190,6 @@ git config --global core.editor nano
 [nano]: https://www.nano-editor.org
 [vim]: https://www.vim.org
 [useful documentation on GitHub]: https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git
+[commit-history]: https://imperialcollegelondon.github.io/introductory_grad_school_git_course/l1-02-committing-history/index.html
 
 {% include links.md %}
