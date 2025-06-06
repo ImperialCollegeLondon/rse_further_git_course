@@ -29,7 +29,7 @@ If you **have not** completed the intro course:
 - Download [this zip archive](code/recipe_with_history.zip) that contains the `recipe`
 repo with some previous commit history that will be used in the session.
 - Extract it into your home directory.
-- Create a repository on your personal GitHub account and set it as the remote for this
+- [Create a repository][commit-history] on your personal GitHub account and set it as the remote for this
 `recipe` repository you have locally.
 
 > ## Important
