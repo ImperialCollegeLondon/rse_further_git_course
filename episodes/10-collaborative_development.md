@@ -59,11 +59,11 @@ knowledge acquired so far.
 >
 > **Explore existing issues** (Contributor's task):
 >
-> - Comment on the issues that you want to be assigned to. (As you don't have write access to the repository, you cannot assign yourself to an issue directly.)
+> - Choose the issues you would like to work on. You will need to comment on them so that the administrator can assign them to you. (As you don't have write access to the repository, you cannot assign yourself to an issue directly.)
 >
 > **Task assignment** (Administrator's task):
 >
-> - Add some tags, prioritise some of the recipes, and assign yourself or one of your colleagues as responsible for each of them.
+> - Add some tags, prioritise some of the recipes, and assign yourself or one of your colleagues (after they have commented on it) as responsible for each of them.
 >
 > **Working on a branch, pushing the changes, and opening a PR** (Contributor's tasks):
 >
