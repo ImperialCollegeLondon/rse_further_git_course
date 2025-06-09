@@ -134,7 +134,7 @@ After forking the repository, the second step is to make our fix/changes. First 
 
 The third and final step in the workflow is to create a pull request. This is done in the same way as in the shared repository model above (navigate to your forked repository, click on the "Contribute" drop-down menu, then click the "Open pull request" button), only this time instead of the base branch being one in your repository, it is a branch in the upstream repository that you forked.
 
-Another difference with forked repositories is to do with permissions. If you push to a branch in the upstream repository, anyone with write access can modify your branch by pushing to it, so maintainers can make changes directly before merging a PR, for instance. (It is generally better to make suggestions rather than editing someone else's branch, however.) If you have a forked repository, maintainers of the upstream will not have permission to edit branches in your repository by default; if you would like them to be able to do so, you have to opt in by selecting the **Allow edits from maintainers** option.
+Another difference with forked repositories is to do with permissions. If you push to a branch in the upstream repository, anyone with write access can modify your branch by pushing to it, so maintainers can make changes directly before merging a PR, for instance. (It is generally better to make suggestions rather than editing someone else's branch, however). If you have a forked repository, maintainers of the upstream will not have permission to edit branches in your repository by default; if you would like them to be able to do so, you have to opt in by selecting the **Allow edits from maintainers** option.
 
 > ## Dive deeper
 >
