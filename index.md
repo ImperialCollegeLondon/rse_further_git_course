@@ -6,7 +6,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 
 > ## Prerequisites
 >
-> - Basic familiarity with Git and GitHub (see our [introductory course](https://imperialcollegelondon.github.io/introductory_grad_school_git_course/index.html))
+> - Basic familiarity with Git and GitHub (see our [introductory course](https://imperialcollegelondon.github.io/rse_introductory_git_course/index.html))
 > - A working local installation of Git
 > - A local copy of the `recipe` repository
 > - Complete the Setup before starting
