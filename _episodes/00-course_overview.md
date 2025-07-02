@@ -31,7 +31,7 @@ you to effectively collaborate with others.
 We provide [a handout sheet] for this course with a glossary of terms and a list of
 common Git commands. You may want to download this as a reference for later.
 
-[Introduction to using Git and GitHub for software development]: https://imperialcollegelondon.github.io/introductory_grad_school_git_course/
+[Introduction to using Git and GitHub for software development]: https://imperialcollegelondon.github.io/rse_introductory_git_course/
 [a handout sheet]: ../handouts/git-course-handout.pdf
 
 ## Learning outcomes
