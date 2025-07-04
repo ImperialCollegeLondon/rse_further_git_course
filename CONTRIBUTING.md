@@ -20,8 +20,8 @@ mistake, some awkward wording, or a factual error.
 ## Where to Contribute
 
 1.  If you wish to change this lesson,
-    please work in <https://github.com/ImperialCollegeLondon/intermediate_grad_school_git_course>,
-    which can be viewed at <https://imperialcollegelondon.github.io/intermediate_grad_school_git_course>.
+    please work in <https://github.com/ImperialCollegeLondon/rse_further_git_course>,
+    which can be viewed at <https://imperialcollegelondon.github.io/rse_further_git_course>.
 
 ## What to Contribute
 

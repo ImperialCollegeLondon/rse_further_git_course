@@ -130,7 +130,7 @@ Forks are often used in large, open-source projects where you do not have write 
 
 This fork and pull model is a key aspect of open-source projects, allowing community contributions whilst reducing the amount of friction for new contributors in terms of being able to work independently without upfront coordination. Another benefit of forking is that it allows you to use someone else's project as a starting point for your own idea.
 
-After forking the repository, the second step is to make our fix/changes. First we will need to clone **our fork** so that we have the files in that repository locally on our computer (`clone` command was covered in the [introductory course](https://imperialcollegelondon.github.io/introductory_grad_school_git_course/l2-02-remote_repositories/index.html)). From here we can go ahead and create a new fix/feature branch and make our changes. When we are happy with the changes we have made, we can `commit` and `push` our upstream, forked repository.
+After forking the repository, the second step is to make our fix/changes. First we will need to clone **our fork** so that we have the files in that repository locally on our computer (`clone` command was covered in the [introductory course](https://imperialcollegelondon.github.io/rse_introductory_git_course/l2-02-remote_repositories/index.html)). From here we can go ahead and create a new fix/feature branch and make our changes. When we are happy with the changes we have made, we can `commit` and `push` our upstream, forked repository.
 
 The third and final step in the workflow is to create a pull request. This is done in the same way as in the shared repository model above (navigate to your forked repository, click on the "Contribute" drop-down menu, then click the "Open pull request" button), only this time instead of the base branch being one in your repository, it is a branch in the upstream repository that you forked.
 
@@ -156,7 +156,7 @@ Another difference with forked repositories is to do with permissions. If you pu
 
 > ## Closing GitHub Issues
 >
-> The introductory course - [Using GitHub Issues](https://imperialcollegelondon.github.io/introductory_grad_school_git_course/l3-01-issues/index.html) - describes how issues work on GitHub, but one handy functionality that is specific to pull requests is being able to automatically close an issue from a pull request.
+> The introductory course - [Using GitHub Issues](https://imperialcollegelondon.github.io/rse_introductory_git_course/l3-01-issues/index.html) - describes how issues work on GitHub, but one handy functionality that is specific to pull requests is being able to automatically close an issue from a pull request.
 >
 > If a PR tackles a particular issue, you can automatically close that issue
 > when the PR is merged by indicating `Close #ISSUE_NUMBER` in any commit

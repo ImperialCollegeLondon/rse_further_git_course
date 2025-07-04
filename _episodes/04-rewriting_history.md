@@ -207,7 +207,7 @@ git reset --hard COMMIT_HASH
 
 > ## `reset` vs `revert`
 >
-> `git revert` was [discussed in the introductory course](https://imperialcollegelondon.github.io/introductory_grad_school_git_course/l1-02-committing-history/index.html).
+> `git revert` was [discussed in the introductory course](https://imperialcollegelondon.github.io/rse_introductory_git_course/l1-02-committing-history/index.html).
 >
 > `reset` and `revert` both let you undo things done in the past, but they both have
 > very different use cases.
