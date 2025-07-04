@@ -183,13 +183,13 @@ git config --global core.editor nano
 ```
 {: .commands}
 
-[intro-course]: https://imperialcollegelondon.github.io/introductory_grad_school_git_course/
-[remote-repo-lesson]: https://imperialcollegelondon.github.io/introductory_grad_school_git_course/l2-02-remote_repositories/index.html
+[intro-course]: https://imperialcollegelondon.github.io/rse_introductory_git_course/
+[remote-repo-lesson]: https://imperialcollegelondon.github.io/rse_introductory_git_course/l2-02-remote_repositories/index.html
 <!-- markdown-link-check-disable-next-line -->
 [installer-list]: http://sourceforge.net/projects/git-osx-installer/files/
 [nano]: https://www.nano-editor.org
 [vim]: https://www.vim.org
 [useful documentation on GitHub]: https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git
-[commit-history]: https://imperialcollegelondon.github.io/introductory_grad_school_git_course/l1-02-committing-history/index.html
+[commit-history]: https://imperialcollegelondon.github.io/rse_introductory_git_course/l1-02-committing-history/index.html
 
 {% include links.md %}
