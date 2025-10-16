@@ -51,11 +51,6 @@ repository"){:class="img-responsive"}
 
 ### Now we want to do this
 
-<div style="border:2px solid #000000;"> <img src="{{ site.baseurl
-  }}/fig/octopus.jpeg" width="60%" alt="Example of git merge"> <br> Source: <a
-  href="https://twitter.com/jay_gee/status/703360688618536960">https://twitter.com/jay_gee/status/703360688618536960</a>
-  </div>
-
 Software development is often not linear:
 
 * We typically need at least one version of the code to "work" (to compile, to
