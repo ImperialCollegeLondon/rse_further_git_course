@@ -82,6 +82,7 @@ new commit in main. Fortunately `git status` is quite useful here:
 git status
 ```
 {: .commands}
+
 ```
 On branch main
 Your branch is ahead of 'origin/main' by 6 commits.
@@ -131,6 +132,7 @@ The conflict makes sense, we can either have 1 tsp of salt or 3. There is no way
 for Git to know which it should be so it has to ask you. Let's resolve it by
 choosing the version from the main branch. Edit `ingredients.md` so it looks
 like:
+
 ```
 * 2 avocados
 * 1 lime
@@ -147,6 +149,7 @@ git commit --no-edit
 git graph
 ```
 {: .commands}
+
 ```
 *   e361d2b (HEAD -> main) Merge branch 'experiment'
 |\
@@ -203,20 +206,24 @@ git graph
 > > git merge --no-edit experiment2
 > > ```
 > > {: .commands}
+> >
 > > This should give rise to a merge conflict:
 > > ```
 > > Auto-merging ingredients.md
 > > CONFLICT (content): Merge conflict in ingredients.md
 > > Automatic merge failed; fix conflicts and then commit the result.
 > > ```
+> > {: .output}
+> >
 > > Resolve the conflicts. Then stage the file again, and view the graph:
+> >
 > > ```
 > > git stage ingredients.md
 > > git commit
 > > git graph
 > > ```
 > > {: .commands}
-> > {: .output}
+> >
 > {: .solution}
 {: .challenge}
 
