@@ -1,16 +1,19 @@
 ---
-layout: lesson
-root: .  # Is the only page that doesn't follow the pattern /:path/index.html
-permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
+permalink: index.html
+site: sandpaper::sandpaper_site
 ---
 
-> ## Prerequisites
->
-> - Basic familiarity with Git and GitHub (see our [introductory course](https://imperialcollegelondon.github.io/rse_introductory_git_course/index.html))
-> - A working local installation of Git
-> - A local copy of the `recipe` repository
-> - Complete the Setup before starting
-{: .prereq}
+::::::::::::::::::::::::::::::::::::::::::  prereq
+
+## Prerequisites
+
+- Basic familiarity with Git and GitHub (see our [introductory course](https://imperialcollegelondon.github.io/rse_introductory_git_course/index.html))
+- A working local installation of Git
+- A local copy of the `recipe` repository
+- Complete the Setup before starting
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## About the RSE team
 
@@ -23,7 +26,10 @@ software development.
 
 You can find more information about our work and the services we offer [on our website].
 
-[on our website]: https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/research-software-engineering/
-[code surgeries]: https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/research-software-engineering/code-surgeries/
 
-{% include links.md %}
+
+[code surgeries]: https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/research-software-engineering/code-surgeries/
+[on our website]: https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/research-software-engineering/
+
+
+

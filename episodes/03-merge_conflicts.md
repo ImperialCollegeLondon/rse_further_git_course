@@ -1,19 +1,23 @@
 ---
-title: "Merge conflicts"
+title: Merge conflicts
 teaching: 10
 exercises: 10
-questions:
-  - What is a merge conflict?
-  - How do I resolve a merge conflict?
-objectives:
-  - Know what a merge conflict is
-  - Know how to abort a merge in the case of a conflict
-  - Know how to resolve a merge conflict by manually editing the conflicting file or files
-keypoints:
-  - Merge conflicts result when Git fails to merge files automatically because of mutually incompatible changes
-  - Merge conflicts must be resolved by manually editing files to specify the desired changes
-  - After resolving a merge conflict you must finalise the merge with `git stage` and `git commit`
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Know what a merge conflict is
+- Know how to abort a merge in the case of a conflict
+- Know how to resolve a merge conflict by manually editing the conflicting file or files
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What is a merge conflict?
+- How do I resolve a merge conflict?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Merge conflicts
 
@@ -23,7 +27,7 @@ you to decide what should be kept and what should be discarded.
 
 Let's try this by artificially creating a conflict:
 
-```sh
+```commands, sh
 git switch main
 # change line to 1 tsp salt in ingredients.md
 git stage ingredients.md
@@ -34,8 +38,8 @@ git stage ingredients.md
 git commit -m "Added salt to balance coriander"
 git graph
 ```
-{: .commands}
-```
+
+```output
 * d5fb141 (HEAD -> experiment) Added salt to balance coriander
 | * 7477632 (main) Reduce salt
 | *   567307e Merge branch 'experiment'
@@ -55,35 +59,32 @@ git graph
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions
 ```
-{: .output}
 
-![Git collaborative]({{ site.baseurl }}/fig/branch8.png
-"Repository with merge conflict"){:class="img-responsive"}
+![](fig/branch8.png "Repository with merge conflict")
+{alt='Git collaborative' class="img-responsive"}
 
 Now we try and merge `experiment` into `main`:
 
-```sh
+```commands, sh
 git switch main
 git merge --no-edit experiment
 ```
-{: .commands}
-```
+
+```output
 Auto-merging ingredients.md
 CONFLICT (content): Merge conflict in ingredients.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
-{: .output}
 
 As suspected we are warned that the merge failed. This puts Git into a special
 state in which the merge is in progress but has not been finalised by creating a
 new commit in main. Fortunately `git status` is quite useful here:
 
-```sh
+```commands, sh
 git status
 ```
-{: .commands}
 
-```
+```output
 On branch main
 Your branch is ahead of 'origin/main' by 6 commits.
   (use "git push" to publish your local commits)
@@ -98,7 +99,6 @@ Unmerged paths:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
-{: .output}
 
 This suggests how we can get out of this state. If we want to give up on this
 merge and try it again later then we can use `git merge --abort`. This will
@@ -143,14 +143,13 @@ like:
 
 Now stage, commit and check the result:
 
-```sh
+```commands, sh
 git stage ingredients.md
 git commit --no-edit
 git graph
 ```
-{: .commands}
 
-```
+```output
 *   e361d2b (HEAD -> main) Merge branch 'experiment'
 |\
 | * d5fb141 (experiment) Added salt to balance coriander
@@ -168,76 +167,88 @@ git graph
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions
 ```
-{: .output}
 
-![Git collaborative]({{ site.baseurl }}/fig/branch9.png
-"Repository with third merge"){:class="img-responsive"}
+![](fig/branch9.png "Repository with third merge")
+{alt='Git collaborative' class="img-responsive"}
 
-> ## Now you try
->
-> You should now be on the `main` branch. Try creating another merge conflict of your
-> own and resolving it.
->
-> You will need to follow these steps:
->
-> 1. Create a new branch and check it out (e.g. called `experiment2`)
-> 1. Commit a change to this branch
-> 1. Check out the `main` branch again
-> 1. Make and commit a change that is incompatible with the previous one (e.g. modify
->    the same line in a different way)
-> 1. Attempt to merge your topic branch (e.g. `experiment2`)
-> 1. Resolve any merge conflicts and finalise the merge with `git commit`
-> 1. Confirm for yourself that the merge has completed with `git graph`
->
-> NB: If the two sets of changes you made *aren't* incompatible (e.g. you changed
-> separate parts of the file) you will not get a merge conflict!
->
-> > ## Solution
-> >
-> > ```
-> > git switch -c experiment2
-> > # make changes to ingredients.md (say 1/2 lime)
-> > git stage ingredients.md
-> > git commit -m "Reduced lime"
-> > git switch main
-> > # make changes to the same line in ingredients.md (say 1/4 lime)
-> > git stage ingredients.md
-> > git commit -m "Reduce lime to balance coriander"
-> > git merge --no-edit experiment2
-> > ```
-> > {: .commands}
-> >
-> > This should give rise to a merge conflict:
-> > ```
-> > Auto-merging ingredients.md
-> > CONFLICT (content): Merge conflict in ingredients.md
-> > Automatic merge failed; fix conflicts and then commit the result.
-> > ```
-> > {: .output}
-> >
-> > Resolve the conflicts. Then stage the file again, and view the graph:
-> >
-> > ```
-> > git stage ingredients.md
-> > git commit
-> > git graph
-> > ```
-> > {: .commands}
-> >
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Now you try
+
+You should now be on the `main` branch. Try creating another merge conflict of your
+own and resolving it.
+
+You will need to follow these steps:
+
+1. Create a new branch and check it out (e.g. called `experiment2`)
+2. Commit a change to this branch
+3. Check out the `main` branch again
+4. Make and commit a change that is incompatible with the previous one (e.g. modify
+  the same line in a different way)
+5. Attempt to merge your topic branch (e.g. `experiment2`)
+6. Resolve any merge conflicts and finalise the merge with `git commit`
+7. Confirm for yourself that the merge has completed with `git graph`
+
+NB: If the two sets of changes you made *aren't* incompatible (e.g. you changed
+separate parts of the file) you will not get a merge conflict!
+
+:::::::::::::::  solution
+
+## Solution
+
+```commands
+git switch -c experiment2
+# make changes to ingredients.md (say 1/2 lime)
+git stage ingredients.md
+git commit -m "Reduced lime"
+git switch main
+# make changes to the same line in ingredients.md (say 1/4 lime)
+git stage ingredients.md
+git commit -m "Reduce lime to balance coriander"
+git merge --no-edit experiment2
+```
+
+This should give rise to a merge conflict:
+
+```output
+Auto-merging ingredients.md
+CONFLICT (content): Merge conflict in ingredients.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Resolve the conflicts. Then stage the file again, and view the graph:
+
+```commands
+git stage ingredients.md
+git commit
+git graph
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Summary
 
 Let us pause for a moment and summarise what we have learned:
 
 - You might come across situations where incompatible sets of changes
-need to be combined.
+  need to be combined.
 - If you don't want to perform a merge (or try it again later) then
-you can use `git merge --abort`.
+  you can use `git merge --abort`.
 - To resolve a merge conflict, edit the conflicted file into the state
-that you would like to keep, then stage and commit it.
+  that you would like to keep, then stage and commit it.
 - In the conflicted file, the tags `<<<<<<< HEAD`, `=======`
-and `>>>>>>> branch-name` indicate which branch each version came from.
+  and `>>>>>>> branch-name` indicate which branch each version came from.
 
-{% include links.md %}
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Merge conflicts result when Git fails to merge files automatically because of mutually incompatible changes
+- Merge conflicts must be resolved by manually editing files to specify the desired changes
+- After resolving a merge conflict you must finalise the merge with `git stage` and `git commit`
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

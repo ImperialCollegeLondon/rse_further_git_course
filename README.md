@@ -17,11 +17,11 @@ ways to render the lesson locally, and even how to write new episodes.
 Please see the current list of [issues] for ideas for contributing to
 this repository. For making your contribution, we use the GitHub flow, which is
 nicely explained in the chapter [Contributing to a
-Project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) in Pro
+Project](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) in Pro
 Git by Scott Chacon.
 
 Look for the tag
-![good_first_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg).
+![good\_first\_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg).
 This indicates that the maintainers will welcome a pull request fixing this issue.
 
 ## Maintainer(s)
@@ -30,11 +30,14 @@ This lesson is maintained by the Imperial College Research Computing Service
 
 ## Authors
 
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
+A list of contributors to the lesson can be found in <AUTHORS>
 
 ## Citation
 
-To cite this lesson, please consult with [CITATION](CITATION)
+To cite this lesson, please consult with <CITATION>
 
 [lesson-example]: https://carpentries.github.io/lesson-example
 [issues]: https://github.com/ImperialCollegeLondon/rse_further_git_course/issues
+
+
+

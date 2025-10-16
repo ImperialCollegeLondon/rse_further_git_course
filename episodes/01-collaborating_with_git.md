@@ -1,16 +1,21 @@
 ---
-title: "Collaborating with Git and GitHub"
+title: Collaborating with Git and GitHub
 teaching: 5
 exercises: 0
-questions:
-- "How does collaborative working differ from individual working?"
-- "What are the challenges of working collaboratively with Git?"
-objectives:
-- "Explain some challenges and benefits of collaborative working"
-keypoints:
-- "Collaborative working poses additional challenges compared to individual working"
-- "Git and GitHub provide powerful tools to help teams to work together"
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain some challenges and benefits of collaborative working
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How does collaborative working differ from individual working?
+- What are the challenges of working collaboratively with Git?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Working in a Team
 
@@ -105,4 +110,13 @@ GitHub were specifically designed to help you mitigate those challenges and
 embrace those opportunities. In the rest of this course we'll be looking in
 detail at the range of functionality that is touched on above.
 
-{% include links.md %}
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Collaborative working poses additional challenges compared to individual working
+- Git and GitHub provide powerful tools to help teams to work together
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

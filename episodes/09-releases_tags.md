@@ -1,28 +1,28 @@
 ---
-title: "Code versions, releases and tags"
+title: Code versions, releases and tags
 teaching: 15
 exercises: 5
-questions:
-- "What is a Git tag and how does it differ from a branch?"
-- "How can I tag commits?"
-- "How and when should I release a new version of my code?"
-- "What is the difference between major and minor version changes?"
-- "How can I effectively communicate what has changed between versions?"
-- "How can I publish a release on Github?"
-objectives:
-- "Understand what is meant by a release and a version"
-- "Know how to tag a given commit"
-- "Understand how to give your software meaningful version numbers with semantic versioning"
-- "Know how to push your tags and publish a release of your software"
-keypoints:
-- "A version of your code with a release number (e.g. v13.4.2) is referred to as a *release*"
-- "A version of your code represented by a commit hash (e.g. 047e4fe) is just referred to as a *commit*"
-- "Publishing a release can be a good way to bundle features and ensure your users use a specific version of your code"
-- "`git tag` allows you to give a commit a human-readable name, such as a version number"
-- "Semantic versioning is a common convention for conveying to your users what a new version number means"
-- "Tags need to be explicitly pushed to remotes with `git push --tags`"
-- "You can use a tag as the basis for a release on GitHub"
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Understand what is meant by a release and a version
+- Know how to tag a given commit
+- Understand how to give your software meaningful version numbers with semantic versioning
+- Know how to push your tags and publish a release of your software
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What is a Git tag and how does it differ from a branch?
+- How can I tag commits?
+- How and when should I release a new version of my code?
+- What is the difference between major and minor version changes?
+- How can I effectively communicate what has changed between versions?
+- How can I publish a release on Github?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Background: To release or not to release?
 
@@ -67,7 +67,7 @@ You *might* consider creating releases if:
 
 In general, though, creating a release is also just a convenient way to label a
 particular commit, so it's a useful way to ensure that the users you're sharing it with
--- who may not be technically savvy -- are using a specific commit, rather than simply
+\-- who may not be technically savvy -- are using a specific commit, rather than simply
 whatever the latest commit on `main` is.
 
 ### When *don't* I need to create releases for my software?
@@ -83,14 +83,13 @@ You probably don't need to create releases for your software if:
 In this case, if you just need to clarify which commit you're working from (e.g. to a
 colleague), you can always obtain the current commit hash like so:
 
-```sh
+```commands, sh
 git rev-parse --short HEAD
 ```
-{: .commands}
-```
+
+```output
 a34042b
 ```
-{: .output}
 
 ## Labelling a particular commit with `git tag`
 
@@ -100,11 +99,11 @@ go through how to add and remove tags to your repository.
 Firstly, remind yourself what the history for your `recipe` repository looks like with
 `git graph`. Mine looks like this:
 
-```
+```commands
 git graph
 ```
-{: .commands}
-```
+
+```output
 * a34042b (HEAD -> spicy) Chillies added to the mix
 * d10e1e9 (main) Guacamole must be served cold
 * 5344d8f Revert "Added 1/2 onion to ingredients"
@@ -120,7 +119,6 @@ git graph
 * 43536f3 Added instruction to enjoy
 * 745fb8b adding ingredients and instructions
 ```
-{: .output}
 
 (Note that yours may look different depending on whether you followed the steps yourself
 or downloaded the pre-made repository.)
@@ -129,39 +127,35 @@ Let's say that you have decided that the point at which you added half an onion 
 highpoint in the recipe's history and you want to make a note of which commit that was
 for a future date by giving it the tag "tasty".  You can do this like so:
 
-```
+```commands
 git tag tasty [commit hash]
 ```
-{: .commands}
 
 In my case, I ran:
 
-```
+```commands
 git tag tasty 5cb4883
 ```
-{: .commands}
 
 You can list the tags for your repo by running `git tag` without any arguments:
 
-```
+```commands
 git tag
 ```
-{: .commands}
-```
+
+```output
 tasty
 ```
-{: .output}
 
 To check which commit hash this corresponds to, use:
 
-```
+```commands
 git rev-parse --short tasty
 ```
-{: .commands}
-```
+
+```output
 5cb4883
 ```
-{: .output}
 
 Double-check that this is the commit you intended to tag by running `git log` (or
 `git graph`) again.
@@ -174,15 +168,14 @@ the instructions. (Note that you need to include the `--detach` option!)
 You may now be wondering, if this is the case, then how is a tag different from a
 branch? Try switching to `tasty` to see what happens:
 
-```
+```commands
 git switch tasty
 ```
-{: .commands}
-```
+
+```output
 fatal: a branch is expected, got tag 'tasty'
 hint: If you want to detach HEAD at the commit, try again with the --detach option.
 ```
-{: .output}
 
 Git provides some helpful output here. To "detach `HEAD`" means to change the current
 working state to a commit that isn't on any branch at all, so if you commit any changes,
@@ -196,41 +189,40 @@ v1.0, for example.
 
 Let's try again using the `--detach` option:
 
-```
+```commands
 git switch --detach tasty
 ```
-{: .commands}
-```
+
+```output
 HEAD is now at 5cb4883 Added 1/2 onion to ingredients
 ```
-{: .output}
 
 Now it works. Fortunately, a detached `HEAD` is a much less serious affliction for git
 repos than human beings, and you can reattach it by simply checking out a branch:
 
-```
+```commands
 git switch main
 ```
-{: .commands}
 
 Assume now that you have decided that you no longer want this tag (perhaps on eating, it
 turned out not to be tasty after all). You can delete the tag like so:
 
-```
+```commands
 git tag -d tasty
 ```
-{: .commands}
-```
+
+```output
 Deleted tag 'tasty' (was 5cb4883)
 ```
-{: .output}
 
-> ## Exercise: Try creating your own tag
->
-> Now try it yourself. Choose a different commit and give it a label using `git tag`.
-> Confirm that you can check out this commit. Once you have finished, delete it.
->
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Exercise: Try creating your own tag
+
+Now try it yourself. Choose a different commit and give it a label using `git tag`.
+Confirm that you can check out this commit. Once you have finished, delete it.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 There is one last important thing to know about git tags. Like branches, they are not
 automatically synced with your remote (e.g. GitHub) and have to be pushed explicitly. We
@@ -271,21 +263,19 @@ repository (in mine this is `745fb8b`) the tag `v0.0.1`, which is often used as 
 first tagged release for a project. (Another common convention is to indicate that the
 software is still experimental by giving it a major version number of zero.)
 
-```
+```commands
 git tag v0.0.1 745fb8b
 ```
-{: .commands}
 
 Verify that the tag has been added:
 
-```
+```commands
 git tag
 ```
-{: .commands}
-```
+
+```output
 v0.0.1
 ```
-{: .output}
 
 Now your repository has a proper version tag. Next, let's push this tag to GitHub so the
 rest of the world can see it.
@@ -294,19 +284,17 @@ rest of the world can see it.
 
 To push your tags to GitHub, do the following:
 
-```
+```commands
 git push --tags
 ```
-{: .commands}
 
 You should see something like this:
 
-```
+```output
 Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/alexdewar/recipe.git
  * [new tag]         v0.0.1 -> v0.0.1
 ```
-{: .output}
 
 Now open your browser and go to the GitHub page for your recipe repository (see the link
 in the command output). [Mine is here, for
@@ -314,7 +302,7 @@ example.](https://github.com/alexdewar/recipe)
 
 If you look in the right-hand pane, under "Releases", you should now see "1 tags":
 
-![1 tags]({{ site.baseurl }}/fig/releases_repo.png "1 tags")
+![](fig/releases_repo.png "1 tags"){alt='1 tags'}
 
 This refers to the `v0.0.1` tag you just pushed. (If there are two tags, you may have
 forgotten to delete the `tasty` tag, which doesn't matter much.)
@@ -322,12 +310,12 @@ forgotten to delete the `tasty` tag, which doesn't matter much.)
 Under "1 tags", there is a link entitled "Create a new release". Click it and you should
 see something like the following:
 
-![Creating a new release]({{ site.baseurl }}/fig/releases_new_release.png "Creating a
-new release")
+![](fig/releases_new_release.png "Creating a new release"){alt='Creating a new release'}
+
 
 Click "Choose a tag" then select your tag "v0.0.1" from the dropdown list:
 
-![Choose your tag]({{ site.baseurl }}/fig/releases_choose_a_tag.png "Choose your tag")
+![](fig/releases_choose_a_tag.png "Choose your tag"){alt='Choose your tag'}
 
 For the release title, you can just put "v0.0.1" again. Then add a description of your
 choosing. (You can check the "Set as pre-release" box if you want to indicate to your
@@ -338,29 +326,45 @@ software (e.g. as an `.exe` file), this is where you could upload it.
 When you're finished, click "Publish
 release":
 
-![Publish your release]({{ site.baseurl }}/fig/releases_publish.png "Publish your
-release")
+![](fig/releases_publish.png "Publish your release"){alt='Publish your release'}
+
 
 Now you should be redirected to a page that looks like this:
 
-![View release]({{ site.baseurl }}/fig/releases_view.png "View release")
+![](fig/releases_view.png "View release"){alt='View release'}
 
 Congratulations, you have made your first release! You can share the link to this page
 with others if you want to notify them of the release. Alternatively, users can find
 your release from the repo's main page by clicking on "Releases".
 
-> ## Exercise: Publish another release
->
-> Now try creating another release corresponding to a newer version of the recipe,
-> following the same steps you did for `v0.0.1`.
->
-> Your first task will be to choose a sensible version number for the release, using
-> semantic versioning. This is necessarily a bit subjective, but you should be able to
-> justify your decision 🙂.
->
-> End by pushing the tag to GitHub and issuing another release, with an appropriate
-> description.
->
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-{% include links.md %}
+## Exercise: Publish another release
+
+Now try creating another release corresponding to a newer version of the recipe,
+following the same steps you did for `v0.0.1`.
+
+Your first task will be to choose a sensible version number for the release, using
+semantic versioning. This is necessarily a bit subjective, but you should be able to
+justify your decision .
+
+End by pushing the tag to GitHub and issuing another release, with an appropriate
+description.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- A version of your code with a release number (e.g. v13.4.2) is referred to as a *release*
+- A version of your code represented by a commit hash (e.g. 047e4fe) is just referred to as a *commit*
+- Publishing a release can be a good way to bundle features and ensure your users use a specific version of your code
+- `git tag` allows you to give a commit a human-readable name, such as a version number
+- Semantic versioning is a common convention for conveying to your users what a new version number means
+- Tags need to be explicitly pushed to remotes with `git push --tags`
+- You can use a tag as the basis for a release on GitHub
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

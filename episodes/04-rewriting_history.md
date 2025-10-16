@@ -1,24 +1,24 @@
 ---
-title: "Rewriting history with Git"
+title: Rewriting history with Git
 teaching: 25
 exercises: 15
-questions:
-- "How can multiple collaborators work efficiently on the same code?"
-- "When should I use rebasing, merging and stashing?"
-- "How can I reset or revert changes without upsetting my collaborators?"
-objectives:
-- "Understand the options for rewriting git history"
-- "Know how to use them effectively when working with collaborators"
-- "Understand the risks associated with rewriting history"
-keypoints:
-- "There are several ways of rewriting git history, each with specific use cases associated to them"
-- "Rewriting history can have unexpected consequences and you risk losing information permanently"
-- "Reset: You have made a mistake and want to keep the commit history tidy for the benefit of collaborators"
-- "Stash: You want to do something else -- e.g. switch to someone else's branch -- without losing your current work"
-- "Rebase: Someone else has updated the main branch while you've been working and need to bring those changes to your branch"
-- "More information: [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)"
 ---
 
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Understand the options for rewriting git history
+- Know how to use them effectively when working with collaborators
+- Understand the risks associated with rewriting history
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How can multiple collaborators work efficiently on the same code?
+- When should I use rebasing, merging and stashing?
+- How can I reset or revert changes without upsetting my collaborators?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Rewriting history with Git
 
@@ -60,66 +60,62 @@ The following are the `git stash` commands needed to make this happen:
 Stash the current state of the repository, giving some message to remind yourself what
 was this about. The working directory becomes identical to the last commit.
 
-```sh
+```commands, sh
 git stash save "Some informative message"
 ```
-{: .commands}
 
 List the stashes available in reverse chronological order (last one stashed goes on
 top).
 
-```sh
+```commands, sh
 git stash list
 ```
-{: .commands}
 
 Extract the **last stash** of the list, updating the working directory
 with its content.
 
-```sh
+```commands, sh
 git stash pop
 ```
-{: .commands}
 
 Extract the stash with the given number from the list, updating the working directory
 with its content.
 
-```sh
+```commands, sh
 git stash pop stash@{NUMBER}
 ```
-{: .commands}
 
 Apply the **last stash** without removing it from the list, so you can apply it to
 other branches, if needed.
 
-```sh
+```commands, sh
 git stash apply
 ```
-{: .commands}
 
 Apply the given stash without removing it from the list, so you can apply it to
 other branches, if needed.
 
-```sh
+```commands, sh
 git stash apply stash@{NUMBER}
 ```
-{: .commands}
 
 If you want more information, you can [read this article on Git
 stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash).
 
-> ## Practice stashing
->
-> Now try using `git stash` with the recipe repository. For example:
->
-> - Add some ingredients then stash the changes (do not stage or commit them)
-> - Modify the instructions and also stash those change
->
-> Then have a look at the list of stashes and bring those changes back to the
-> working directory using `git stash pop` and `git stash apply`, and see how the list of
-> stashes changes in either case.
->
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Practice stashing
+
+Now try using `git stash` with the recipe repository. For example:
+
+- Add some ingredients then stash the changes (do not stage or commit them)
+- Modify the instructions and also stash those change
+
+Then have a look at the list of stashes and bring those changes back to the
+working directory using `git stash pop` and `git stash apply`, and see how the list of
+stashes changes in either case.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Amend
 
@@ -129,17 +125,15 @@ made, maybe adding some files you forgot to stage or fixing a typo in the commit
 After you have made those last minute changes - and `staged` them, if needed - all you
 need to do to amend the last commit while keeping the same commit message is:
 
-```sh
+```commands, sh
 git commit --amend --no-edit
 ```
-{: .commands}
 
 Or this:
 
-```sh
+```commands, sh
 git commit --amend -m "New commit message"
 ```
-{: .commands}
 
 if you want to write a new commit message.
 
@@ -148,20 +142,25 @@ be different -- so this approach must not be used if the commit was already push
 the remote repository and shared with collaborators.
 
 > ## Edit commit message with your editor
->
+> 
 > If you run `git commit` without either the `--no-edit` or `-m` flags, it will open a
 > text editor to allow you to enter a commit message. If you are using the `--amend`
 > flag, the text editor will contain the commit message for the commit you are amending.
->
+> 
 > You can edit the commit message in your text editor however you like, then, when you
 > have finished, save and exit. For longer commit messages, the convention is to provide
 > a short, one-line summary on the first line, followed by an empty line, then by a more
 > detailed description.
->
+
 <!-- markdownlint-disable-next-line -->
-> For details on how to choose which text editor Git will use, see [the setup
-> instructions][lesson-setup].
-{: .challenge}
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+For details on how to choose which text editor Git will use, see [the setup
+instructions][lesson-setup].
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Reset
 
@@ -172,10 +171,9 @@ or just improve your commit message. Unlike `git revert`, `git reset` will
 retrospectively alter your commit history, so it should **not** be used when you have
 already shared work with collaborators.
 
-```sh
+```commands, sh
 git reset --soft HEAD^
 ```
-{: .commands}
 
 This resets the staging area to match the most recent commit, but leaves the working
 directory unchanged - so no information is lost. Now you can review the files you
@@ -193,115 +191,119 @@ erased**.
 
 To undo just the last commit, you can do:
 
-```sh
+```commands, sh
 git reset --hard HEAD^
 ```
-{: .commands}
 
 Otherwise, to go back in time to a specific commit, you would do:
 
-```sh
+```commands, sh
 git reset --hard COMMIT_HASH
 ```
-{: .commands}
 
-> ## `reset` vs `revert`
->
-> `git revert` was [discussed in the introductory course](https://imperialcollegelondon.github.io/rse_introductory_git_course/l1-02-committing-history/index.html).
->
-> `reset` and `revert` both let you undo things done in the past, but they both have
-> very different use cases.
->
-> - `reset` uses brute force, potentially with destructive consequences, to
->   make those changes and is suitable only if the work has not been shared with others
->   already. Use it when you want to get rid of recent work you're not happy with and start
->   all over again.
-> - `revert` is more lightweight and surgical, to target specific changes and creating
->   new commits to history. Use it when code has already been shared with others or when
->   changes are small and clearly isolated.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-> ## Don't mess with the salt
->
-> Let's put this into practice! After all the work done in the previous episode adjusting
-> the amount of salt, you conclude that it was nonsense and you should keep the original
-> amount. You could obviously just create a new commit with the correct amount of salt, but
-> that will leave your poor attempts to improve the recipe in the commit history, so you
-> decide to totally erase them.
-> >
-> > ## Solution
-> >
-> > First, we check how far back we need to go with `git graph`:
-> >
-> > ```
-> > *   c9d9bfe (HEAD -> main) Merged experiment into main
-> > |\
-> > | * 84a371d (experiment) Added salt to balance coriander
-> > * | 54467fa Reduce salt
-> > * | fe0d257 Merge branch 'experiment'
-> > |\|
-> > | * 99b2352 Reduced the amount of coriander
-> > * | 2c2d0e2 Merge branch 'experiment'
-> > |\|
-> > | * d9043d2 Try with some coriander
-> > * | 6a2a76f Corrected typo in ingredients.md
-> > |/
-> > * 57d4505 (origin/main) Revert "Added instruction to enjoy"
-> > * 5cb4883 Added 1/2 onion
-> > * 43536f3 Added instruction to enjoy
-> > * 745fb8b Adding ingredients and instructions
-> > ```
-> > {: .output}
-> >
-> > We can see in the example that we want to discard the last three commits from history
-> > and go back to `fe0d257`, when we merged the `experiment` branch after reducing the
-> > amount of coriander. Let's do it (use your own commit hash!):
-> >
-> > ```sh
-> > git reset --hard fe0d257
-> > git graph
-> > ```
-> > {: .commands}
-> >
-> > Now, the commit history should look like this:
-> >
-> > ```
-> > * 84a371d (experiment) Added salt to balance coriander
-> > | *   fe0d257 (HEAD -> main) Merge branch 'experiment'
-> > | |\
-> > | |/
-> > |/|
-> > * | 99b2352 Reduced the amount of coriander
-> > | *   2c2d0e2 Merge branch 'experiment'
-> > | |\
-> > | |/
-> > |/|
-> > * | d9043d2 Try with some coriander
-> > | * 6a2a76f Corrected typo in ingredients.md
-> > |/
-> > * 57d4505 (origin/main) Revert "Added instruction to enjoy"
-> > * 5cb4883 Added 1/2 onion
-> > * 43536f3 Added instruction to enjoy
-> > * 745fb8b Adding ingredients and instructions
-> > ```
-> > {: .output}
-> > Note that while the `experiment` branch still mentions the adjustment of salt, that is
-> > no longer part of the `main` commit history. Your working directory has become identical
-> > to that before starting the salty adventure.
-> >
-> {: .solution}
->
-{: .challenge}
+## `reset` vs `revert`
 
-> ## Changing History Can Have Unexpected Consequences
->
-> Like with `git commit --amend`, using `git reset` to remove a commit is a bad idea if
-> you have **already shared** it with other people. If you make a commit and share it on
-> GitHub or with a colleague by other means then removing that commit from your Git
-> history will cause inconsistencies that may be difficult to resolve later. We
-> only recommend this approach for commits that are only in your local working
-> copy of a repository.
-{: .callout}
+`git revert` was [discussed in the introductory course](https://imperialcollegelondon.github.io/rse_introductory_git_course/l1-02-committing-history/index.html).
+
+`reset` and `revert` both let you undo things done in the past, but they both have
+very different use cases.
+
+- `reset` uses brute force, potentially with destructive consequences, to
+  make those changes and is suitable only if the work has not been shared with others
+  already. Use it when you want to get rid of recent work you're not happy with and start
+  all over again.
+- `revert` is more lightweight and surgical, to target specific changes and creating
+  new commits to history. Use it when code has already been shared with others or when
+  changes are small and clearly isolated.
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Don't mess with the salt
+
+Let's put this into practice! After all the work done in the previous episode adjusting
+the amount of salt, you conclude that it was nonsense and you should keep the original
+amount. You could obviously just create a new commit with the correct amount of salt, but
+that will leave your poor attempts to improve the recipe in the commit history, so you
+decide to totally erase them.
+
+> ## Solution
+> 
+> First, we check how far back we need to go with `git graph`:
+> 
+> ```output
+> *   c9d9bfe (HEAD -> main) Merged experiment into main
+> |\
+> | * 84a371d (experiment) Added salt to balance coriander
+> * | 54467fa Reduce salt
+> * | fe0d257 Merge branch 'experiment'
+> |\|
+> | * 99b2352 Reduced the amount of coriander
+> * | 2c2d0e2 Merge branch 'experiment'
+> |\|
+> | * d9043d2 Try with some coriander
+> * | 6a2a76f Corrected typo in ingredients.md
+> |/
+> * 57d4505 (origin/main) Revert "Added instruction to enjoy"
+> * 5cb4883 Added 1/2 onion
+> * 43536f3 Added instruction to enjoy
+> * 745fb8b Adding ingredients and instructions
+> ```
+> 
+> We can see in the example that we want to discard the last three commits from history
+> and go back to `fe0d257`, when we merged the `experiment` branch after reducing the
+> amount of coriander. Let's do it (use your own commit hash!):
+> 
+> ```commands, sh
+> git reset --hard fe0d257
+> git graph
+> ```
+> 
+> Now, the commit history should look like this:
+> 
+> ```output
+> * 84a371d (experiment) Added salt to balance coriander
+> | *   fe0d257 (HEAD -> main) Merge branch 'experiment'
+> | |\
+> | |/
+> |/|
+> * | 99b2352 Reduced the amount of coriander
+> | *   2c2d0e2 Merge branch 'experiment'
+> | |\
+> | |/
+> |/|
+> * | d9043d2 Try with some coriander
+> | * 6a2a76f Corrected typo in ingredients.md
+> |/
+> * 57d4505 (origin/main) Revert "Added instruction to enjoy"
+> * 5cb4883 Added 1/2 onion
+> * 43536f3 Added instruction to enjoy
+> * 745fb8b Adding ingredients and instructions
+> ```
+> 
+> Note that while the `experiment` branch still mentions the adjustment of salt, that is
+> no longer part of the `main` commit history. Your working directory has become identical
+> to that before starting the salty adventure.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Changing History Can Have Unexpected Consequences
+
+Like with `git commit --amend`, using `git reset` to remove a commit is a bad idea if
+you have **already shared** it with other people. If you make a commit and share it on
+GitHub or with a colleague by other means then removing that commit from your Git
+history will cause inconsistencies that may be difficult to resolve later. We
+only recommend this approach for commits that are only in your local working
+copy of a repository.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Removing branches once you are done with them is good practice
 
@@ -309,46 +311,43 @@ Over time, you will accumulate lots of branches to implement different features 
 code. It is good practice to remove them once they have fulfil their purpose. You can do
 that using the `-D` flag with the `git branch` command:
 
-```sh
+```commands, sh
 git branch -D BRANCH_NAME
 ```
-{: .commands}
 
-> ## Getting rid of the experiment
->
-> As we are done with the `experiment` branch, let's delete it to have a cleaner history.
-> >
-> > ## Solution
-> >
-> > ```sh
-> > git branch -D experiment
-> > git graph
-> > ```
-> > {: .commands}
-> >
-> > Now, the commit history should look like this:
-> >
-> > ```
-> > *   fe0d257 (HEAD -> main) Merge branch 'experiment'
-> > |\
-> > | * 99b2352 Reduced the amount of coriander
-> > * | 2c2d0e2 Merge branch 'experiment'
-> > |\|
-> > | * d9043d2 Try with some coriander
-> > * | 6a2a76f Corrected typo in ingredients.md
-> > |/
-> > * 57d4505 (origin/main) Revert "Added instruction to enjoy"
-> > * 5cb4883 Added 1/2 onion
-> > * 43536f3 Added instruction to enjoy
-> > * 745fb8b Adding ingredients and instructions
-> > ```
-> > {: .output}
-> >
-> > Now there is truly no trace of your attempts to change the content of salt!
-> >
-> {: .solution}
->
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Getting rid of the experiment
+
+As we are done with the `experiment` branch, let's delete it to have a cleaner history.
+
+> ## Solution
+> 
+> ```commands, sh
+> git branch -D experiment
+> git graph
+> ```
+> 
+> Now, the commit history should look like this:
+> 
+> ```output
+> *   fe0d257 (HEAD -> main) Merge branch 'experiment'
+> |\
+> | * 99b2352 Reduced the amount of coriander
+> * | 2c2d0e2 Merge branch 'experiment'
+> |\|
+> | * d9043d2 Try with some coriander
+> * | 6a2a76f Corrected typo in ingredients.md
+> |/
+> * 57d4505 (origin/main) Revert "Added instruction to enjoy"
+> * 5cb4883 Added 1/2 onion
+> * 43536f3 Added instruction to enjoy
+> * 745fb8b Adding ingredients and instructions
+> ```
+> 
+> Now there is truly no trace of your attempts to change the content of salt!
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Incorporate past commits with `rebase`
 
@@ -365,10 +364,9 @@ facilitating merging back in the future.
 
 The command is straightforward:
 
-```sh
+```commands, sh
 git rebase NEW_BASE
 ```
-{: .commands}
 
 where `NEW_BASE` can be either a commit hash or a branch name we want to use as the new
 base.
@@ -376,101 +374,112 @@ base.
 The following figure illustrates the process where, after rebasing, the two commits of
 the feature branch have been recreated after the last commit of the main branch.
 
-![Rebase process with a feature branch being moved to another branch]({{ site.baseurl }}/fig/rebase.png
-"Rebase process with a feature branch being moved to another branch")
+![](fig/rebase.png "Rebase process with a feature branch being moved to another branch"){alt='Rebase process with a feature branch being moved to another branch'}
+
 
 For a very thorough description about how this process works, read this [article on Git
 rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
-> ## Practice rebasing
->
-> We are going to practice rebasing in a simple scenario with the recipe repository.
-> We need to do some preparatory work first:
->
-> - Create a `spicy` branch
-> - Add some chillies to the list of ingredients and commit the changes
-> - Switch back to the `main` branch
-> - Add a final step in the instructions indicating that this should be served cold
-> - Go back to the `spicy` branch
->
-> If you were to add now instructions to chop the chillies finely and put some on top
-> of the mix, chances are that you will have conflicts later on when merging back to
-> main. We can merge `main` into `spicy`, as we did in the previous episode, but that
-> will result in a non-linear history (not a big deal in this case, but things can get
-> really complicated).
->
-> So let's use `git rebase` to bring the `spicy` branch as it it would have been
-> branched off `main` after indicating that the guacamole needs to be served cold.
->
-> > ## Solution
-> >
-> > After the following commands (and modifications to the files) the repository history
-> > should look like the graph below:
-> >
-> > ```sh
-> > git switch -c spicy
-> > # add the chillies to ingredients.md
-> > git stage ingredients.md
-> > git commit -m "Chillies added to the mix"
-> > git switch main
-> > # Indicate that should be served cold in instructions.md
-> > git stage instructions.md
-> > git commit -m "Guacamole must be served cold"
-> > git graph
-> > ```
-> > {: .commands}
-> > ```
-> > * d10e1e9 (HEAD -> main) Guacamole must be served cold
-> > | * e0350e4 (spicy) Chillies added to the mix
-> > |/
-> > * 5344d8f Revert "Added 1/2 onion"
-> > *   fe0d257 Merge branch 'experiment'
-> > |\
-> > | * 99b2352 Reduced the amount of coriander
-> > * | 2c2d0e2 Merge branch 'experiment'
-> > |\|
-> > | * d9043d2 Try with some coriander
-> > * | 6a2a76f Corrected typo in ingredients.md
-> > |/
-> > * 57d4505 (origin/main) Revert "Added instruction to enjoy"
-> > * 5cb4883 Added 1/2 onion
-> > * 43536f3 Added instruction to enjoy
-> > * 745fb8b Adding ingredients and instructions
-> > ```
-> > {: .output}
-> >
-> > Now, let's go back to `spicy` and do the `git rebase`:
-> >
-> > ```sh
-> > git switch spicy
-> > git rebase main
-> > git graph
-> > ```
-> > {: .commands}
-> > ```
-> > * a34042b (HEAD -> spicy) Chillies added to the mix
-> > * d10e1e9 (main) Guacamole must be served cold
-> > * 5344d8f Revert "Added 1/2 onion"
-> > *   fe0d257 Merge branch 'experiment'
-> > |\
-> > | * 99b2352 Reduced the amount of coriander
-> > * | 2c2d0e2 Merge branch 'experiment'
-> > |\|
-> > | * d9043d2 Try with some coriander
-> > * | 6a2a76f Corrected typo in ingredients.md
-> > |/
-> > * 57d4505 (origin/main) Revert "Added instruction to enjoy"
-> > * 5cb4883 Added 1/2 onion
-> > * 43536f3 Added instruction to enjoy
-> > * 745fb8b Adding ingredients and instructions
-> > ```
-> > {: .output}
-> >
-> > Can you spot the difference with the coriander experiment? Now the commit history is
-> > linear and we have avoided the risk of conflicts.
-> >
-> {: .solution}
->
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-{% include links.md %}
+## Practice rebasing
+
+We are going to practice rebasing in a simple scenario with the recipe repository.
+We need to do some preparatory work first:
+
+- Create a `spicy` branch
+- Add some chillies to the list of ingredients and commit the changes
+- Switch back to the `main` branch
+- Add a final step in the instructions indicating that this should be served cold
+- Go back to the `spicy` branch
+
+If you were to add now instructions to chop the chillies finely and put some on top
+of the mix, chances are that you will have conflicts later on when merging back to
+main. We can merge `main` into `spicy`, as we did in the previous episode, but that
+will result in a non-linear history (not a big deal in this case, but things can get
+really complicated).
+
+So let's use `git rebase` to bring the `spicy` branch as it it would have been
+branched off `main` after indicating that the guacamole needs to be served cold.
+
+> ## Solution
+> 
+> After the following commands (and modifications to the files) the repository history
+> should look like the graph below:
+> 
+> ```commands, sh
+> git switch -c spicy
+> # add the chillies to ingredients.md
+> git stage ingredients.md
+> git commit -m "Chillies added to the mix"
+> git switch main
+> # Indicate that should be served cold in instructions.md
+> git stage instructions.md
+> git commit -m "Guacamole must be served cold"
+> git graph
+> ```
+> 
+> ```output
+> * d10e1e9 (HEAD -> main) Guacamole must be served cold
+> | * e0350e4 (spicy) Chillies added to the mix
+> |/
+> * 5344d8f Revert "Added 1/2 onion"
+> *   fe0d257 Merge branch 'experiment'
+> |\
+> | * 99b2352 Reduced the amount of coriander
+> * | 2c2d0e2 Merge branch 'experiment'
+> |\|
+> | * d9043d2 Try with some coriander
+> * | 6a2a76f Corrected typo in ingredients.md
+> |/
+> * 57d4505 (origin/main) Revert "Added instruction to enjoy"
+> * 5cb4883 Added 1/2 onion
+> * 43536f3 Added instruction to enjoy
+> * 745fb8b Adding ingredients and instructions
+> ```
+> 
+> Now, let's go back to `spicy` and do the `git rebase`:
+> 
+> ```commands, sh
+> git switch spicy
+> git rebase main
+> git graph
+> ```
+> 
+> ```output
+> * a34042b (HEAD -> spicy) Chillies added to the mix
+> * d10e1e9 (main) Guacamole must be served cold
+> * 5344d8f Revert "Added 1/2 onion"
+> *   fe0d257 Merge branch 'experiment'
+> |\
+> | * 99b2352 Reduced the amount of coriander
+> * | 2c2d0e2 Merge branch 'experiment'
+> |\|
+> | * d9043d2 Try with some coriander
+> * | 6a2a76f Corrected typo in ingredients.md
+> |/
+> * 57d4505 (origin/main) Revert "Added instruction to enjoy"
+> * 5cb4883 Added 1/2 onion
+> * 43536f3 Added instruction to enjoy
+> * 745fb8b Adding ingredients and instructions
+> ```
+> 
+> Can you spot the difference with the coriander experiment? Now the commit history is
+> linear and we have avoided the risk of conflicts.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- There are several ways of rewriting git history, each with specific use cases associated to them
+- Rewriting history can have unexpected consequences and you risk losing information permanently
+- Reset: You have made a mistake and want to keep the commit history tidy for the benefit of collaborators
+- Stash: You want to do something else -- e.g. switch to someone else's branch -- without losing your current work
+- Rebase: Someone else has updated the main branch while you've been working and need to bring those changes to your branch
+- More information: [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

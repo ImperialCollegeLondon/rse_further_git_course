@@ -1,41 +1,45 @@
 ---
-title: "Using GitHub actions for continuous integration"
+title: Using GitHub actions for continuous integration
 teaching: 30
 exercises: 10
-questions:
-- "What is meant by continuous integration (CI) and what are the benefits?"
-- "What tasks can be automated in CI?"
-- "How do I set up CI using GitHub Actions?"
-- "How do I know if CI runs are passing and what should I do if they are failing?"
-- "What should I do if I can't replicate failing runs locally?"
-objectives:
-- "Understand the role of Continuous Integration (CI) in collaborative development"
-- "Know how to write a simple GitHub Actions configuration file"
-- "Be able to design a CI workflow for a variety of projects"
-keypoints:
-- "Continuous Integration (CI) is the practice of automating checks of code contributions"
-- "GitHub Actions is a CI system provided by GitHub"
-- "GitHub Actions is configured via a YAML file in the directory `.github/workflows`"
-- "GitHub Actions comprise individual steps combined into workflows"
-- "Steps may run a pre-existing action or custom code"
-- "The result of a GitHub Actions run can be used to block merging of a Pull Request"
-- "CI can be used for a wide variety of purposes"
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Understand the role of Continuous Integration (CI) in collaborative development
+- Know how to write a simple GitHub Actions configuration file
+- Be able to design a CI workflow for a variety of projects
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What is meant by continuous integration (CI) and what are the benefits?
+- What tasks can be automated in CI?
+- How do I set up CI using GitHub Actions?
+- How do I know if CI runs are passing and what should I do if they are failing?
+- What should I do if I can't replicate failing runs locally?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Motivation for CI
 
-> ## Individual styles and preferences
->
-> Developer 1 - "Tabs!"
->
-> Developer 2 - "Spaces!"
->
-> Developer 1 - "TABS!"
->
-> Developer 2 - "SPACES!"
->
-> [**GitHub Actions**](https://docs.github.com/en/actions) automatically runs checks on your code.
-{: .discussion}
+::::::::::::::::::::::::::::::::::::::  discussion
+
+## Individual styles and preferences
+
+Developer 1 - "Tabs!"
+
+Developer 2 - "Spaces!"
+
+Developer 1 - "TABS!"
+
+Developer 2 - "SPACES!"
+
+[GitHub Actions] automatically runs checks on your code.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Explanation of CI
 
@@ -58,13 +62,6 @@ available. Some are closely integrated with a particular code hosting platform
 third-party online services (e.g. [CircleCI], [Travis CI]) and others are designed for
 you to setup and run yourself (e.g. [Jenkins], [Buildbot]).
 
-[CircleCI]: https://circleci.com/
-[GitHub Actions]: https://docs.github.com/en/actions
-[GitLab CI/CD]: https://docs.gitlab.com/ee/ci/
-[Travis CI]: https://www.travis-ci.com/
-[Buildbot]: https://buildbot.net/
-[Jenkins]: https://www.jenkins.io/
-
 We're going to look at how to setup and use GitHub Actions for the following reasons:
 
 - It is the integrated CI system for GitHub.
@@ -76,13 +73,13 @@ We're going to look at how to setup and use GitHub Actions for the following rea
 There are two requirements to use GitHub Actions:
 
 1. You must have a repository on GitHub with Actions enabled. This is the default in the
-   majority of circumstances but Actions may be initially disabled on a fork. You can
-   check by going to the Actions Settings in the GitHub user interface (under Settings
-   -> Actions -> General).
-1. Your repository must contain a workflow file in the directory `.github/workflows`. A
-   workflow file contains the instructions that specify when your CI should run and what
-   to do when it runs. You can have as many workflow files as you want and they will all
-   run simultaneously.
+  majority of circumstances but Actions may be initially disabled on a fork. You can
+  check by going to the Actions Settings in the GitHub user interface (under Settings
+  \-> Actions -> General).
+2. Your repository must contain a workflow file in the directory `.github/workflows`. A
+  workflow file contains the instructions that specify when your CI should run and what
+  to do when it runs. You can have as many workflow files as you want and they will all
+  run simultaneously.
 
 ### Configuring and Running GitHub Actions
 
@@ -102,16 +99,20 @@ jobs:
 This roughly translates to the following: "When I push new code to GitHub, use the
 Ubuntu operating system to checkout the code and then run the specified command".
 
-> ## YAML File Format
->
-> You may not have encountered the YAML file format before. YAML is very commonly used
-> for configuration files because it allows the definition of structured data whilst
-> also being pretty easy for people to read.
->
-> That being said, it can take a moment to get your head around. When starting out it's
-> generally best to start with an example and modify it. We'll break down the meaning
-> and structure of this YAML file as we go.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## YAML File Format
+
+You may not have encountered the YAML file format before. YAML is very commonly used
+for configuration files because it allows the definition of structured data whilst
+also being pretty easy for people to read.
+
+That being said, it can take a moment to get your head around. When starting out it's
+generally best to start with an example and modify it. We'll break down the meaning
+and structure of this YAML file as we go.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Let's breakdown the example workflow file in a bit more detail:
 
@@ -130,12 +131,10 @@ on:
 ```
 
 This will additionally trigger the workflow to run when a pull request is created. The
-"push" and "pull_request" triggers are probably the most commonly used however, there
+"push" and "pull\_request" triggers are probably the most commonly used however, there
 are a great many available (see [GitHub Docs: Events that trigger
 workflows][actions-triggers]). This is an example of where GitHub Actions goes further
 than most CI systems as you can automate pretty much any behaviour in a repository.
-
-[actions-triggers]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#available-events
 
 Next chunk:
 
@@ -162,9 +161,6 @@ different parameters using a matrix. This can be used, for instance, to test cod
 multiple different operating systems with different versions of Python. See [GitHub
 Docs: Using a matrix for your jobs][matrix] for more information.
 
-[matrix]: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
-[jobs]: https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow
-
 ```yaml
     steps:
       - uses: actions/checkout@v3
@@ -188,15 +184,11 @@ can make the action checkout a different version of your code or checkout code f
 different repository entirely. See [GitHub Market Place: Checkout Action][checkout] for
 details.
 
-[checkout]: https://github.com/marketplace/actions/checkout
-
 The second step does not use a pre-packaged action but instead has a `run` entry. This
 allows us to execute some custom code. As a general rule, if you can find a pre-packaged
 action in the Marketplace that does what you want, use it, and only fall back to running
 custom code if necessary. For more detail on custom job steps see [GitHub Docs: Job Step
 Workflow Syntax][step-syntax].
-
-[step-syntax]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
 
 Once those two steps have completed, the CI run is finished. What happens next
 depends on what happened during the job steps. If any step did not finish successfully,
@@ -204,60 +196,67 @@ but instead generated an error, then the CI run is considered to have failed. Su
 CI runs are marked in the GitHub UI with a green tick next to the commit; failed runs
 have a red cross.
 
-> ## Adding CI to Your Recipe
->
-> Let's look at adding some useful CI to the recipe repository. We're working with
-> Markdown files so it would be helpful to enforce a consistent style to avoid
-> differences between authors. Well do this by adding a workflow that runs the
-> `markdownlint-cli` action. This action runs [markdownlint-cli], a tool that checks
-> markdown files against a set of criteria.
->
-> 1. Create a `.github` directory in your project then create a `workflows` directory
->    within that.
-> 1. Create a file called `ci.yml` in the `workflows` directory.
-> 1. Add the following contents to `ci.yml`:
->
->     ```yaml
->     on:
->       - push
->     jobs:
->       markdownlint:
->         runs-on: ubuntu-latest
->         steps:
->           - uses: actions/checkout@v3
->           - name: markdownlint-cli
->             uses: nosborn/github-action-markdown-cli@v3.2.0
->             with:
->               files: .
->     ```
->
-> 1. Stage and commit `ci.yml` then push the repository to GitHub.
-> 1. Your first CI run should have been triggered! Quickly, go to your repository on
->    GitHub and select the `Actions` tab. You should see a workflow with a glowing amber
->    dot next to the commit message you provided. This means that the workflow is
->    running.
-> 1. Click on the commit message. You now get a breakdown of the individual jobs within
->    your workflow. It's only one job in this case - `markdownlint` - click on it to see
->    its progress. You can see the individual steps, and the output that they produce as
->    they run.
-> 1. Before long the workflow will complete but, alas, it should be a failure. Go back
->    to the front page of the repository by clicking the `Code` tab. You should see your
->    commit marked with a red cross to indicate that it failed the CI. You should also
->    receive a notification (after a few minutes) via the email address associated with
->    your GitHub account.
-> 1. Return to the `Actions` tab and open the failed workflow. You should see a handy
->    summary of the errors that were encountered during the `markdownlint` job. You now
->    need to correct both `ingredients.md` and `instructions.md` so that the CI will
->    pass. Hint: see [markdownlint-cli: Rule MD041][md041].
-> 1. Once you've modified the files stage, commit and push once again. Your next CI run
->    should succeed. If it doesn't then try modifying the files again.
-> 1. Once the CI is passing, go back to the `Code` tab and you should see a nice green
->    tick next to your latest commit.
->
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-[markdownlint-cli]: https://github.com/igorshubovych/markdownlint-cli
-[md041]: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041---first-line-in-a-file-should-be-a-top-level-heading
+## Adding CI to Your Recipe
+
+Let's look at adding some useful CI to the recipe repository. We're working with
+Markdown files so it would be helpful to enforce a consistent style to avoid
+differences between authors. Well do this by adding a workflow that runs the
+`markdownlint-cli` action. This action runs [markdownlint-cli], a tool that checks
+markdown files against a set of criteria.
+
+1. Create a `.github` directory in your project then create a `workflows` directory
+  within that.
+
+2. Create a file called `ci.yml` in the `workflows` directory.
+
+3. Add the following contents to `ci.yml`:
+  
+  ```yaml
+  on:
+    - push
+  jobs:
+    markdownlint:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: markdownlint-cli
+          uses: nosborn/github-action-markdown-cli@v3.2.0
+          with:
+            files: .
+  ```
+
+4. Stage and commit `ci.yml` then push the repository to GitHub.
+
+5. Your first CI run should have been triggered! Quickly, go to your repository on
+  GitHub and select the `Actions` tab. You should see a workflow with a glowing amber
+  dot next to the commit message you provided. This means that the workflow is
+  running.
+
+6. Click on the commit message. You now get a breakdown of the individual jobs within
+  your workflow. It's only one job in this case - `markdownlint` - click on it to see
+  its progress. You can see the individual steps, and the output that they produce as
+  they run.
+
+7. Before long the workflow will complete but, alas, it should be a failure. Go back
+  to the front page of the repository by clicking the `Code` tab. You should see your
+  commit marked with a red cross to indicate that it failed the CI. You should also
+  receive a notification (after a few minutes) via the email address associated with
+  your GitHub account.
+
+8. Return to the `Actions` tab and open the failed workflow. You should see a handy
+  summary of the errors that were encountered during the `markdownlint` job. You now
+  need to correct both `ingredients.md` and `instructions.md` so that the CI will
+  pass. Hint: see [markdownlint-cli: Rule MD041][md041].
+
+9. Once you've modified the files stage, commit and push once again. Your next CI run
+  should succeed. If it doesn't then try modifying the files again.
+
+10. Once the CI is passing, go back to the `Code` tab and you should see a nice green
+  tick next to your latest commit.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Using CI with Pull Requests
 
@@ -269,8 +268,8 @@ Let's say we've created a new branch that we want to merge into main. If we crea
 pull request but our CI is failing in the new branch, we'll see something like the
 following:
 
-![Failing CI]({{ site.baseurl }}/fig/pr_failing_ci.png "Panel from GitHub pull request
-user interface showing failing CI checks"){:class="img-responsive"}
+![](fig/pr_failing_ci.png "Panel from GitHub pull request user interface showing failing CI checks")
+{alt='Failing CI' class="img-responsive"}
 
 GitHub makes the failure of the CI pretty apparent but, by default, it will still allow
 the PR to be merged. At this point the CI is a useful aid to peer review but we can
@@ -278,8 +277,8 @@ take things further by implementing some policy in the form of a "branch protect
 rule". We can use this to put two restrictions in place:
 
 1. No code can be pushed directly to the `main` branch, it must always be added via pull
-   request.
-1. All CI workflows must succeed in order for PR's to be allowed to merge.
+  request.
+2. All CI workflows must succeed in order for PR's to be allowed to merge.
 
 Combined together these rules mean that **no code can end up in the `main` branch if it
 did not successfully pass through CI first**. Creating a cast iron guarantee that all
@@ -290,19 +289,17 @@ Let's see how to create a branch protection rule and how this changes the behavi
 PR's:
 
 1. Go to the `Settings` tab and select `Branches` from the left-hand side.
-1. Select `Add classic branch protection rule`.
-1. Set `main` as the `Branch name pattern`. Check the box for `Require a pull
-   request before merging` and in the options that appear below it, you can select
-   the number of approvals required for merging (default is 1).
-1. Also check the box for `Require status checks to pass before merging`.
-   In the extra options that appear beneath, check `Require
-   branches to be up to date before merging`. Using the search bar, find and select the
-   names of any CI jobs that must pass to allow merging.
-1. Scroll down and press `Create`. GitHub may ask you to confirm your password.
+2. Select `Add classic branch protection rule`.
+3. Set `main` as the `Branch name pattern`. Check the box for `Require a pull request before merging` and in the options that appear below it, you can select
+  the number of approvals required for merging (default is 1).
+4. Also check the box for `Require status checks to pass before merging`.
+  In the extra options that appear beneath, check `Require branches to be up to date before merging`. Using the search bar, find and select the
+  names of any CI jobs that must pass to allow merging.
+5. Scroll down and press `Create`. GitHub may ask you to confirm your password.
 
 Now a CI failure for a pull request looks like this:
 
-![Failing CI]({{ site.baseurl }}/fig/pr_protected_failing_ci.png "Panel from GitHub pull
+![](\(fig/pr_protected_failing_ci.png "Panel from GitHub pull){alt='Failing CI'}({{ site.baseurl }}/fig/pr\_protected\_failing\_ci.png "Panel from GitHub pull
 request user interface showing failing CI checks with merging blocked due to a branch
 protection rule"){:class="img-responsive"}
 
@@ -330,17 +327,11 @@ usage of GitHub Actions. In brief:
 - Billing varies depending on the operating system used by your jobs. Running on Windows
   or MacOS is more expensive.
 
-[billing]: https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions
-[github-org]: https://github.com/ImperialCollegeLondon
-[join-github-org]: https://servicemgt.imperial.ac.uk/ask?id=kb_article_view&sysparm_article=KB0012428
-
 ## Ways to use CI
 
 Now that we've set up and configured GitHub Actions, what can we use it for? The [GitHub
-Marketplace] is a good place to get ideas but the number of available actions can be
+Marketplace][GitHub MarketPlace] is a good place to get ideas but the number of available actions can be
 overwhelming.
-
-[GitHub MarketPlace]: https://github.com/marketplace?type=actions
 
 ### Enforce Style and Formatting
 
@@ -348,8 +339,6 @@ One of the simplest uses of CI is to enforce common style and formatting standar
 code. The below workflow runs [Flake8] to check that all Python code in the repository
 conforms to the PEP8 style guide. Having this workflow ensures that all code added to
 the repository has a consistent style and appearance.
-
-[Flake8]: https://flake8.pycqa.org/
 
 ```yaml
 on:
@@ -462,8 +451,6 @@ If we put together a few things we've seen so far, we can start to build more re
 and useful workflows. The below example is taken from a template for Python
 repositories (see [Github Python Poetry Template Repository][poetry]).
 
-[poetry]: https://github.com/ImperialCollegeLondon/poetry_template_2/blob/main/.github/workflows/ci.yml
-
 {% raw %}
 
 ```yaml
@@ -515,4 +502,39 @@ jobs:
 
 {% endraw %}
 
-{% include links.md %}
+
+
+[GitHub Actions]: https://docs.github.com/en/actions
+[GitLab CI/CD]: https://docs.gitlab.com/ee/ci/
+[CircleCI]: https://circleci.com/
+[Travis CI]: https://www.travis-ci.com/
+[Jenkins]: https://www.jenkins.io/
+[Buildbot]: https://buildbot.net/
+[actions-triggers]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#available-events
+[jobs]: https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow
+[matrix]: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
+[GitHub MarketPlace]: https://github.com/marketplace?type=actions
+[checkout]: https://github.com/marketplace/actions/checkout
+[step-syntax]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
+[markdownlint-cli]: https://github.com/igorshubovych/markdownlint-cli
+[md041]: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041---first-line-in-a-file-should-be-a-top-level-heading
+[billing]: https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions
+[github-org]: https://github.com/ImperialCollegeLondon
+[join-github-org]: https://servicemgt.imperial.ac.uk/ask?id=kb_article_view&sysparm_article=KB0012428
+[Flake8]: https://flake8.pycqa.org/
+[poetry]: https://github.com/ImperialCollegeLondon/poetry_template_2/blob/main/.github/workflows/ci.yml
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Continuous Integration (CI) is the practice of automating checks of code contributions
+- GitHub Actions is a CI system provided by GitHub
+- GitHub Actions is configured via a YAML file in the directory `.github/workflows`
+- GitHub Actions comprise individual steps combined into workflows
+- Steps may run a pre-existing action or custom code
+- The result of a GitHub Actions run can be used to block merging of a Pull Request
+- CI can be used for a wide variety of purposes
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
