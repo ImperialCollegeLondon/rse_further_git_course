@@ -20,7 +20,7 @@ carpentry: 'cp'
 title: 'Further Git and GitHub for Effective Collaboration'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 
+created: 2019-12-11 
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries'
@@ -95,5 +95,4 @@ profiles:
 
 carpentry_description: Lesson Description
 url: 'https://SaranjeetKaur.github.io/rse_further_git_course'
-analytics: carpentries
 lang: en
