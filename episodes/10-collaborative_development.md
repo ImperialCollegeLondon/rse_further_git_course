@@ -34,8 +34,6 @@ knowledge acquired so far.
 >
 >   ![Use this template]({{ site.baseurl }}/fig/use_this_template.png "Use this template"){:class="img-responsive" style="float: left; margin-right: 10px; width: 20%;"}
 >
->   <div style="clear: both;"></div>
->
 > - Set the owner of the new repository to your own GitHub username.
 > - Set the name of the repository to "book_of_recipes".
 > - Set the description to something like "Repository for the exercises of the Grad School Git Course".
@@ -78,6 +76,7 @@ knowledge acquired so far.
 > **Creating a new release** (Administrator's task):
 >
 > - When all the recipes by the Contributors are added, create a new release.
+>
 {: .challenge}
 
 ## Bonus: Keeping your fork in sync with the original repo

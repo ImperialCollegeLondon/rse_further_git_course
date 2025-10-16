@@ -113,6 +113,7 @@ To see where we are (where HEAD points to) use `git branch`:
 git branch
 ```
 {: .commands}
+
 ```
 * main
 ```
@@ -149,6 +150,7 @@ Firstly let's take stock of the current state of our repository:
 git graph
 ```
 {: .commands}
+
 ```
 * ddef60e (HEAD -> main, origin/main) Revert "Added instruction to enjoy"
 * 8bfd0ff Added 1/2 onion to ingredients
@@ -172,6 +174,7 @@ git branch experiment
 git graph
 ```
 {: .commands}
+
 ```
 * ddef60e (HEAD -> main, origin/main, experiment) Revert "Added instruction to enjoy"
 * 8bfd0ff Added 1/2 onion to ingredients
@@ -194,6 +197,7 @@ git switch experiment
 git graph
 ```
 {: .commands}
+
 ```
 * ddef60e (HEAD -> experiment, origin/main, main) Revert "Added instruction to enjoy"
 * 8bfd0ff Added 1/2 onion to ingredients
@@ -220,6 +224,7 @@ git commit -m "try with some coriander"
 git graph
 ```
 {: .commands}
+
 ```
 * 96fe069 (HEAD -> experiment) try with some coriander
 * ddef60e (origin/main, main) Revert "Added instruction to enjoy"
@@ -257,6 +262,7 @@ git commit -m "Corrected typo in ingredients.md"
 git graph
 ```
 {: .commands}
+
 ```
 * d4ca89f (HEAD -> main) Corrected typo in ingredients.md
 | * 96fe069 (experiment) try with some coriander
@@ -267,6 +273,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 {: .output}
+
 ![Git collaborative]({{ site.baseurl }}/fig/branch5.png
 "Repository with one commit on main and experiment branches"){:class="img-responsive"}
 
@@ -280,6 +287,7 @@ with `git branch`). The below command can then be used to perform the merge.
 git merge --no-edit experiment
 ```
 {: .commands}
+
 ```
 Auto-merging ingredients.md
 Merge made by the 'ort' strategy.
@@ -294,6 +302,7 @@ now use:
 git graph
 ```
 {: .commands}
+
 ```
 *   40070a5 (HEAD -> main) Merge branch 'experiment'
 |\
@@ -339,6 +348,7 @@ repository.
 > > git graph
 > > ```
 > > {: .commands}
+> >
 > > ```
 > > *   567307e (HEAD -> main) Merge branch 'experiment'
 > > |\
@@ -355,6 +365,7 @@ repository.
 > > * ae3255a Adding ingredients and instructions
 > > ```
 > > {: .output}
+> >
 > {: .solution}
 {: .challenge}
 
