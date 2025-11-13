@@ -461,18 +461,19 @@ to using Git and GitHub for software development</a> course first.</p>
 </div>
 <p>Please follow the relevant instructions depending on your operating
 system.</p>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Windows
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>Download the Git for Windows <a href="https://git-for-windows.github.io/" class="external-link">installer</a>.</li>
-<li>Run the installer and follow the steps below:</li>
-<li>Click on “Next” four times (two times if you’ve previously installed
+<ul><li>Download the Git for Windows <a href="https://git-for-windows.github.io/" class="external-link">installer</a>.</li>
+<li>Run the installer and follow the steps below:
+<ul><li>Click on “Next” four times (two times if you’ve previously installed
 Git). You don’t need to change anything in the Information, location,
 components, and start menu screens.</li>
 <li>From the dropdown menu select “Use the nano editor by default” and
@@ -502,9 +503,10 @@ click on “Next”.</li>
 <li>Ensure to select “Enable experimental built-in file system monitor”
 and click on “Install”.</li>
 <li>Click on “Finish”.</li>
+</ul></li>
 <li>If your “HOME” environment variable is not set (or you don’t know
-what this is):</li>
-<li>Open command prompt (Open Start Menu then type <code>cmd</code> and
+what this is):
+<ul><li>Open command prompt (Open Start Menu then type <code>cmd</code> and
 press [Enter])</li>
 <li>Type the following line into the command prompt window exactly as
 shown: <code>setx HOME "%USERPROFILE%"</code>
@@ -513,7 +515,8 @@ shown: <code>setx HOME "%USERPROFILE%"</code>
 <code>SUCCESS: Specified value was saved</code>.</li>
 <li>Quit command prompt by typing <code>exit</code> then pressing
 [Enter]</li>
-</ol><p>This will provide you with both Git and Bash via the program Git
+</ul></li>
+</ul><p>This will provide you with both Git and Bash via the program Git
 Bash. You should be able to launch Git Bash from the Start Menu. Within
 the window that launches enter the command <code>git --version</code>
 and press enter. You should see output similar to that below:</p>
@@ -526,18 +529,23 @@ and press enter. You should see output similar to that below:</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  macOS
-  </h4>
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  MacOS
+  </h3>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Apple provide a suite of UNIX-style command line tools that includes
 git. Install them by opening the “Terminal” app and running:</p>
-<p><code>commands, bash xcode-select --install</code></p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -547,7 +555,11 @@ git. Install them by opening the “Terminal” app and running:</p>
 the tools. If it does not open a dialog, it may be because it is already
 installed (the error message will be clear).</p>
 <p>To check the installation was successful, run the command:</p>
-<p><code>commands, bash git --version</code></p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre>
+</div>
 <p>You should see output similar to that below:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -567,24 +579,37 @@ use the most recent available installer labelled “snow-leopard”.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Linux
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>If Git is not already available on your machine you can try to
 install it via your distribution’s package manager.</p>
 <p>For <strong>Debian/Ubuntu</strong> run:</p>
-<p><code>commands, bash sudo apt-get install git</code></p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">sudo</span> apt-get install git</span></code></pre>
+</div>
 <p>For <strong>Fedora</strong> run:</p>
-<p><code>commands, bash sudo dnf install git</code></p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">sudo</span> dnf install git</span></code></pre>
+</div>
 <p>To check the installation was successful open a new terminal. In the
 window that launches enter the command:</p>
-<p><code>commands, bash git --version</code></p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre>
+</div>
 <p>You should see output similar to that below:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -606,14 +631,22 @@ editors. It is best to configure your preferred editor explicitly (if
 you are using editor for the first time, it is advisable to use
 nano).</p>
 <p>To view the currently configured text editor, you can run:</p>
-<p><code>commands, bash git config --global core.editor</code></p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor</span></code></pre>
+</div>
 <p>(The output may be empty, indicating that no editor has been
 selected.)</p>
 <p>If you would prefer to use a graphical text editor, there is <a href="https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git" class="external-link">useful
 documentation on GitHub</a> on how to do this for some common
 editors.</p>
 <p>If you would rather just use nano, you can run:</p>
-<p><code>commands, bash git config --global core.editor nano</code></p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor nano</span></code></pre>
+</div>
 <!-- markdown-link-check-disable-next-line -->
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="00-course_overview.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -664,8 +697,8 @@ editors.</p>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/index.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/index.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-11-11",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-13",
+  "datePublished": "2025-11-13"
 }
 
   </script><script>

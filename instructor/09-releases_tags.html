@@ -108,11 +108,11 @@
   Further Git and GitHub for Effective Collaboration
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 74%" class="percentage">
-    74%
+<aside class="col-md-12 lesson-progress"><div style="width: 76%" class="percentage">
+    76%
   </div>
   <div class="progress carpentries">
-    <div class="progress-bar carpentries" role="progressbar" style="width: 74%" aria-valuenow="74" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar carpentries" role="progressbar" style="width: 76%" aria-valuenow="76" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -373,7 +373,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Code versions, releases and tags</h1>
-        <p>Last updated on 2025-10-31 |
+        <p>Last updated on 2025-11-13 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/09-releases_tags.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -481,7 +481,11 @@ the next</li>
 </ul><p>In this case, if you just need to clarify which commit you’re working
 from (e.g. to a colleague), you can always obtain the current commit
 hash like so:</p>
-<p><code>commands, sh git rev-parse --short HEAD</code></p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> rev-parse <span class="at">--short</span> HEAD</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -496,7 +500,11 @@ repository.</p>
 <p>Firstly, remind yourself what the history for your
 <code>recipe</code> repository looks like with <code>git graph</code>.
 Mine looks like this:</p>
-<pre class="commands"><code>git graph</code></pre>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -521,19 +529,35 @@ the steps yourself or downloaded the pre-made repository.)</p>
 half an onion was a highpoint in the recipe’s history and you want to
 make a note of which commit that was for a future date by giving it the
 tag “tasty”. You can do this like so:</p>
-<pre class="commands"><code>git tag tasty [commit hash]</code></pre>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> tag tasty [commit hash]</span></code></pre>
+</div>
 <p>In my case, I ran:</p>
-<pre class="commands"><code>git tag tasty 5cb4883</code></pre>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> tag tasty 5cb4883</span></code></pre>
+</div>
 <p>You can list the tags for your repo by running <code>git tag</code>
 without any arguments:</p>
-<pre class="commands"><code>git tag</code></pre>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> tag</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">tasty</span></span></code></pre>
 </div>
 <p>To check which commit hash this corresponds to, use:</p>
-<pre class="commands"><code>git rev-parse --short tasty</code></pre>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> rev-parse <span class="at">--short</span> tasty</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -550,7 +574,11 @@ onion to the instructions. (Note that you need to include the
 <p>You may now be wondering, if this is the case, then how is a tag
 different from a branch? Try switching to <code>tasty</code> to see what
 happens:</p>
-<pre class="commands"><code>git switch tasty</code></pre>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> switch tasty</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -569,7 +597,11 @@ v1.0 – to represent the code <em>in one unique state</em>. You don’t
 want two of your users to be using two different versions of the code
 both labelled v1.0, for example.</p>
 <p>Let’s try again using the <code>--detach</code> option:</p>
-<pre class="commands"><code>git switch --detach tasty</code></pre>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">--detach</span> tasty</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -578,11 +610,19 @@ both labelled v1.0, for example.</p>
 <p>Now it works. Fortunately, a detached <code>HEAD</code> is a much
 less serious affliction for git repos than human beings, and you can
 reattach it by simply checking out a branch:</p>
-<pre class="commands"><code>git switch main</code></pre>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre>
+</div>
 <p>Assume now that you have decided that you no longer want this tag
 (perhaps on eating, it turned out not to be tasty after all). You can
 delete the tag like so:</p>
-<pre class="commands"><code>git tag -d tasty</code></pre>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-d</span> tasty</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -642,9 +682,17 @@ Give the first commit to the repository (in mine this is
 as the first tagged release for a project. (Another common convention is
 to indicate that the software is still experimental by giving it a major
 version number of zero.)</p>
-<pre class="commands"><code>git tag v0.0.1 745fb8b</code></pre>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">git</span> tag v0.0.1 745fb8b</span></code></pre>
+</div>
 <p>Verify that the tag has been added:</p>
-<pre class="commands"><code>git tag</code></pre>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">git</span> tag</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -654,7 +702,11 @@ version number of zero.)</p>
 tag to GitHub so the rest of the world can see it.</p>
 </section><section><h2 class="section-heading" id="pushing-your-tags-and-publishing-a-release">Pushing your tags and publishing a release<a class="anchor" aria-label="anchor" href="#pushing-your-tags-and-publishing-a-release"></a></h2>
 <hr class="half-width"><p>To push your tags to GitHub, do the following:</p>
-<pre class="commands"><code>git push --tags</code></pre>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code></pre>
+</div>
 <p>You should see something like this:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -668,14 +720,17 @@ repository (see the link in the command output). <a href="https://github.com/ale
 example.</a></p>
 <p>If you look in the right-hand pane, under “Releases”, you should now
 see “1 tags”:</p>
-<figure><img src="../fig/releases_repo.png" title="1 tags" alt="1 tags" class="figure mx-auto d-block"></figure><p>This refers to the <code>v0.0.1</code> tag you just pushed. (If there
+<figure><img src="../fig/releases_repo.png" alt="1 tags" class="figure mx-auto d-block"><div class="figcaption">1 tags</div>
+</figure><p>This refers to the <code>v0.0.1</code> tag you just pushed. (If there
 are two tags, you may have forgotten to delete the <code>tasty</code>
 tag, which doesn’t matter much.)</p>
 <p>Under “1 tags”, there is a link entitled “Create a new release”.
 Click it and you should see something like the following:</p>
-<figure><img src="../fig/releases_new_release.png" title="Creating a new release" alt="Creating a new release" class="figure mx-auto d-block"></figure><p>Click “Choose a tag” then select your tag “v0.0.1” from the dropdown
+<figure><img src="../fig/releases_new_release.png" alt="Creating a new release" class="figure mx-auto d-block"><div class="figcaption">Creating a new release</div>
+</figure><p>Click “Choose a tag” then select your tag “v0.0.1” from the dropdown
 list:</p>
-<figure><img src="../fig/releases_choose_a_tag.png" title="Choose your tag" alt="Choose your tag" class="figure mx-auto d-block"></figure><p>For the release title, you can just put “v0.0.1” again. Then add a
+<figure><img src="../fig/releases_choose_a_tag.png" alt="Choose your tag" class="figure mx-auto d-block"><div class="figcaption">Choose your tag</div>
+</figure><p>For the release title, you can just put “v0.0.1” again. Then add a
 description of your choosing. (You can check the “Set as pre-release”
 box if you want to indicate to your users that the recipe isn’t
 production ready.) Note that there is another field: “Attach binaries”.
@@ -683,8 +738,10 @@ We won’t be using this now, but if you did have a compiled version of
 your software (e.g. as an <code>.exe</code> file), this is where you
 could upload it.</p>
 <p>When you’re finished, click “Publish release”:</p>
-<figure><img src="../fig/releases_publish.png" title="Publish your release" alt="Publish your release" class="figure mx-auto d-block"></figure><p>Now you should be redirected to a page that looks like this:</p>
-<figure><img src="../fig/releases_view.png" title="View release" alt="View release" class="figure mx-auto d-block"></figure><p>Congratulations, you have made your first release! You can share the
+<figure><img src="../fig/releases_publish.png" alt="Publish your release" class="figure mx-auto d-block"><div class="figcaption">Publish your release</div>
+</figure><p>Now you should be redirected to a page that looks like this:</p>
+<figure><img src="../fig/releases_view.png" alt="View release" class="figure mx-auto d-block"><div class="figcaption">View release</div>
+</figure><p>Congratulations, you have made your first release! You can share the
 link to this page with others if you want to notify them of the release.
 Alternatively, users can find your release from the repo’s main page by
 clicking on “Releases”.</p>
@@ -792,8 +849,8 @@ users what a new version number means</li>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/09-releases_tags.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/09-releases_tags.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-10-31",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-13",
+  "datePublished": "2025-11-13"
 }
 
   </script><script>

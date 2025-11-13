@@ -108,11 +108,11 @@
   Further Git and GitHub for Effective Collaboration
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 17%" class="percentage">
-    17%
+<aside class="col-md-12 lesson-progress"><div style="width: 18%" class="percentage">
+    18%
   </div>
   <div class="progress carpentries">
-    <div class="progress-bar carpentries" role="progressbar" style="width: 17%" aria-valuenow="17" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar carpentries" role="progressbar" style="width: 18%" aria-valuenow="18" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -371,7 +371,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Merge conflicts</h1>
-        <p>Last updated on 2025-10-31 |
+        <p>Last updated on 2025-11-13 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/03-merge_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -416,7 +416,19 @@ situations arise where incompatible sets of changes need to be combined.
 In this case it is up to you to decide what should be kept and what
 should be discarded.</p>
 <p>Let’s try this by artificially creating a conflict:</p>
-<p><code>commands, sh git switch main # change line to 1 tsp salt in ingredients.md git stage ingredients.md git commit -m "Reduce salt" git switch experiment # change line to 3 tsp salt in ingredients.md git stage ingredients.md git commit -m "Added salt to balance coriander" git graph</code></p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># change line to 1 tsp salt in ingredients.md</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Reduce salt"</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">git</span> switch experiment</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co"># change line to 3 tsp salt in ingredients.md</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Added salt to balance coriander"</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -439,11 +451,15 @@ should be discarded.</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<p><img src="../fig/branch8.png" title="Repository with merge conflict" class="figure">
-{alt=‘Git collaborative’ class=“img-responsive”}</p>
-<p>Now we try and merge <code>experiment</code> into
+<figure><img src="../fig/branch8.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with merge conflict</div>
+</figure><p>Now we try and merge <code>experiment</code> into
 <code>main</code>:</p>
-<p><code>commands, sh git switch main git merge --no-edit experiment</code></p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-edit</span> experiment</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -455,7 +471,11 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 a special state in which the merge is in progress but has not been
 finalised by creating a new commit in main. Fortunately
 <code>git status</code> is quite useful here:</p>
-<p><code>commands, sh git status</code></p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -481,7 +501,10 @@ point though so may as well do it now. Fortunately we don’t need any new
 commands. We just need to edit the conflicted file into the state we
 would like to keep, then add and commit as usual.</p>
 <p>Let’s look at ingredients.md to understand the conflict:</p>
-<pre><code>* 2 avocados
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>* 2 avocados
 * 1 lime
 &lt;&lt;&lt;&lt;&lt;&lt; HEAD
 * 1 tsp salt
@@ -490,6 +513,7 @@ would like to keep, then add and commit as usual.</p>
 &gt;&gt;&gt;&gt;&gt;&gt; experiment
 * 1/2 onion
 * 1 tbsp coriander</code></pre>
+</div>
 <p>Git has changed this file for us and added some lines which highlight
 the location of the conflict. This may be confusing at first glance (a
 good editor may add some highlighting which can help), but you are
@@ -503,13 +527,23 @@ indicate which branch each version came from (HEAD here corresponds to
 There is no way for Git to know which it should be so it has to ask you.
 Let’s resolve it by choosing the version from the main branch. Edit
 <code>ingredients.md</code> so it looks like:</p>
-<pre><code>* 2 avocados
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>* 2 avocados
 * 1 lime
 * 1 tsp salt
 * 1/2 onion
 * 1 tbsp coriander</code></pre>
+</div>
 <p>Now stage, commit and check the result:</p>
-<p><code>commands, sh git stage ingredients.md git commit --no-edit git graph</code></p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--no-edit</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -530,9 +564,8 @@ Let’s resolve it by choosing the version from the main branch. Edit
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<p><img src="../fig/branch9.png" title="Repository with third merge" class="figure">
-{alt=‘Git collaborative’ class=“img-responsive”}</p>
-<div id="now-you-try" class="callout challenge">
+<figure><img src="../fig/branch9.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with third merge</div>
+</figure><div id="now-you-try" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -570,15 +603,19 @@ conflict!</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<pre class="commands"><code>git switch -c experiment2
-# make changes to ingredients.md (say 1/2 lime)
-git stage ingredients.md
-git commit -m "Reduced lime"
-git switch main
-# make changes to the same line in ingredients.md (say 1/4 lime)
-git stage ingredients.md
-git commit -m "Reduce lime to balance coriander"
-git merge --no-edit experiment2</code></pre>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> experiment2</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co"># make changes to ingredients.md (say 1/2 lime)</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Reduced lime"</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co"># make changes to the same line in ingredients.md (say 1/4 lime)</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Reduce lime to balance coriander"</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-edit</span> experiment2</span></code></pre>
+</div>
 <p>This should give rise to a merge conflict:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -589,9 +626,13 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 </div>
 <p>Resolve the conflicts. Then stage the file again, and view the
 graph:</p>
-<pre class="commands"><code>git stage ingredients.md
-git commit
-git graph</code></pre>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">git</span> commit</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -683,8 +724,8 @@ specify the desired changes</li>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/03-merge_conflicts.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/03-merge_conflicts.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-10-31",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-13",
+  "datePublished": "2025-11-13"
 }
 
   </script><script>

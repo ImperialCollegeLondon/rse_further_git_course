@@ -108,11 +108,11 @@
   Further Git and GitHub for Effective Collaboration
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 58%" class="percentage">
-    58%
+<aside class="col-md-12 lesson-progress"><div style="width: 60%" class="percentage">
+    60%
   </div>
   <div class="progress carpentries">
-    <div class="progress-bar carpentries" role="progressbar" style="width: 58%" aria-valuenow="58" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar carpentries" role="progressbar" style="width: 60%" aria-valuenow="60" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -373,7 +373,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using GitHub actions for continuous integration</h1>
-        <p>Last updated on 2025-10-31 |
+        <p>Last updated on 2025-11-13 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/08-continuous_integration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -673,9 +673,9 @@ can be even more useful when combined with pull requests.</p>
 <p>Let’s say we’ve created a new branch that we want to merge into main.
 If we create a pull request but our CI is failing in the new branch,
 we’ll see something like the following:</p>
-<p><img src="fig/pr_failing_ci.png" title="Panel from GitHub pull request user interface showing failing CI checks" class="figure">
-{alt=‘Failing CI’ class=“img-responsive”}</p>
-<p>GitHub makes the failure of the CI pretty apparent but, by default,
+<figure><img src="fig/pr_failing_ci.png" alt="Failing CI" class="figure mx-auto d-block"><div class="figcaption">Panel from GitHub pull request user interface
+showing failing CI checks</div>
+</figure><p>GitHub makes the failure of the CI pretty apparent but, by default,
 it will still allow the PR to be merged. At this point the CI is a
 useful aid to peer review but we can take things further by implementing
 some policy in the form of a “branch protection rule”. We can use this
@@ -707,12 +707,10 @@ allow merging.</li>
 <li>Scroll down and press <code>Create</code>. GitHub may ask you to
 confirm your password.</li>
 </ol><p>Now a CI failure for a pull request looks like this:</p>
-<p>![]((fig/pr_protected_failing_ci.png “Panel from GitHub
-pull){alt=‘Failing CI’}({{ site.baseurl
-}}/fig/pr_protected_failing_ci.png”Panel from GitHub pull request user
-interface showing failing CI checks with merging blocked due to a branch
-protection rule”){:class=“img-responsive”}</p>
-<p>Now it’s much harder to get anything past peer review that doesn’t
+<figure><img src="fig/pr_protected_failing_ci.png" alt="Failing CI" class="figure mx-auto d-block"><div class="figcaption">Panel from GitHub pull request user interface
+showing failing CI checks with merging blocked due to a branch
+protection rule</div>
+</figure><p>Now it’s much harder to get anything past peer review that doesn’t
 meet the required standard. There remains an option to “bypass branch
 protections” but this is only available to administrators of the
 repository and can be removed by further refining the rule.</p>
@@ -830,7 +828,6 @@ Docker image only when new commits are added to the <code>main</code>
 branch. Docker is a tool for packaging and distributing software along
 with all of its requirements. Once published the Docker image can then
 be downloaded and used by other users or services.</p>
-<p>{% raw %}</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -857,7 +854,6 @@ be downloaded and used by other users or services.</p>
 <span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a><span class="at">          </span><span class="fu">push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="at">          </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> ${{ steps.meta.outputs.tags }}</span></span></code></pre>
 </div>
-<p>{% endraw %}</p>
 </div>
 <div class="section level3">
 <h3 id="a-realistic-example">A Realistic Example<a class="anchor" aria-label="anchor" href="#a-realistic-example"></a></h3>
@@ -865,7 +861,6 @@ be downloaded and used by other users or services.</p>
 build more realistic and useful workflows. The below example is taken
 from a template for Python repositories (see <a href="https://github.com/ImperialCollegeLondon/poetry_template_2/blob/main/.github/workflows/ci.yml" class="external-link">Github
 Python Poetry Template Repository</a>).</p>
-<p>{% raw %}</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -914,7 +909,6 @@ Python Poetry Template Repository</a>).</p>
 <span id="cb11-43"><a href="#cb11-43" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run tests</span></span>
 <span id="cb11-44"><a href="#cb11-44" tabindex="-1"></a><span class="at">      </span><span class="fu">run</span><span class="kw">:</span><span class="at"> poetry run pytest</span></span></code></pre>
 </div>
-<p>{% endraw %}</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -996,8 +990,8 @@ Pull Request</li>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/08-continuous_integration.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/08-continuous_integration.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-10-31",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-13",
+  "datePublished": "2025-11-13"
 }
 
   </script><script>

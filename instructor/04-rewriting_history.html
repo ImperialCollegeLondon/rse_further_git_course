@@ -108,11 +108,11 @@
   Further Git and GitHub for Effective Collaboration
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 25%" class="percentage">
-    25%
+<aside class="col-md-12 lesson-progress"><div style="width: 26%" class="percentage">
+    26%
   </div>
   <div class="progress carpentries">
-    <div class="progress-bar carpentries" role="progressbar" style="width: 25%" aria-valuenow="25" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar carpentries" role="progressbar" style="width: 26%" aria-valuenow="26" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -370,7 +370,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Rewriting history with Git</h1>
-        <p>Last updated on 2025-10-31 |
+        <p>Last updated on 2025-11-13 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/04-rewriting_history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -451,22 +451,46 @@ this happen:</p>
 <p>Stash the current state of the repository, giving some message to
 remind yourself what was this about. The working directory becomes
 identical to the last commit.</p>
-<p><code>commands, sh git stash save "Some informative message"</code></p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> stash save <span class="st">"Some informative message"</span></span></code></pre>
+</div>
 <p>List the stashes available in reverse chronological order (last one
 stashed goes on top).</p>
-<p><code>commands, sh git stash list</code></p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre>
+</div>
 <p>Extract the <strong>last stash</strong> of the list, updating the
 working directory with its content.</p>
-<p><code>commands, sh git stash pop</code></p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> stash pop</span></code></pre>
+</div>
 <p>Extract the stash with the given number from the list, updating the
 working directory with its content.</p>
-<p><code>commands, sh git stash pop stash@{NUMBER}</code></p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> stash pop stash@{NUMBER}</span></code></pre>
+</div>
 <p>Apply the <strong>last stash</strong> without removing it from the
 list, so you can apply it to other branches, if needed.</p>
-<p><code>commands, sh git stash apply</code></p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> stash apply</span></code></pre>
+</div>
 <p>Apply the given stash without removing it from the list, so you can
 apply it to other branches, if needed.</p>
-<p><code>commands, sh git stash apply stash@{NUMBER}</code></p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{NUMBER}</span></code></pre>
+</div>
 <p>If you want more information, you can <a href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash" class="external-link">read
 this article on Git stash</a>.</p>
 <div id="practice-stashing" class="callout discussion">
@@ -498,17 +522,30 @@ fixing a typo in the commit message.</p>
 <p>After you have made those last minute changes - and
 <code>staged</code> them, if needed - all you need to do to amend the
 last commit while keeping the same commit message is:</p>
-<p><code>commands, sh git commit --amend --no-edit</code></p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">--no-edit</span></span></code></pre>
+</div>
 <p>Or this:</p>
-<p><code>commands, sh git commit --amend -m "New commit message"</code></p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">-m</span> <span class="st">"New commit message"</span></span></code></pre>
+</div>
 <p>if you want to write a new commit message.</p>
 <p>Note that this will replace the previous commit with a new one – the
 commit hash will be different – so this approach must not be used if the
 commit was already pushed to the remote repository and shared with
 collaborators.</p>
-<blockquote>
-<h2 id="edit-commit-message-with-your-editor">Edit commit message with
-your editor</h2>
+<div id="edit-commit-message-with-your-editor" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="edit-commit-message-with-your-editor" class="callout-inner">
+<h3 class="callout-title">Edit commit message with your editor</h3>
+<div class="callout-content">
 <p>If you run <code>git commit</code> without either the
 <code>--no-edit</code> or <code>-m</code> flags, it will open a text
 editor to allow you to enter a commit message. If you are using the
@@ -519,7 +556,9 @@ then, when you have finished, save and exit. For longer commit messages,
 the convention is to provide a short, one-line summary on the first
 line, followed by an empty line, then by a more detailed
 description.</p>
-</blockquote>
+</div>
+</div>
+</div>
 <!-- markdownlint-disable-next-line -->
 <div id="discussion2" class="callout discussion">
 <div class="callout-square">
@@ -529,8 +568,7 @@ description.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>For details on how to choose which text editor Git will use, see [the
-setup instructions][lesson-setup].</p>
+<p>For details on how to choose which text editor Git will use, see <a href="lesson-setup">the setup instructions</a>.</p>
 </div>
 </div>
 </div>
@@ -545,7 +583,11 @@ just improve your commit message. Unlike <code>git revert</code>,
 <code>git reset</code> will retrospectively alter your commit history,
 so it should <strong>not</strong> be used when you have already shared
 work with collaborators.</p>
-<p><code>commands, sh git reset --soft HEAD^</code></p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD^</span></code></pre>
+</div>
 <p>This resets the staging area to match the most recent commit, but
 leaves the working directory unchanged - so no information is lost. Now
 you can review the files you modified, make more changes or whatever you
@@ -562,9 +604,17 @@ updating the files in the working directory accordingly. In other words,
 <strong>any work done since the chosen commit will be completely
 erased</strong>.</p>
 <p>To undo just the last commit, you can do:</p>
-<p><code>commands, sh git reset --hard HEAD^</code></p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD^</span></code></pre>
+</div>
 <p>Otherwise, to go back in time to a specific commit, you would do:</p>
-<p><code>commands, sh git reset --hard COMMIT_HASH</code></p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> COMMIT_HASH</span></code></pre>
+</div>
 <div id="reset-vs-revert" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -592,11 +642,11 @@ clearly isolated.</li>
 </ul></div>
 </div>
 </div>
-<div id="dont-mess-with-the-salt" class="callout discussion">
+<div id="dont-mess-with-the-salt" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="dont-mess-with-the-salt" class="callout-inner">
 <h3 class="callout-title">Don’t mess with the salt</h3>
 <div class="callout-content">
@@ -606,8 +656,16 @@ and you should keep the original amount. You could obviously just create
 a new commit with the correct amount of salt, but that will leave your
 poor attempts to improve the recipe in the commit history, so you decide
 to totally erase them.</p>
-<blockquote>
-<h2 id="solution">Solution</h2>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
 <p>First, we check how far back we need to go with
 <code>git graph</code>:</p>
 <div class="codewrapper">
@@ -634,7 +692,12 @@ to totally erase them.</p>
 commits from history and go back to <code>fe0d257</code>, when we merged
 the <code>experiment</code> branch after reducing the amount of
 coriander. Let’s do it (use your own commit hash!):</p>
-<p><code>commands, sh git reset --hard fe0d257 git graph</code></p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> fe0d257</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <p>Now, the commit history should look like this:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -661,7 +724,7 @@ coriander. Let’s do it (use your own commit hash!):</p>
 adjustment of salt, that is no longer part of the <code>main</code>
 commit history. Your working directory has become identical to that
 before starting the salty adventure.</p>
-</blockquote>
+</div>
 </div>
 </div>
 </div>
@@ -692,20 +755,37 @@ repository.</p>
 different features in you code. It is good practice to remove them once
 they have fulfil their purpose. You can do that using the
 <code>-D</code> flag with the <code>git branch</code> command:</p>
-<p><code>commands, sh git branch -D BRANCH_NAME</code></p>
-<div id="getting-rid-of-the-experiment" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-D</span> BRANCH_NAME</span></code></pre>
 </div>
-<span class="callout-header">Discussion</span>
+<div id="getting-rid-of-the-experiment" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
 <div id="getting-rid-of-the-experiment" class="callout-inner">
 <h3 class="callout-title">Getting rid of the experiment</h3>
 <div class="callout-content">
 <p>As we are done with the <code>experiment</code> branch, let’s delete
 it to have a cleaner history.</p>
-<blockquote>
-<h2 id="solution-1">Solution</h2>
-<p><code>commands, sh git branch -D experiment git graph</code></p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-D</span> experiment</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <p>Now, the commit history should look like this:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -725,7 +805,7 @@ it to have a cleaner history.</p>
 </div>
 <p>Now there is truly no trace of your attempts to change the content of
 salt!</p>
-</blockquote>
+</div>
 </div>
 </div>
 </div>
@@ -744,20 +824,26 @@ and, in the meantime there have been commits done to the base branch
 some upstream changes done by someone else or simply keep the history of
 the repository linear, facilitating merging back in the future.</p>
 <p>The command is straightforward:</p>
-<p><code>commands, sh git rebase NEW_BASE</code></p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">git</span> rebase NEW_BASE</span></code></pre>
+</div>
 <p>where <code>NEW_BASE</code> can be either a commit hash or a branch
 name we want to use as the new base.</p>
 <p>The following figure illustrates the process where, after rebasing,
 the two commits of the feature branch have been recreated after the last
 commit of the main branch.</p>
-<figure><img src="../fig/rebase.png" title="Rebase process with a feature branch being moved to another branch" alt="Rebase process with a feature branch being moved to another branch" class="figure mx-auto d-block"></figure><p>For a very thorough description about how this process works, read
+<figure><img src="../fig/rebase.png" alt="Rebase process with a feature branch being moved to another branch" class="figure mx-auto d-block"><div class="figcaption">Rebase process with a feature branch being moved
+to another branch</div>
+</figure><p>For a very thorough description about how this process works, read
 this <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" class="external-link">article
 on Git rebase</a>.</p>
-<div id="practice-rebasing" class="callout discussion">
+<div id="practice-rebasing" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="practice-rebasing" class="callout-inner">
 <h3 class="callout-title">Practice rebasing</h3>
 <div class="callout-content">
@@ -779,11 +865,31 @@ can get really complicated).</p>
 <p>So let’s use <code>git rebase</code> to bring the <code>spicy</code>
 branch as it it would have been branched off <code>main</code> after
 indicating that the guacamole needs to be served cold.</p>
-<blockquote>
-<h2 id="solution-2">Solution</h2>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
 <p>After the following commands (and modifications to the files) the
 repository history should look like the graph below:</p>
-<p><code>commands, sh git switch -c spicy # add the chillies to ingredients.md git stage ingredients.md git commit -m "Chillies added to the mix" git switch main # Indicate that should be served cold in instructions.md git stage instructions.md git commit -m "Guacamole must be served cold" git graph</code></p>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> spicy</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="co"># add the chillies to ingredients.md</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Chillies added to the mix"</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a><span class="co"># Indicate that should be served cold in instructions.md</span></span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="fu">git</span> stage instructions.md</span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Guacamole must be served cold"</span></span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -806,7 +912,13 @@ repository history should look like the graph below:</p>
 </div>
 <p>Now, let’s go back to <code>spicy</code> and do the
 <code>git rebase</code>:</p>
-<p><code>commands, sh git switch spicy git rebase main git graph</code></p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">git</span> switch spicy</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="fu">git</span> rebase main</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -828,7 +940,7 @@ repository history should look like the graph below:</p>
 </div>
 <p>Can you spot the difference with the coriander experiment? Now the
 commit history is linear and we have avoided the risk of conflicts.</p>
-</blockquote>
+</div>
 </div>
 </div>
 </div>
@@ -914,8 +1026,8 @@ vs. Rebasing</a>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/04-rewriting_history.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/04-rewriting_history.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-10-31",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-13",
+  "datePublished": "2025-11-13"
 }
 
   </script><script>

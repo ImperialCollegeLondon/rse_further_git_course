@@ -373,7 +373,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Branching and merging</h1>
-        <p>Last updated on 2025-10-31 |
+        <p>Last updated on 2025-11-13 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/02-branching_merging.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -433,9 +433,8 @@ adding commits is good enough. But chances are that you will want to
 unleash all the power of <code>git</code> at some point and start using
 branches.</p>
 <p>In a linear history, we have something like:</p>
-<p><img src="fig/branch1.png" title="Linear git repository" class="figure">
-{alt=‘Linear’ class=“img-responsive”}</p>
-<ul><li>Commits are depicted here as little boxes with abbreviated
+<figure><img src="fig/branch1.png" alt="Linear" class="figure mx-auto d-block"><div class="figcaption">Linear git repository</div>
+</figure><ul><li>Commits are depicted here as little boxes with abbreviated
 hashes.</li>
 <li>Here the branch <code>main</code> points to a commit.</li>
 <li>“HEAD” is the current position (remember the recording head of tape
@@ -454,9 +453,9 @@ features.</li>
 </ul><p>The strength of version control is that it permits the researcher to
 <strong>isolate different tracks of work</strong>, which can later be
 merged to create a composite version that contains all changes:</p>
-<p><img src="fig/branching_full_example.png" title="Example of commit history with multiple branches and merges" class="figure">
-{alt=‘Git collaborative’ class=“img-responsive”}</p>
-<ul><li>We see branching points and merging points.</li>
+<figure><img src="fig/branching_full_example.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Example of commit history with multiple branches
+and merges</div>
+</figure><ul><li>We see branching points and merging points.</li>
 <li>Main line development is often called <code>main</code>.</li>
 <li>Other than this convention there is nothing special about
 <code>main</code>, it is just a branch.</li>
@@ -500,7 +499,11 @@ ae3255a Adding ingredients and instructions</code></pre>
 <h3 id="which-branch-are-we-using">Which Branch Are We Using?<a class="anchor" aria-label="anchor" href="#which-branch-are-we-using"></a></h3>
 <p>To see where we are (where HEAD points to) use
 <code>git branch</code>:</p>
-<p><code>commands, sh git branch</code></p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -524,14 +527,22 @@ visualise branch structure in the terminal without having to remember a
 long Git command (more details about what aliases are can be found <a href="https://linuxize.com/post/how-to-create-bash-aliases/" class="external-link">here</a>
 and the full <!-- markdown-link-check-disable-line --> docs on how to
 set them up in Git are <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" class="external-link">here</a>):</p>
-<p><code>commands, sh git config --global alias.graph "log --all --graph --decorate --oneline"</code></p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> alias.graph <span class="st">"log --all --graph --decorate --oneline"</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="creating-and-working-with-branches">Creating and Working with Branches<a class="anchor" aria-label="anchor" href="#creating-and-working-with-branches"></a></h2>
 <hr class="half-width"><p>Firstly let’s take stock of the current state of our repository:</p>
-<p><code>commands, sh git graph</code></p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -543,12 +554,15 @@ set them up in Git are <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Al
 <p>We have four commits and you can see that we are working on the main
 branch from <code>HEAD -&gt; main</code> next to the most recent commit.
 This can be represented diagrammatically:</p>
-<p><img src="fig/branch1.png" title="Repository before branching" class="figure">
-{alt=‘Git collaborative’ class=“img-responsive”}</p>
-<p>Let’s create a branch called <code>experiment</code> where we try out
+<figure><img src="fig/branch1.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository before branching</div>
+</figure><p>Let’s create a branch called <code>experiment</code> where we try out
 adding some coriander to <code>ingredients.md</code>.</p>
-<pre class="commands"><code>git branch experiment
-git graph</code></pre>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> branch experiment</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -560,10 +574,15 @@ git graph</code></pre>
 <p>Notice that the name of our new branch has appeared next to latest
 commit. HEAD is still pointing to main however denoting that we have
 created a new branch but we’re not using it yet. This looks like:</p>
-<p><img src="fig/branch2.png" title="Repository after experiment branch creation" class="figure"> {alt=‘Git
-collaborative’ class=“img-responsive”}</p>
-<p>To start using the new branch we need to check it out:</p>
-<p><code>commands, sh git switch experiment git graph</code></p>
+<figure><img src="fig/branch2.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository after experiment branch
+creation</div>
+</figure><p>To start using the new branch we need to check it out:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> switch experiment</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -577,13 +596,19 @@ indicating that we are now working with, and any commits we make will be
 part of the <code>experiment</code> branch. As shown before which branch
 is currently checked out can be confirmed with
 <code>git branch</code>.</p>
-<p><img src="fig/branch3.png" title="Repository with HEAD at new experiment branch" class="figure"> {alt=‘Git
-collaborative’ class=“img-responsive”}</p>
-<p>Now when we make new commits they will be part of the
+<figure><img src="fig/branch3.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with HEAD at new experiment
+branch</div>
+</figure><p>Now when we make new commits they will be part of the
 <code>experiment</code> branch. To test this let’s add 1 tbsp coriander
 to <code>ingredients.md</code>. Stage this and commit it with the
 message “try with some coriander”.</p>
-<p><code>commands, sh git stage ingredients.md git commit -m "try with some coriander" git graph</code></p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"try with some coriander"</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -593,9 +618,9 @@ message “try with some coriander”.</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<p><img src="fig/branch4.png" title="Repository with one commit on experiment branch" class="figure"> {alt=‘Git
-collaborative’ class=“img-responsive”}</p>
-<p>Note that the main branch is unchanged whilst a new commit (labelled
+<figure><img src="fig/branch4.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on experiment
+branch</div>
+</figure><p>Note that the main branch is unchanged whilst a new commit (labelled
 <code>e1</code>) has been created as part of the experiment branch.</p>
 <p>As mentioned previously, one of the advantages of using branches is
 working on different features in parallel. You may have already spotted
@@ -606,11 +631,21 @@ branch. We could correct the typo with a new commit in
 decide to discard our experiment then we also lose the correction.
 Instead it makes much more sense to create a correcting commit in
 <code>main</code>. First, switch to the main branch:</p>
-<p><code>commands, sh git switch main</code></p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre>
+</div>
 <p>Then fix the typing mistake in <code>ingredients.md</code>. And
 finally, commit that change (hint: ‘avo’ look at the first
 ingredient):</p>
-<p><code>commands, sh git stage ingredients.md git commit -m "Corrected typo in ingredients.md" git graph</code></p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Corrected typo in ingredients.md"</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -622,14 +657,18 @@ ingredient):</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<p><img src="fig/branch5.png" title="Repository with one commit on main and experiment branches" class="figure">
-{alt=‘Git collaborative’ class=“img-responsive”}</p>
-</section><section><h2 class="section-heading" id="merging">Merging<a class="anchor" aria-label="anchor" href="#merging"></a></h2>
+<figure><img src="fig/branch5.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on main and
+experiment branches</div>
+</figure></section><section><h2 class="section-heading" id="merging">Merging<a class="anchor" aria-label="anchor" href="#merging"></a></h2>
 <hr class="half-width"><p>Now that we have our two separate tracks of work they need to be
 combined back together. We should already have the <code>main</code>
 branch checked out (double check with <code>git branch</code>). The
 below command can then be used to perform the merge.</p>
-<p><code>commands, sh git merge --no-edit experiment</code></p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-edit</span> experiment</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -639,7 +678,11 @@ Merge made by the 'ort' strategy.
  1 file changed, 1 insertion(+)</code></pre>
 </div>
 <p>now use:</p>
-<p><code>commands, sh git graph</code></p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -653,9 +696,8 @@ Merge made by the 'ort' strategy.
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<p><img src="fig/branch6.png" title="Repository with first merge" class="figure">
-{alt=‘Git collaborative’ class=“img-responsive”}</p>
-<p>Merging creates a new commit in whichever branch is being
+<figure><img src="fig/branch6.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with first merge</div>
+</figure><p>Merging creates a new commit in whichever branch is being
 <strong>merged into</strong> that contains the combined changes from
 both branches. The commit has been highlighted in a separate colour
 above but it is the same as every commit we’ve seen so far except that
@@ -674,9 +716,9 @@ repository.</p>
 <p>As the experiment branch is still present there is no reason further
 commits can’t be added to it. Create a new commit in the
 <code>experiment</code> branch adjusting the amount of coriander in the
-recipe. Then merge <code>experiment</code> into <code>main</code>. <img src="fig/branch7.png" title="Repository with second merge" class="figure">
-{alt=‘Gitcollaborative’ class=“img-responsive”}</p>
-</div>
+recipe. Then merge <code>experiment</code> into <code>main</code>.</p>
+<figure><img src="fig/branch7.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with second merge</div>
+</figure></div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -686,13 +728,17 @@ recipe. Then merge <code>experiment</code> into <code>main</code>. <img src="fig
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<pre class="commands"><code>git switch experiment
-# make changes to ingredients.md
-git stage ingredients.md
-git commit -m "Reduced the amount of coriander"
-git switch main
-git merge --no-edit experiment
-git graph</code></pre>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">git</span> switch experiment</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="co"># make changes to ingredients.md</span></span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="fu">git</span> stage ingredients.md</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Reduced the amount of coriander"</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-edit</span> experiment</span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="fu">git</span> graph</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -716,45 +762,45 @@ git graph</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
 <hr class="half-width"><p>Let us pause for a moment and recap what we have learned:</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb22">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> branch               <span class="co"># see where we are</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># create branch &lt;name&gt;</span></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">git</span> switch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># switch to branch &lt;name&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">git</span> branch               <span class="co"># see where we are</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># create branch &lt;name&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="fu">git</span> switch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># switch to branch &lt;name&gt;</span></span></code></pre>
 </div>
 <p>Since the following command combo is so frequent:</p>
-<div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># create branch &lt;name&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">git</span> switch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># switch to branch &lt;name&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># create branch &lt;name&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="fu">git</span> switch <span class="op">&lt;</span>name<span class="op">&gt;</span>        <span class="co"># switch to branch &lt;name&gt;</span></span></code></pre>
 </div>
 <p>There is a shortcut for it:</p>
-<div class="codewrapper sourceCode" id="cb15">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> <span class="op">&lt;</span>name<span class="op">&gt;</span>     <span class="co"># create branch &lt;name&gt; and switch to it</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> <span class="op">&lt;</span>name<span class="op">&gt;</span>     <span class="co"># create branch &lt;name&gt; and switch to it</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">git</span> merge <span class="op">&lt;</span>name<span class="op">&gt;</span>         <span class="co"># merge branch &lt;name&gt; (to current branch)</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">git</span> merge <span class="op">&lt;</span>name<span class="op">&gt;</span>         <span class="co"># merge branch &lt;name&gt; (to current branch)</span></span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="typical-workflow">Typical workflow<a class="anchor" aria-label="anchor" href="#typical-workflow"></a></h3>
 <p>These commands can be used in a typical workflow that looks like the
 below:</p>
-<div class="codewrapper sourceCode" id="cb17">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> new-feature  <span class="co"># create branch, switch to it</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> git commit                 <span class="co"># work, work, work, ...</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>                             <span class="co"># test</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>                             <span class="co"># feature is ready</span></span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="ex">$</span> git switch main            <span class="co"># switch to main</span></span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="ex">$</span> git merge new-feature      <span class="co"># merge work to main</span></span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="ex">$</span> git branch <span class="at">-d</span> new-feature  <span class="co"># remove branch</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> new-feature  <span class="co"># create branch, switch to it</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="ex">$</span> git commit                 <span class="co"># work, work, work, ...</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>                             <span class="co"># test</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>                             <span class="co"># feature is ready</span></span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="ex">$</span> git switch main            <span class="co"># switch to main</span></span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="ex">$</span> git merge new-feature      <span class="co"># merge work to main</span></span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a><span class="ex">$</span> git branch <span class="at">-d</span> new-feature  <span class="co"># remove branch</span></span></code></pre>
 </div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -843,8 +889,8 @@ of the changes made in a branch</li>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/02-branching_merging.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/02-branching_merging.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-10-31",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-13",
+  "datePublished": "2025-11-13"
 }
 
   </script><script>

@@ -108,11 +108,11 @@
   Further Git and GitHub for Effective Collaboration
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 40%" class="percentage">
-    40%
+<aside class="col-md-12 lesson-progress"><div style="width: 42%" class="percentage">
+    42%
   </div>
   <div class="progress carpentries">
-    <div class="progress-bar carpentries" role="progressbar" style="width: 40%" aria-valuenow="40" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar carpentries" role="progressbar" style="width: 42%" aria-valuenow="42" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -371,7 +371,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pulling and Pushing</h1>
-        <p>Last updated on 2025-10-31 |
+        <p>Last updated on 2025-11-13 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/05-pulling_pushing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -419,28 +419,35 @@ synchronisation needs to be done <strong>branch by branch</strong> with
 all of those you want to keep in sync.</p>
 <div class="section level3">
 <h3 id="pushing">Pushing<a class="anchor" aria-label="anchor" href="#pushing"></a></h3>
-<ul><li>Its basic use is to synchronise <strong>any committed
+<ul><li><p>Its basic use is to synchronise <strong>any committed
 changes</strong> in your current branch to its upstream branch:
-<code>git push</code>.</li>
-<li>Changes in the staging area will not be synchronised. <img src="../fig/push.png" title="Push a branch ." class="figure"> {alt=‘Git collaborative’
-class=“img-responsive”}</li>
-<li>If the current branch has no upstream yet, you can configure one by
-doing <code>git push --set-upstream origin BRANCH_NAME</code>, as done
-with <code>main</code> in the example below. The
+<code>git push</code>.</p></li>
+<li>
+<p>Changes in the staging area will not be synchronised.</p>
+<figure><img src="../fig/push.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Push a branch</div>
+</figure></li>
+<li>
+<p>If the current branch has no upstream yet, you can configure one
+by doing <code>git push --set-upstream origin BRANCH_NAME</code>, as
+done with <code>main</code> in the example below. The
 <code>--set-upstream</code> flag can be replaced by a shortcut
 <code>-u</code>. So you can use
-<code>git push -u origin BRANCH_NAME</code> instead. <img src="../fig/push_u.png" title="Push a branch without upstream yet." class="figure">
-{alt=‘Git collaborative’ class=“img-responsive”}</li>
-<li>
-<code>push</code> only operates on your current branch. If you want
-to push another branch, you have to <code>checkout</code> that branch
-first.</li>
-<li>If the upstream branch has changes you do not have in the local
+<code>git push -u origin BRANCH_NAME</code> instead.</p>
+<figure><img src="../fig/push_u.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Push a branch without upstream yet</div>
+</figure></li>
+<li><p><code>push</code> only operates on your current branch. If you
+want to push another branch, you have to <code>checkout</code> that
+branch first.</p></li>
+<li><p>If the upstream branch has changes you do not have in the local
 branch, the command will fail, requesting you to pull those changes
-first.</li>
+first.</p></li>
 </ul><p>Let’s try to push changes to the <code>main</code> branch. First make
 sure you are on the <code>main</code> branch.</p>
-<p><code>commands, sh git switch main</code></p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -450,7 +457,11 @@ Your branch is ahead of 'origin/main' by 6 commits.
 </div>
 <p>Notice that git is suggesting you to use <code>git push</code> to
 publish your local commits. Let’s do that:</p>
-<p><code>commands, sh git push</code></p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -489,20 +500,32 @@ the <code>spicy</code> branch and pushing changes to it.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<pre class="commands"><code>git branch
-git switch spicy
-git push</code></pre>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> branch</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">git</span> switch spicy</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+</div>
 <p>This should give an error that the current branch <code>spicy</code>
 has no upstream branch:</p>
-<pre><code>fatal: The current branch spicy has no upstream branch.
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>fatal: The current branch spicy has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
     git push --set-upstream origin spicy
 
 To have this happen automatically for branches without a tracking
 upstream, see 'push.autoSetupRemote' in 'git help config'.</code></pre>
+</div>
 <p>Push again by setting the upstream:</p>
-<pre class="commands"><code>git push -u origin spicy</code></pre>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin spicy</span></code></pre>
+</div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -542,9 +565,8 @@ above.</li>
 <li>You can get a new branch that exists only in <code>origin</code>
 directly with <code>git switch BRANCH_NAME</code> which will
 automatically create a local branch with the same name</li>
-</ul><p><img src="../fig/pull.png" title="Pull remote changes" class="figure"> {alt=‘Git
-collaborative’ class=“img-responsive”}</p>
-<div id="keypoints1" class="callout keypoints">
+</ul><figure><img src="../fig/pull.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Pull remote changes</div>
+</figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -621,8 +643,8 @@ If there are conflicts, you will have to resolve them.</li>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/05-pulling_pushing.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/05-pulling_pushing.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-10-31",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-13",
+  "datePublished": "2025-11-13"
 }
 
   </script><script>
