@@ -118,5 +118,3 @@ detail at the range of functionality that is touched on above.
 - Git and GitHub provide powerful tools to help teams to work together
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

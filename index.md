@@ -11,7 +11,7 @@ site: sandpaper::sandpaper_site
 - A working local installation of Git
 - A local copy of the `recipe` repository
 - Complete the Setup before starting
-  
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -30,6 +30,3 @@ You can find more information about our work and the services we offer [on our w
 
 [code surgeries]: https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/research-software-engineering/code-surgeries/
 [on our website]: https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/research-software-engineering/
-
-
-
