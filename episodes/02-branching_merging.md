@@ -52,6 +52,8 @@ In a linear history, we have something like:
 
 ### Now we want to do this
 
+![Example of git merge <https://twitter.com/jay_gee/status/703360688618536960>](fig/octopus.jpeg){alt='Example of git merge'}
+
 Software development is often not linear:
 
 - We typically need at least one version of the code to "work" (to compile, to
