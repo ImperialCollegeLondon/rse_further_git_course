@@ -83,7 +83,7 @@ You probably don't need to create releases for your software if:
 In this case, if you just need to clarify which commit you're working from (e.g. to a
 colleague), you can always obtain the current commit hash like so:
 
-```commands, sh
+```bash
 git rev-parse --short HEAD
 ```
 
@@ -99,7 +99,7 @@ go through how to add and remove tags to your repository.
 Firstly, remind yourself what the history for your `recipe` repository looks like with
 `git graph`. Mine looks like this:
 
-```commands
+```bash
 git graph
 ```
 
@@ -127,19 +127,19 @@ Let's say that you have decided that the point at which you added half an onion 
 highpoint in the recipe's history and you want to make a note of which commit that was
 for a future date by giving it the tag "tasty".  You can do this like so:
 
-```commands
+```bash
 git tag tasty [commit hash]
 ```
 
 In my case, I ran:
 
-```commands
+```bash
 git tag tasty 5cb4883
 ```
 
 You can list the tags for your repo by running `git tag` without any arguments:
 
-```commands
+```bash
 git tag
 ```
 
@@ -149,7 +149,7 @@ tasty
 
 To check which commit hash this corresponds to, use:
 
-```commands
+```bash
 git rev-parse --short tasty
 ```
 
@@ -168,7 +168,7 @@ the instructions. (Note that you need to include the `--detach` option!)
 You may now be wondering, if this is the case, then how is a tag different from a
 branch? Try switching to `tasty` to see what happens:
 
-```commands
+```bash
 git switch tasty
 ```
 
@@ -189,7 +189,7 @@ v1.0, for example.
 
 Let's try again using the `--detach` option:
 
-```commands
+```bash
 git switch --detach tasty
 ```
 
@@ -200,14 +200,14 @@ HEAD is now at 5cb4883 Added 1/2 onion to ingredients
 Now it works. Fortunately, a detached `HEAD` is a much less serious affliction for git
 repos than human beings, and you can reattach it by simply checking out a branch:
 
-```commands
+```bash
 git switch main
 ```
 
 Assume now that you have decided that you no longer want this tag (perhaps on eating, it
 turned out not to be tasty after all). You can delete the tag like so:
 
-```commands
+```bash
 git tag -d tasty
 ```
 
@@ -263,13 +263,13 @@ repository (in mine this is `745fb8b`) the tag `v0.0.1`, which is often used as 
 first tagged release for a project. (Another common convention is to indicate that the
 software is still experimental by giving it a major version number of zero.)
 
-```commands
+```bash
 git tag v0.0.1 745fb8b
 ```
 
 Verify that the tag has been added:
 
-```commands
+```bash
 git tag
 ```
 
@@ -284,7 +284,7 @@ rest of the world can see it.
 
 To push your tags to GitHub, do the following:
 
-```commands
+```bash
 git push --tags
 ```
 
@@ -302,7 +302,7 @@ example.](https://github.com/alexdewar/recipe)
 
 If you look in the right-hand pane, under "Releases", you should now see "1 tags":
 
-![](fig/releases_repo.png "1 tags"){alt='1 tags'}
+![1 tags](fig/releases_repo.png){alt='1 tags'}
 
 This refers to the `v0.0.1` tag you just pushed. (If there are two tags, you may have
 forgotten to delete the `tasty` tag, which doesn't matter much.)
@@ -310,12 +310,11 @@ forgotten to delete the `tasty` tag, which doesn't matter much.)
 Under "1 tags", there is a link entitled "Create a new release". Click it and you should
 see something like the following:
 
-![](fig/releases_new_release.png "Creating a new release"){alt='Creating a new release'}
-
+![Creating a new release](fig/releases_new_release.png){alt='Creating a new release'}
 
 Click "Choose a tag" then select your tag "v0.0.1" from the dropdown list:
 
-![](fig/releases_choose_a_tag.png "Choose your tag"){alt='Choose your tag'}
+![Choose your tag](fig/releases_choose_a_tag.png){alt='Choose your tag'}
 
 For the release title, you can just put "v0.0.1" again. Then add a description of your
 choosing. (You can check the "Set as pre-release" box if you want to indicate to your
@@ -326,12 +325,11 @@ software (e.g. as an `.exe` file), this is where you could upload it.
 When you're finished, click "Publish
 release":
 
-![](fig/releases_publish.png "Publish your release"){alt='Publish your release'}
-
+![Publish your release](fig/releases_publish.png){alt='Publish your release'}
 
 Now you should be redirected to a page that looks like this:
 
-![](fig/releases_view.png "View release"){alt='View release'}
+![View release](fig/releases_view.png){alt='View release'}
 
 Congratulations, you have made your first release! You can share the link to this page
 with others if you want to notify them of the release. Alternatively, users can find
@@ -353,8 +351,6 @@ description.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - A version of your code with a release number (e.g. v13.4.2) is referred to as a *release*
@@ -366,5 +362,3 @@ description.
 - You can use a tag as the basis for a release on GitHub
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
