@@ -38,7 +38,7 @@ Form groups of 3-4 people and choose one to act as Administrator.
 **Housekeeping** (Administrator's task):
 
 - Create a new repository using the template [Book of Recipes repository](https://github.com/ImperialCollegeLondon/book_of_recipes) which has the skeleton of the book. (**Note**: Click on the green  "Use this template" button on the top right of the Book of Recipes repository and then select "Create a new repository")
-  
+
   ![](fig/use_this_template.png "Use this template"){alt='Use this template' class="img-responsive" style="float: left; margin-right: 10px; width: 20%;"}
 
 - Set the owner of the new repository to your own GitHub username.
@@ -108,5 +108,3 @@ instructions to make sure that your own forks are kept up to date.
 - Notifications from GitHub are very useful but also overwhelming when there are many contributions - you will need to manage them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
