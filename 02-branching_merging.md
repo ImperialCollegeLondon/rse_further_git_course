@@ -33,7 +33,6 @@ Developer 1 - "I need a new type of analysis to finish my thesis"
 Developer 2 - "My problem is bigger. I need better performance to process all my
 data"
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 For simple projects, working with a single branch where you keep adding commits is good
@@ -42,8 +41,7 @@ point and start using branches.
 
 In a linear history, we have something like:
 
-![](fig/branch1.png "Linear git repository")
-{alt='Linear' class="img-responsive"}
+![Linear git repository](fig/branch1.png){alt='Linear'}
 
 - Commits are depicted here as little boxes with abbreviated hashes.
 - Here the branch `main` points to a commit.
@@ -66,8 +64,7 @@ The strength of version control is that it permits the researcher to **isolate
 different tracks of work**, which can later be merged to create a composite
 version that contains all changes:
 
-![](fig/branching_full_example.png "Example of commit history with multiple branches and merges")
-{alt='Git collaborative' class="img-responsive"}
+![Example of commit history with multiple branches and merges](fig/branching_full_example.png){alt='Git collaborative'}
 
 - We see branching points and merging points.
 - Main line development is often called `main`.
@@ -107,7 +104,7 @@ ae3255a Adding ingredients and instructions
 
 To see where we are (where HEAD points to) use `git branch`:
 
-```commands, sh
+```bash
 git branch
 ```
 
@@ -134,7 +131,7 @@ structure in the terminal without having to remember a long Git command
 docs on how to set them up in Git are
 [here](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)):
 
-```commands, sh
+```bash
 git config --global alias.graph "log --all --graph --decorate --oneline"
 ```
 
@@ -144,7 +141,7 @@ git config --global alias.graph "log --all --graph --decorate --oneline"
 
 Firstly let's take stock of the current state of our repository:
 
-```commands, sh
+```bash
 git graph
 ```
 
@@ -159,13 +156,12 @@ We have four commits and you can see that we are working on the main branch
 from `HEAD -> main` next to the most recent commit. This can be represented
 diagrammatically:
 
-![](fig/branch1.png "Repository before branching")
-{alt='Git collaborative' class="img-responsive"}
+![Repository before branching](fig/branch1.png){alt='Git collaborative'}
 
 Let's create a branch called `experiment` where we try out adding some
 coriander to `ingredients.md`.
 
-```commands
+```bash
 git branch experiment
 git graph
 ```
@@ -181,12 +177,11 @@ Notice that the name of our new branch has appeared next to latest commit. HEAD
 is still pointing to main however denoting that we have created a new branch but
 we're not using it yet. This looks like:
 
-![](fig/branch2.png "Repository after experiment branch creation")
-{alt='Git collaborative' class="img-responsive"}
+![Repository after experiment branch creation](fig/branch2.png){alt='Git collaborative'}
 
 To start using the new branch we need to check it out:
 
-```commands, sh
+```bash
 git switch experiment
 git graph
 ```
@@ -203,14 +198,13 @@ now working with, and any commits we make will be part of the `experiment`
 branch. As shown before which branch is currently checked out can be confirmed
 with `git branch`.
 
-![](fig/branch3.png "Repository with HEAD at new experiment branch")
-{alt='Git collaborative' class="img-responsive"}
+![Repository with HEAD at new experiment branch](fig/branch3.png){alt='Git collaborative'}
 
 Now when we make new commits they will be part of the `experiment` branch. To
 test this let's add 1 tbsp coriander to `ingredients.md`. Stage this and commit
 it with the message "try with some coriander".
 
-```commands, sh
+```bash
 git stage ingredients.md
 git commit -m "try with some coriander"
 git graph
@@ -224,8 +218,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![](fig/branch4.png "Repository with one commit on experiment branch")
-{alt='Git collaborative' class="img-responsive"}
+![Repository with one commit on experiment branch](fig/branch4.png){alt='Git collaborative'}
 
 Note that the main branch is unchanged whilst a new commit (labelled `e1`) has
 been created as part of the experiment branch.
@@ -238,14 +231,14 @@ in `experiment` but it doesn't fit in very well here - if we decide to discard
 our experiment then we also lose the correction. Instead it makes much more
 sense to create a correcting commit in `main`. First, switch to the main branch:
 
-```commands, sh
+```bash
 git switch main
 ```
 
 Then fix the typing mistake in `ingredients.md`. And finally, commit that change (hint:
 'avo' look at the first ingredient):
 
-```commands, sh
+```bash
 git stage ingredients.md
 git commit -m "Corrected typo in ingredients.md"
 git graph
@@ -261,8 +254,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![](fig/branch5.png "Repository with one commit on main and experiment branches")
-{alt='Git collaborative' class="img-responsive"}
+![Repository with one commit on main and experiment branches](fig/branch5.png){alt='Git collaborative'}
 
 ## Merging
 
@@ -270,7 +262,7 @@ Now that we have our two separate tracks of work they need to be combined back
 together. We should already have the `main` branch checked out (double check
 with `git branch`). The below command can then be used to perform the merge.
 
-```commands, sh
+```bash
 git merge --no-edit experiment
 ```
 
@@ -283,7 +275,7 @@ Merge made by the 'ort' strategy.
 
 now use:
 
-```commands, sh
+```bash
 git graph
 ```
 
@@ -299,8 +291,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![](fig/branch6.png "Repository with first merge")
-{alt='Git collaborative' class="img-responsive"}
+![Repository with first merge](fig/branch6.png){alt='Git collaborative'}
 
 Merging creates a new commit in whichever branch is being **merged into** that
 contains the combined changes from both branches. The commit has been
@@ -317,14 +308,14 @@ repository.
 As the experiment branch is still present there is no reason further commits
 can't be added to it. Create a new commit in the `experiment` branch adjusting
 the amount of coriander in the recipe. Then merge `experiment` into `main`.
-![](fig/branch7.png "Repository with second merge")
-{alt='Gitcollaborative' class="img-responsive"}
+
+![Repository with second merge](fig/branch7.png){alt='Git collaborative'}
 
 :::::::::::::::  solution
 
 ## Solution
 
-```commands
+```bash
 git switch experiment
 # make changes to ingredients.md
 git stage ingredients.md
@@ -358,7 +349,7 @@ git graph
 
 Let us pause for a moment and recap what we have learned:
 
-```sh
+```bash
 git branch               # see where we are
 git branch <name>        # create branch <name>
 git switch <name>        # switch to branch <name>
@@ -366,18 +357,18 @@ git switch <name>        # switch to branch <name>
 
 Since the following command combo is so frequent:
 
-```sh
+```bash
 git branch <name>        # create branch <name>
 git switch <name>        # switch to branch <name>
 ```
 
 There is a shortcut for it:
 
-```sh
+```bash
 git switch -c <name>     # create branch <name> and switch to it
 ```
 
-```sh
+```bash
 git merge <name>         # merge branch <name> (to current branch)
 ```
 
@@ -385,7 +376,7 @@ git merge <name>         # merge branch <name> (to current branch)
 
 These commands can be used in a typical workflow that looks like the below:
 
-```sh
+```bash
 $ git switch -c new-feature  # create branch, switch to it
 $ git commit                 # work, work, work, ...
                              # test
@@ -394,8 +385,6 @@ $ git switch main            # switch to main
 $ git merge new-feature      # merge work to main
 $ git branch -d new-feature  # remove branch
 ```
-
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -409,5 +398,3 @@ $ git branch -d new-feature  # remove branch
 - Merging creates a new commit in the target branch incorporating all of the changes made in a branch
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

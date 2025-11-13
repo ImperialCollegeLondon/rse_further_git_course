@@ -38,7 +38,6 @@ Developer 2 - "SPACES!"
 
 [GitHub Actions] automatically runs checks on your code.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Explanation of CI
@@ -110,7 +109,6 @@ also being pretty easy for people to read.
 That being said, it can take a moment to get your head around. When starting out it's
 generally best to start with an example and modify it. We'll break down the meaning
 and structure of this YAML file as we go.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -212,7 +210,7 @@ markdown files against a set of criteria.
 2. Create a file called `ci.yml` in the `workflows` directory.
 
 3. Add the following contents to `ci.yml`:
-  
+
   ```yaml
   on:
     - push
@@ -268,8 +266,7 @@ Let's say we've created a new branch that we want to merge into main. If we crea
 pull request but our CI is failing in the new branch, we'll see something like the
 following:
 
-![](fig/pr_failing_ci.png "Panel from GitHub pull request user interface showing failing CI checks")
-{alt='Failing CI' class="img-responsive"}
+![Panel from GitHub pull request user interface showing failing CI checks](fig/pr_failing_ci.png){alt='Failing CI'}
 
 GitHub makes the failure of the CI pretty apparent but, by default, it will still allow
 the PR to be merged. At this point the CI is a useful aid to peer review but we can
@@ -299,9 +296,8 @@ PR's:
 
 Now a CI failure for a pull request looks like this:
 
-![](\(fig/pr_protected_failing_ci.png "Panel from GitHub pull){alt='Failing CI'}({{ site.baseurl }}/fig/pr\_protected\_failing\_ci.png "Panel from GitHub pull
-request user interface showing failing CI checks with merging blocked due to a branch
-protection rule"){:class="img-responsive"}
+![Panel from GitHub pull request user interface showing failing CI checks with merging blocked due to a branch
+protection rule](fig/pr_protected_failing_ci.png){alt='Failing CI'}
 
 Now it's much harder to get anything past peer review that doesn't meet the required
 standard. There remains an option to "bypass branch protections" but this is only
@@ -416,8 +412,6 @@ commits are added to the `main` branch. Docker is a tool for packaging and distr
 software along with all of its requirements. Once published the Docker image can then
 be downloaded and used by other users or services.
 
-{% raw %}
-
 ```yaml
 on: push
 jobs:
@@ -443,15 +437,11 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
 ```
 
-{% endraw %}
-
 ### A Realistic Example
 
 If we put together a few things we've seen so far, we can start to build more realistic
 and useful workflows. The below example is taken from a template for Python
 repositories (see [Github Python Poetry Template Repository][poetry]).
-
-{% raw %}
 
 ```yaml
 name: Test and build  # workflows can have a name that appears in the GitHub UI
@@ -500,10 +490,6 @@ jobs:
       run: poetry run pytest
 ```
 
-{% endraw %}
-
-
-
 [GitHub Actions]: https://docs.github.com/en/actions
 [GitLab CI/CD]: https://docs.gitlab.com/ee/ci/
 [CircleCI]: https://circleci.com/
@@ -524,7 +510,6 @@ jobs:
 [Flake8]: https://flake8.pycqa.org/
 [poetry]: https://github.com/ImperialCollegeLondon/poetry_template_2/blob/main/.github/workflows/ci.yml
 
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Continuous Integration (CI) is the practice of automating checks of code contributions
@@ -536,5 +521,3 @@ jobs:
 - CI can be used for a wide variety of purposes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

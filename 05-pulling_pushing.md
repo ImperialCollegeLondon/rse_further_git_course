@@ -31,14 +31,16 @@ in sync.
 - Its basic use is to synchronise **any committed changes** in your current
   branch to its upstream branch: `git push`.
 - Changes in the staging area will not be synchronised.
-  ![](fig/push.png "Push a branch .")
-  {alt='Git collaborative' class="img-responsive"}
+
+  ![Push a branch](fig/push.png){alt='Git collaborative'}
+
 - If the current branch has no upstream yet, you can configure one by doing
   `git push --set-upstream origin BRANCH_NAME`, as done with `main` in the example
   below. The `--set-upstream` flag can be replaced by a shortcut `-u`. So you can
   use `git push -u origin BRANCH_NAME` instead.
-  ![](fig/push_u.png "Push a branch without upstream yet.")
-  {alt='Git collaborative' class="img-responsive"}
+
+  ![Push a branch without upstream yet](fig/push_u.png){alt='Git collaborative'}
+
 - `push` only operates on your current branch. If you want to push another
   branch, you have to `checkout` that branch first.
 - If the upstream branch has changes you do not have in the local branch, the
@@ -46,7 +48,7 @@ in sync.
 
 Let's try to push changes to the `main` branch. First make sure you are on the `main` branch.
 
-```commands, sh
+```bash
 git switch main
 ```
 
@@ -58,7 +60,7 @@ Your branch is ahead of 'origin/main' by 6 commits.
 
 Notice that git is suggesting you to use `git push` to publish your local commits. Let's do that:
 
-```commands, sh
+```bash
 git push
 ```
 
@@ -89,7 +91,7 @@ branch and pushing changes to it.
 
 ## Solution
 
-```commands
+```bash
 git branch
 git switch spicy
 git push
@@ -97,7 +99,7 @@ git push
 
 This should give an error that the current branch `spicy` has no upstream branch:
 
-```
+```output
 fatal: The current branch spicy has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
@@ -109,7 +111,7 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 Push again by setting the upstream:
 
-```commands
+```bash
 git push -u origin spicy
 ```
 
@@ -147,10 +149,7 @@ branch 'spicy' set up to track 'origin/spicy'.
   them in the same way described above.
 - You can get a new branch that exists only in `origin` directly with `git switch BRANCH_NAME` which will automatically create a local branch with the same name
 
-![](fig/pull.png "Pull remote changes")
-{alt='Git collaborative' class="img-responsive"}
-
-
+![Pull remote changes](fig/pull.png){alt='Git collaborative'}
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -160,5 +159,3 @@ branch 'spicy' set up to track 'origin/spicy'.
 - If the local and upstream branches have diverged (have different commit history), then `git pull` will attempt to merge both. If there are conflicts, you will have to resolve them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

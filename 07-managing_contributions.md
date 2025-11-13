@@ -97,7 +97,7 @@ Before we get into understanding pull requests, we should first get to grips wit
 - Forks are related to the original repository, and the number of forks a given repository has can be seen in the upper right corner of the repo page.
 - If you have some changes in your fork that you want to contribute to the original repo, you open a `pull request`.
 - You can bring changes from an upstream repository to your local fork.
-  
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -142,8 +142,8 @@ Let's revisit our `recipe` repository.
   ![](fig/base_compare_drop_down.png "Choose the base and compare branches from the drop-down"){alt='Choose the base and compare branches from the drop-down' class="img-responsive"}
 7. After giving a suitable title and description for your pull request, click the "Create pull request" button.
   ![](fig/pr_title_description.png "Pull request title and description fields and create pull request button"){alt='Pull request title and description fields and create pull request button' class="img-responsive"}
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
@@ -220,5 +220,3 @@ message of the PR or in a comment within the PR.
 - PR are often created to solve specific issues.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
