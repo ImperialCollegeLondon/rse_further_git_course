@@ -1,7 +1,3 @@
 ---
 title: Instructor Notes
 ---
-
-
-
-

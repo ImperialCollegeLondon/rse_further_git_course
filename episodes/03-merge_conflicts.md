@@ -27,7 +27,7 @@ you to decide what should be kept and what should be discarded.
 
 Let's try this by artificially creating a conflict:
 
-```commands, sh
+```bash
 git switch main
 # change line to 1 tsp salt in ingredients.md
 git stage ingredients.md
@@ -60,12 +60,11 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![](fig/branch8.png "Repository with merge conflict")
-{alt='Git collaborative' class="img-responsive"}
+![Repository with merge conflict](fig/branch8.png){alt='Git collaborative'}
 
 Now we try and merge `experiment` into `main`:
 
-```commands, sh
+```bash
 git switch main
 git merge --no-edit experiment
 ```
@@ -80,7 +79,7 @@ As suspected we are warned that the merge failed. This puts Git into a special
 state in which the merge is in progress but has not been finalised by creating a
 new commit in main. Fortunately `git status` is quite useful here:
 
-```commands, sh
+```bash
 git status
 ```
 
@@ -109,7 +108,7 @@ we would like to keep, then add and commit as usual.
 
 Let's look at ingredients.md to understand the conflict:
 
-```
+```output
 * 2 avocados
 * 1 lime
 <<<<<< HEAD
@@ -133,7 +132,7 @@ for Git to know which it should be so it has to ask you. Let's resolve it by
 choosing the version from the main branch. Edit `ingredients.md` so it looks
 like:
 
-```
+```output
 * 2 avocados
 * 1 lime
 * 1 tsp salt
@@ -143,7 +142,7 @@ like:
 
 Now stage, commit and check the result:
 
-```commands, sh
+```bash
 git stage ingredients.md
 git commit --no-edit
 git graph
@@ -168,8 +167,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![](fig/branch9.png "Repository with third merge")
-{alt='Git collaborative' class="img-responsive"}
+![Repository with third merge](fig/branch9.png){alt='Git collaborative'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -196,7 +194,7 @@ separate parts of the file) you will not get a merge conflict!
 
 ## Solution
 
-```commands
+```bash
 git switch -c experiment2
 # make changes to ingredients.md (say 1/2 lime)
 git stage ingredients.md
@@ -218,7 +216,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Resolve the conflicts. Then stage the file again, and view the graph:
 
-```commands
+```bash
 git stage ingredients.md
 git commit
 git graph
@@ -241,8 +239,6 @@ Let us pause for a moment and summarise what we have learned:
 - In the conflicted file, the tags `<<<<<<< HEAD`, `=======`
   and `>>>>>>> branch-name` indicate which branch each version came from.
 
-
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Merge conflicts result when Git fails to merge files automatically because of mutually incompatible changes
@@ -250,5 +246,3 @@ Let us pause for a moment and summarise what we have learned:
 - After resolving a merge conflict you must finalise the merge with `git stage` and `git commit`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

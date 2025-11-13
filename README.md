@@ -38,6 +38,3 @@ To cite this lesson, please consult with <CITATION>
 
 [lesson-example]: https://carpentries.github.io/lesson-example
 [issues]: https://github.com/ImperialCollegeLondon/rse_further_git_course/issues
-
-
-
