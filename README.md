@@ -3,6 +3,11 @@
 This repository contains materials taught as part of the Imperial College
 Graduate School Course of the above title.
 
+## Development
+
+Run `docker compose up` to start the development server. After a few moments the site
+will be accessible at <http://127.0.0.1:4321>.
+
 ## Contributing
 
 We welcome all contributions to improve the lesson! Maintainers will do their
