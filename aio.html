@@ -689,7 +689,7 @@ together</li>
 </div>
 </section></section><section id="aio-02-branching_merging"><p>Content from <a href="02-branching_merging.html">Branching and merging</a></p>
 <hr>
-<p>Last updated on 2025-11-13 |
+<p>Last updated on 2026-01-20 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/02-branching_merging.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -851,16 +851,17 @@ between them and how to merge changes from different branches.</p>
 <div id="a-useful-alias" class="callout-inner">
 <h3 class="callout-title">A useful alias</h3>
 <div class="callout-content">
-<p>We will now define an <em>alias</em> in Git, to be able to nicely
-visualise branch structure in the terminal without having to remember a
-long Git command (more details about what aliases are can be found <a href="https://linuxize.com/post/how-to-create-bash-aliases/" class="external-link">here</a>
-and the full <!-- markdown-link-check-disable-line --> docs on how to
-set them up in Git are <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" class="external-link">here</a>):</p>
+<p>We will now define an <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" class="external-link"><em>alias</em>
+in Git</a>, to be able to nicely visualise branch structure in the
+terminal without having to remember a long Git command:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> alias.graph <span class="st">"log --all --graph --decorate --oneline"</span></span></code></pre>
 </div>
+<p>We can now abbreviate
+<code>log --all --graph --decorate --oneline</code> with the alias
+<code>graph</code>.</p>
 </div>
 </div>
 </div>
@@ -1402,7 +1403,7 @@ conflict!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1776,7 +1777,7 @@ to totally erase them.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>First, we check how far back we need to go with
 <code>git graph</code>:</p>
@@ -1891,7 +1892,7 @@ it to have a cleaner history.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1989,7 +1990,7 @@ indicating that the guacamole needs to be served cold.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>After the following commands (and modifications to the files) the
 repository history should look like the graph below:</p>
@@ -2564,7 +2565,7 @@ the branch containing your changes into the main branch.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>$ git branch more_avocados</code></li>
