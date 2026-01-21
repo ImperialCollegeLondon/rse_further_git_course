@@ -60,7 +60,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with merge conflict](fig/branch8.png){alt='Git collaborative'}
+![Repository with merge conflict](fig/branch8.png){alt='Repository with merge conflict'}
 
 Now we try and merge `experiment` into `main`:
 
@@ -167,7 +167,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with third merge](fig/branch9.png){alt='Git collaborative'}
+![Repository with third merge](fig/branch9.png){alt='Repository with third merge'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 

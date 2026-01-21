@@ -302,7 +302,7 @@ example.](https://github.com/alexdewar/recipe)
 
 If you look in the right-hand pane, under "Releases", you should now see "1 tags":
 
-![1 tags](fig/releases_repo.png){alt='1 tags'}
+![Release page showing 1 tags](fig/releases_repo.png){alt='Release page showing 1 tags'}
 
 This refers to the `v0.0.1` tag you just pushed. (If there are two tags, you may have
 forgotten to delete the `tasty` tag, which doesn't matter much.)
@@ -310,11 +310,11 @@ forgotten to delete the `tasty` tag, which doesn't matter much.)
 Under "1 tags", there is a link entitled "Create a new release". Click it and you should
 see something like the following:
 
-![Creating a new release](fig/releases_new_release.png){alt='Creating a new release'}
+![Creating a new release](fig/releases_new_release.png){alt='Page for creating a new release'}
 
 Click "Choose a tag" then select your tag "v0.0.1" from the dropdown list:
 
-![Choose your tag](fig/releases_choose_a_tag.png){alt='Choose your tag'}
+![Choose your tag](fig/releases_choose_a_tag.png){alt='Process of choosing your tag'}
 
 For the release title, you can just put "v0.0.1" again. Then add a description of your
 choosing. (You can check the "Set as pre-release" box if you want to indicate to your
@@ -329,7 +329,7 @@ release":
 
 Now you should be redirected to a page that looks like this:
 
-![View release](fig/releases_view.png){alt='View release'}
+![View release](fig/releases_view.png){alt='View release after publishing'}
 
 Congratulations, you have made your first release! You can share the link to this page
 with others if you want to notify them of the release. Alternatively, users can find

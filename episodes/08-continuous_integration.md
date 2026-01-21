@@ -266,7 +266,7 @@ Let's say we've created a new branch that we want to merge into main. If we crea
 pull request but our CI is failing in the new branch, we'll see something like the
 following:
 
-![Panel from GitHub pull request user interface showing failing CI checks](fig/pr_failing_ci.png){alt='Failing CI'}
+![Panel from GitHub pull request user interface showing failing CI checks](fig/pr_failing_ci.png){alt='Panel from GitHub pull request user interface showing failing CI checks'}
 
 GitHub makes the failure of the CI pretty apparent but, by default, it will still allow
 the PR to be merged. At this point the CI is a useful aid to peer review but we can
@@ -297,7 +297,8 @@ PR's:
 Now a CI failure for a pull request looks like this:
 
 ![Panel from GitHub pull request user interface showing failing CI checks with merging blocked due to a branch
-protection rule](fig/pr_protected_failing_ci.png){alt='Failing CI'}
+protection rule](fig/pr_protected_failing_ci.png){alt='Panel from GitHub pull request user interface showing failing CI checks with merging blocked due to a branch
+protection rule'}
 
 Now it's much harder to get anything past peer review that doesn't meet the required
 standard. There remains an option to "bypass branch protections" but this is only

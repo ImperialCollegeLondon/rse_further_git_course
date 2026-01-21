@@ -32,14 +32,14 @@ in sync.
   branch to its upstream branch: `git push`.
 - Changes in the staging area will not be synchronised.
 
-  ![Push a branch](fig/push.png){alt='Git collaborative'}
+  ![Summary of pushing a branch](fig/push.png){alt='Summary of pushing a branch'}
 
 - If the current branch has no upstream yet, you can configure one by doing
   `git push --set-upstream origin BRANCH_NAME`, as done with `main` in the example
   below. The `--set-upstream` flag can be replaced by a shortcut `-u`. So you can
   use `git push -u origin BRANCH_NAME` instead.
 
-  ![Push a branch without upstream yet](fig/push_u.png){alt='Git collaborative'}
+  ![Push a branch without upstream yet](fig/push_u.png){alt='Push a branch without upstream yet'}
 
 - `push` only operates on your current branch. If you want to push another
   branch, you have to `checkout` that branch first.
@@ -149,7 +149,7 @@ branch 'spicy' set up to track 'origin/spicy'.
   them in the same way described above.
 - You can get a new branch that exists only in `origin` directly with `git switch BRANCH_NAME` which will automatically create a local branch with the same name
 
-![Pull remote changes](fig/pull.png){alt='Git collaborative'}
+![Pull remote changes](fig/pull.png){alt='Pull remote changes'}
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
