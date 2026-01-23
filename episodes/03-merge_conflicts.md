@@ -60,7 +60,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with merge conflict](fig/branch8.png){alt='Repository with merge conflict'}
+![Repository with a merge conflict](fig/branch8.png){alt='Repository with a merge conflict'}
 
 Now we try and merge `experiment` into `main`:
 

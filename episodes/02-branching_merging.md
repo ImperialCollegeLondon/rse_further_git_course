@@ -41,7 +41,7 @@ point and start using branches.
 
 In a linear history, we have something like:
 
-![Linear git repository](fig/branch1.png){alt='Linear git history'}
+![Linear git history](fig/branch1.png){alt='Linear git history'}
 
 - Commits are depicted here as little boxes with abbreviated hashes.
 - Here the branch `main` points to a commit.
@@ -199,7 +199,7 @@ now working with, and any commits we make will be part of the `experiment`
 branch. As shown before which branch is currently checked out can be confirmed
 with `git branch`.
 
-![Repository with HEAD at new experiment branch](fig/branch3.png){alt='Repository with HEAD at new experiment branch'}
+![Repository with HEAD at the new experiment branch](fig/branch3.png){alt='Repository with HEAD at the new experiment branch'}
 
 Now when we make new commits they will be part of the `experiment` branch. To
 test this let's add 1 tbsp coriander to `ingredients.md`. Stage this and commit
@@ -219,7 +219,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with one commit on experiment branch](fig/branch4.png){alt='Repository with one commit on experiment branch'}
+![Repository with one commit on the experiment branch](fig/branch4.png){alt='Repository with one commit on the experiment branch'}
 
 Note that the main branch is unchanged whilst a new commit (labelled `e1`) has
 been created as part of the experiment branch.
@@ -255,7 +255,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with one commit on main and experiment branches](fig/branch5.png){alt='Repository with one commit on main and experiment branches'}
+![Repository with one commit each on the main and experiment branches](fig/branch5.png){alt='Repository with one commit each on the main and experiment branches'}
 
 ## Merging
 

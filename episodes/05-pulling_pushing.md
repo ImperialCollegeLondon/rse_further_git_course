@@ -39,7 +39,7 @@ in sync.
   below. The `--set-upstream` flag can be replaced by a shortcut `-u`. So you can
   use `git push -u origin BRANCH_NAME` instead.
 
-  ![Push a branch without upstream yet](fig/push_u.png){alt='Push a branch without upstream yet'}
+  ![Push a branch without an upstream yet](fig/push_u.png){alt='Push a branch without an upstream yet'}
 
 - `push` only operates on your current branch. If you want to push another
   branch, you have to `checkout` that branch first.
