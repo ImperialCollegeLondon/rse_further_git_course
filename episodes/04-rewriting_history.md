@@ -160,7 +160,7 @@ detailed description.
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 For details on how to choose which text editor Git will use, see [the setup
-instructions](lesson-setup).
+instructions](../index.md).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
