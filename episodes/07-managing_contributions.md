@@ -220,7 +220,7 @@ message of the PR or in a comment within the PR.
 
 - Forks and pull requests are GitHub concepts, not git.
 - Pull requests can be opened to branches on your own repository or any other fork.
-- Some branches are restricted, meaning that PR cannot be open against them.
+- Some branches are restricted, meaning that PRs cannot be opened against them.
 - Merging a PR does not delete the original branch, just modifies the target one.
 - PRs are often created to solve specific issues.
 

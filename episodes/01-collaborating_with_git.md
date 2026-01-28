@@ -31,7 +31,7 @@ Developer 1 -- "I need a new type of analysis to finish my thesis"
 Developer 2 -- "My problem is bigger. I need better performance to process all my
 data"
 
-Even when working independently you might find you need to need to work on
+Even when working independently you might find you need to work on
 different things at different times. This is greatly compounded however when you
 have multiple developers all wanting to contribute to the same Git repository.
 
