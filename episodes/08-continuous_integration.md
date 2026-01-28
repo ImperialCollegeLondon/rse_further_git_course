@@ -228,7 +228,7 @@ markdown files against a set of criteria.
 4. Stage and commit `ci.yml` then push the repository to GitHub.
 
 5. Your first CI run should have been triggered! Quickly, go to your repository on
-  GitHub and select the `Actions` tab. You should see a workflow with a glowing amber
+  GitHub and select the "Actions" tab. You should see a workflow with a glowing amber
   dot next to the commit message you provided. This means that the workflow is
   running.
 
@@ -238,12 +238,12 @@ markdown files against a set of criteria.
   they run.
 
 7. Before long the workflow will complete but, alas, it should be a failure. Go back
-  to the front page of the repository by clicking the `Code` tab. You should see your
+  to the front page of the repository by clicking the "Code" tab. You should see your
   commit marked with a red cross to indicate that it failed the CI. You should also
   receive a notification (after a few minutes) via the email address associated with
   your GitHub account.
 
-8. Return to the `Actions` tab and open the failed workflow. You should see a handy
+8. Return to the "Actions" tab and open the failed workflow. You should see a handy
   summary of the errors that were encountered during the `markdownlint` job. You now
   need to correct both `ingredients.md` and `instructions.md` so that the CI will
   pass. Hint: see [markdownlint-cli: Rule MD041][md041].
@@ -251,7 +251,7 @@ markdown files against a set of criteria.
 9. Once you've modified the files stage, commit and push once again. Your next CI run
   should succeed. If it doesn't then try modifying the files again.
 
-10. Once the CI is passing, go back to the `Code` tab and you should see a nice green
+10. Once the CI is passing, go back to the "Code" tab and you should see a nice green
   tick next to your latest commit.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -285,14 +285,15 @@ powerful.
 Let's see how to create a branch protection rule and how this changes the behaviour of
 PR's:
 
-1. Go to the `Settings` tab and select `Branches` from the left-hand side.
-2. Select `Add classic branch protection rule`.
-3. Set `main` as the `Branch name pattern`. Check the box for `Require a pull request before merging` and in the options that appear below it, you can select
-  the number of approvals required for merging (default is 1).
-4. Also check the box for `Require status checks to pass before merging`.
-  In the extra options that appear beneath, check `Require branches to be up to date before merging`. Using the search bar, find and select the
-  names of any CI jobs that must pass to allow merging.
-5. Scroll down and press `Create`. GitHub may ask you to confirm your password.
+1. Go to the "Settings" tab and select "Branches" from the left-hand side.
+2. Select "Add classic branch protection rule".
+3. Set `main` as the "Branch name pattern". Check the box for "Require a pull request before
+   merging" and in the options that appear below it, you can select the number of approvals required
+   for merging (default is 1).
+4. Also check the box for "Require status checks to pass before merging". In the extra options that
+   appear beneath, check "Require branches to be up to date before merging". Using the search bar,
+   find and select the names of any CI jobs that must pass to allow merging.
+5. Scroll down and press "Create". GitHub may ask you to confirm your password.
 
 Now a CI failure for a pull request looks like this:
 
