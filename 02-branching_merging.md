@@ -41,7 +41,7 @@ point and start using branches.
 
 In a linear history, we have something like:
 
-![Linear git repository](fig/branch1.png){alt='Linear'}
+![Linear git history](fig/branch1.png){alt='Linear git history'}
 
 - Commits are depicted here as little boxes with abbreviated hashes.
 - Here the branch `main` points to a commit.
@@ -66,7 +66,7 @@ The strength of version control is that it permits the researcher to **isolate
 different tracks of work**, which can later be merged to create a composite
 version that contains all changes:
 
-![Example of commit history with multiple branches and merges](fig/branching_full_example.png){alt='Git collaborative'}
+![Example of commit history with multiple branches and merges](fig/branching_full_example.png){alt='Example of commit history with multiple branches and merges'}
 
 - We see branching points and merging points.
 - Mainline development is usually carried out in a branch called `main`.
@@ -157,7 +157,7 @@ We have four commits and you can see that we are working on the main branch
 from `HEAD -> main` next to the most recent commit. This can be represented
 diagrammatically:
 
-![Repository before branching](fig/branch1.png){alt='Git collaborative'}
+![Repository before branching](fig/branch1.png){alt='Repository before branching'}
 
 Let's create a branch called `experiment` where we try out adding some
 coriander to `ingredients.md`.
@@ -178,7 +178,7 @@ Notice that the name of our new branch has appeared next to latest commit. HEAD
 is still pointing to main however denoting that we have created a new branch but
 we're not using it yet. This looks like:
 
-![Repository after experiment branch creation](fig/branch2.png){alt='Git collaborative'}
+![Repository after experiment branch creation](fig/branch2.png){alt='Repository after experiment branch creation'}
 
 To start using the new branch we need to check it out:
 
@@ -199,7 +199,7 @@ now working with, and any commits we make will be part of the `experiment`
 branch. As shown before which branch is currently checked out can be confirmed
 with `git branch`.
 
-![Repository with HEAD at new experiment branch](fig/branch3.png){alt='Git collaborative'}
+![Repository with HEAD at the new experiment branch](fig/branch3.png){alt='Repository with HEAD at the new experiment branch'}
 
 Now when we make new commits they will be part of the `experiment` branch. To
 test this let's add 1 tbsp coriander to `ingredients.md`. Stage this and commit
@@ -219,7 +219,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with one commit on experiment branch](fig/branch4.png){alt='Git collaborative'}
+![Repository with one commit on the experiment branch](fig/branch4.png){alt='Repository with one commit on the experiment branch'}
 
 Note that the main branch is unchanged whilst a new commit (labelled `e1`) has
 been created as part of the experiment branch.
@@ -255,7 +255,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with one commit on main and experiment branches](fig/branch5.png){alt='Git collaborative'}
+![Repository with one commit each on the main and experiment branches](fig/branch5.png){alt='Repository with one commit each on the main and experiment branches'}
 
 ## Merging
 
@@ -292,7 +292,7 @@ git graph
 * ae3255a Adding ingredients and instructions
 ```
 
-![Repository with first merge](fig/branch6.png){alt='Git collaborative'}
+![Repository with first merge](fig/branch6.png){alt='Repository with first merge'}
 
 Merging creates a new commit in whichever branch is being **merged into** that
 contains the combined changes from both branches. The commit has been
@@ -310,7 +310,7 @@ As the experiment branch is still present there is no reason further commits
 can't be added to it. Create a new commit in the `experiment` branch adjusting
 the amount of coriander in the recipe. Then merge `experiment` into `main`.
 
-![Repository with second merge](fig/branch7.png){alt='Git collaborative'}
+![Repository with second merge](fig/branch7.png){alt='Repository with second merge'}
 
 :::::::::::::::  solution
 

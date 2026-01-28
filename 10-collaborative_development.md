@@ -39,11 +39,11 @@ Form groups of 3-4 people and choose one to act as Administrator.
 
 - Create a new repository using the template [Book of Recipes repository](https://github.com/ImperialCollegeLondon/book_of_recipes) which has the skeleton of the book. (**Note**: Click on the green  "Use this template" button on the top right of the Book of Recipes repository and then select "Create a new repository")
 
-  ![](fig/use_this_template.png "Use this template"){alt='Use this template' class="img-responsive" style="float: left; margin-right: 10px; width: 20%;"}
+  ![Use this template](fig/use_this_template.png){alt='Use this template' width=40%}
 
 - Set the owner of the new repository to your own GitHub username.
 
-- Set the name of the repository to "book\_of\_recipes".
+- Set the name of the repository to `book_of_recipes`.
 
 - Set the description to something like "Repository for the exercises of the Further Git Course".
 
