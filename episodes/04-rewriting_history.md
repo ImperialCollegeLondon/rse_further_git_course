@@ -123,7 +123,7 @@ stashes changes in either case.
 This is the simplest method of rewriting history: it lets you amend the last commit you
 made, maybe adding some files you forgot to stage or fixing a typo in the commit message.
 
-After you have made those last minute changes - and `staged` them, if needed - all you
+After you have made those last minute changes -- and `staged` them, if needed -- all you
 need to do to amend the last commit while keeping the same commit message is:
 
 ```bash
@@ -179,7 +179,7 @@ git reset --soft HEAD^
 ```
 
 This resets the staging area to match the most recent commit, but leaves the working
-directory unchanged - so no information is lost. Now you can review the files you
+directory unchanged -- so no information is lost. Now you can review the files you
 modified, make more changes or whatever you like. When you are ready, you stage and
 commit your files, as usual. You can go back 2 commits, 3, etc with `HEAD^2`,
 `HEAD^3`... but the further you go, the more chances there are to leave commits

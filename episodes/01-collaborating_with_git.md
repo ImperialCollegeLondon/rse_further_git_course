@@ -26,9 +26,9 @@ Each of these examples will be shown again in a subsequent section.
 
 ### Differing Goals and Objectives
 
-Developer 1 - "I need a new type of analysis to finish my thesis"
+Developer 1 -- "I need a new type of analysis to finish my thesis"
 
-Developer 2 - "My problem is bigger. I need better performance to process all my
+Developer 2 -- "My problem is bigger. I need better performance to process all my
 data"
 
 Even when working independently you might find you need to need to work on
@@ -44,9 +44,9 @@ about sorting out conflicts later.
 
 ### Access and Permissions
 
-Developer 1 - "Just email me your changes. I'll save them into the master copy."
+Developer 1 -- "Just email me your changes. I'll save them into the master copy."
 
-Developer 2 - "Ok... so why do all of my changes have to go through you?"
+Developer 2 -- "Ok... so why do all of my changes have to go through you?"
 
 An important practical consideration is where to store the code that you're
 collaborating on. Usually you want everyone's contributions to end up in one
@@ -60,9 +60,9 @@ within a project.
 
 ### Need to Coordinate Efforts
 
-Developer 1 - "I'm still waiting on those changes to the data analysis workflow."
+Developer 1 -- "I'm still waiting on those changes to the data analysis workflow."
 
-Developer 2 - "Huh? I added those a month ago."
+Developer 2 -- "Huh? I added those a month ago."
 
 Successfully coordinating the efforts of multiple contributors is a key
 challenge to avoid delay and duplication of work. GitHub can help here via
@@ -70,9 +70,9 @@ challenge to avoid delay and duplication of work. GitHub can help here via
 
 ### Different Points of View
 
-Developer 1 - "Here's what I've been working on for the last month."
+Developer 1 -- "Here's what I've been working on for the last month."
 
-Developer 2 - "Hmmm... if we tweak things here then it might be faster."
+Developer 2 -- "Hmmm... if we tweak things here then it might be faster."
 
 Two heads, as they say, are better than one and writing software is no
 exception. There is no greater benefit to collaboration than being able to pick
@@ -84,19 +84,19 @@ GitHub provides functionality for peer review via **Pull Requests**.
 
 ### Individual styles and preferences
 
-Developer 1 - "Tabs!"
+Developer 1 -- "Tabs!"
 
-Developer 2 - "Spaces!"
+Developer 2 -- "Spaces!"
 
-Developer 1 - "TABS!"
+Developer 1 -- "TABS!"
 
-Developer 2 - "SPACES!"
+Developer 2 -- "SPACES!"
 
 Whilst it may seem trivial the tabs vs. spaces controversy is a long standing
 debate. A quick google search will reveal any number of discussions on the
 topic. Ultimately, it doesn't matter, but trouble can arise when everyone
 follows their own preference and you end up with a messy combination. The same
-logic applies in many places - consistency is king!
+logic applies in many places -- consistency is king!
 
 To get around these sorts of issues it's a good idea to make a choice and then
 automatically enforce it. GitHub Actions is a **Continuous Integration** system

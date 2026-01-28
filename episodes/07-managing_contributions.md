@@ -27,9 +27,9 @@ exercises: 10
 
 ## Access and Permissions
 
-Developer 1 - "Just email me your changes. I'll save them into the master copy."
+Developer 1 -- "Just email me your changes. I'll save them into the master copy."
 
-Developer 2 - "Ok... so why do all of my changes have to go through you?"
+Developer 2 -- "Ok... so why do all of my changes have to go through you?"
 
 [**GitHub**](https://github.com) gives you a central place to collaborate!
 
@@ -40,9 +40,9 @@ Developer 2 - "Ok... so why do all of my changes have to go through you?"
 
 ## Need to Coordinate Efforts
 
-Developer 1 - "I'm still waiting on those changes to the data analysis workflow."
+Developer 1 -- "I'm still waiting on those changes to the data analysis workflow."
 
-Developer 2 - "Huh? I added those a month ago."
+Developer 2 -- "Huh? I added those a month ago."
 
 [**Issues**](https://docs.github.com/en/issues) help keep track of tasks.
 
@@ -53,9 +53,9 @@ Developer 2 - "Huh? I added those a month ago."
 
 ## Different Points of View
 
-Developer 1 - "Here's what I've been working on for the last month."
+Developer 1 -- "Here's what I've been working on for the last month."
 
-Developer 2 - "Hmmm... if we tweak things here then it might be faster."
+Developer 2 -- "Hmmm... if we tweak things here then it might be faster."
 
 [**Pull Requests**](https://docs.github.com/en/pull-requests) allow for easily reviewing collaborators' changes.
 
@@ -158,7 +158,7 @@ Let's revisit our `recipe` repository.
 
 ## Dive deeper
 
-For a deeper dive into this "feature branch workflow", have a read of the Atlassian example - [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+For a deeper dive into this "feature branch workflow", have a read of the Atlassian example -- [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -205,7 +205,7 @@ As with the **shared repository model**, Atlassian has a nice [Forking Workflow]
 
 ## Closing GitHub Issues
 
-The introductory course - [Using GitHub Issues](https://imperialcollegelondon.github.io/rse_introductory_git_course/l3-01-issues/index.html) - describes how issues work on GitHub, but one handy functionality that is specific to pull requests is being able to automatically close an issue from a pull request.
+The introductory course -- [Using GitHub Issues](https://imperialcollegelondon.github.io/rse_introductory_git_course/l3-01-issues/index.html) -- describes how issues work on GitHub, but one handy functionality that is specific to pull requests is being able to automatically close an issue from a pull request.
 
 If a PR tackles a particular issue, you can automatically close that issue
 when the PR is merged by indicating `Close #ISSUE_NUMBER` in any commit

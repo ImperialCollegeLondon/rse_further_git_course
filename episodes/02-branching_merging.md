@@ -28,9 +28,9 @@ exercises: 10
 
 ## Differing Goals and Objectives
 
-Developer 1 - "I need a new type of analysis to finish my thesis"
+Developer 1 -- "I need a new type of analysis to finish my thesis"
 
-Developer 2 - "My problem is bigger. I need better performance to process all my
+Developer 2 -- "My problem is bigger. I need better performance to process all my
 data"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -228,7 +228,7 @@ As mentioned previously, one of the advantages of using branches is working on
 different features in parallel. You may have already spotted the typo in
 `ingredients.md` but let's say that we've only just seen it in the midst of
 our work on the `experiment` branch. We could correct the typo with a new commit
-in `experiment` but it doesn't fit in very well here - if we decide to discard
+in `experiment` but it doesn't fit in very well here -- if we decide to discard
 our experiment then we also lose the correction. Instead it makes much more
 sense to create a correcting commit in `main`. First, switch to the main branch:
 

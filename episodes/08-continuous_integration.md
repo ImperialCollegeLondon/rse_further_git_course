@@ -28,13 +28,13 @@ exercises: 10
 
 ## Individual styles and preferences
 
-Developer 1 - "Tabs!"
+Developer 1 -- "Tabs!"
 
-Developer 2 - "Spaces!"
+Developer 2 -- "Spaces!"
 
-Developer 1 - "TABS!"
+Developer 1 -- "TABS!"
 
-Developer 2 - "SPACES!"
+Developer 2 -- "SPACES!"
 
 [GitHub Actions] automatically runs checks on your code.
 
@@ -233,7 +233,7 @@ markdown files against a set of criteria.
   running.
 
 6. Click on the commit message. You now get a breakdown of the individual jobs within
-  your workflow. It's only one job in this case - `markdownlint` - click on it to see
+  your workflow. It's only one job in this case -- `markdownlint` -- click on it to see
   its progress. You can see the individual steps, and the output that they produce as
   they run.
 

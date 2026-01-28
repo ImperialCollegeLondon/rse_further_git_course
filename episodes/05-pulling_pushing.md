@@ -144,7 +144,7 @@ branch 'spicy' set up to track 'origin/spicy'.
   see how your local and remote branch compare in terms of commit history.
 - It's best to make sure your repository is in a clean state with no staged or unstaged
   changes.
-- If the local and upstream branches have diverged - have different commit history - the
+- If the local and upstream branches have diverged -- have different commit history -- the
   command will attempt to merge both. If there are conflicts, you will need deal with
   them in the same way described above.
 - You can get a new branch that exists only in `origin` directly with `git switch BRANCH_NAME` which will automatically create a local branch with the same name

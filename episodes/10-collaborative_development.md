@@ -104,7 +104,7 @@ instructions to make sure that your own forks are kept up to date.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Working collaboratively requires coordination - use Issues to discuss with your colleagues who is doing what.
-- Notifications from GitHub are very useful but also overwhelming when there are many contributions - you will need to manage them.
+- Working collaboratively requires coordination -- use Issues to discuss with your colleagues who is doing what.
+- Notifications from GitHub are very useful but also overwhelming when there are many contributions -- you will need to manage them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
