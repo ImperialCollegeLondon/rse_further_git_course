@@ -43,7 +43,7 @@ Form groups of 3-4 people and choose one to act as Administrator.
 
 - Set the owner of the new repository to your own GitHub username.
 
-- Set the name of the repository to "book of recipes".
+- Set the name of the repository to `book_of_recipes`.
 
 - Set the description to something like "Repository for the exercises of the Further Git Course".
 
