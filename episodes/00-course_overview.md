@@ -72,7 +72,7 @@ style.
 
 
 [intro-course]: https://imperialcollegelondon.github.io/rse_introductory_git_course/
-[a handout sheet]: handouts/git-course-handout.pdf
+[a handout sheet]: files/git-course-handout.pdf
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
