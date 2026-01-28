@@ -750,7 +750,7 @@ adding commits is good enough. But chances are that you will want to
 unleash all the power of <code>git</code> at some point and start using
 branches.</p>
 <p>In a linear history, we have something like:</p>
-<figure><img src="../fig/branch1.png" alt="Linear" class="figure mx-auto d-block"><div class="figcaption">Linear git repository</div>
+<figure><img src="../fig/branch1.png" alt="Linear git history" class="figure mx-auto d-block"><div class="figcaption">Linear git history</div>
 </figure><ul>
 <li>Commits are depicted here as little boxes with abbreviated
 hashes.</li>
@@ -777,7 +777,7 @@ features.</li>
 <p>The strength of version control is that it permits the researcher to
 <strong>isolate different tracks of work</strong>, which can later be
 merged to create a composite version that contains all changes:</p>
-<figure><img src="../fig/branching_full_example.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Example of commit history with multiple branches
+<figure><img src="../fig/branching_full_example.png" alt="Example of commit history with multiple branches and merges" class="figure mx-auto d-block"><div class="figcaption">Example of commit history with multiple branches
 and merges</div>
 </figure><ul>
 <li>We see branching points and merging points.</li>
@@ -888,7 +888,7 @@ terminal without having to remember a long Git command:</p>
 <p>We have four commits and you can see that we are working on the main
 branch from <code>HEAD -&gt; main</code> next to the most recent commit.
 This can be represented diagrammatically:</p>
-<figure><img src="../fig/branch1.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository before branching</div>
+<figure><img src="../fig/branch1.png" alt="Repository before branching" class="figure mx-auto d-block"><div class="figcaption">Repository before branching</div>
 </figure><p>Let’s create a branch called <code>experiment</code> where we try out
 adding some coriander to <code>ingredients.md</code>.</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -908,7 +908,7 @@ adding some coriander to <code>ingredients.md</code>.</p>
 <p>Notice that the name of our new branch has appeared next to latest
 commit. HEAD is still pointing to main however denoting that we have
 created a new branch but we’re not using it yet. This looks like:</p>
-<figure><img src="../fig/branch2.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository after experiment branch
+<figure><img src="../fig/branch2.png" alt="Repository after experiment branch creation" class="figure mx-auto d-block"><div class="figcaption">Repository after experiment branch
 creation</div>
 </figure><p>To start using the new branch we need to check it out:</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -930,7 +930,7 @@ indicating that we are now working with, and any commits we make will be
 part of the <code>experiment</code> branch. As shown before which branch
 is currently checked out can be confirmed with
 <code>git branch</code>.</p>
-<figure><img src="../fig/branch3.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with HEAD at new experiment
+<figure><img src="../fig/branch3.png" alt="Repository with HEAD at the new experiment branch" class="figure mx-auto d-block"><div class="figcaption">Repository with HEAD at the new experiment
 branch</div>
 </figure><p>Now when we make new commits they will be part of the
 <code>experiment</code> branch. To test this let’s add 1 tbsp coriander
@@ -952,7 +952,7 @@ message “try with some coriander”.</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch4.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on experiment
+<figure><img src="../fig/branch4.png" alt="Repository with one commit on the experiment branch" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on the experiment
 branch</div>
 </figure><p>Note that the main branch is unchanged whilst a new commit (labelled
 <code>e1</code>) has been created as part of the experiment branch.</p>
@@ -991,7 +991,7 @@ ingredient):</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch5.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on main and
+<figure><img src="../fig/branch5.png" alt="Repository with one commit each on the main and experiment branches" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit each on the main and
 experiment branches</div>
 </figure></section><section><h2 class="section-heading" id="merging">Merging<a class="anchor" aria-label="anchor" href="#merging"></a>
 </h2>
@@ -1032,7 +1032,7 @@ Merge made by the 'ort' strategy.
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch6.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with first merge</div>
+<figure><img src="../fig/branch6.png" alt="Repository with first merge" class="figure mx-auto d-block"><div class="figcaption">Repository with first merge</div>
 </figure><p>Merging creates a new commit in whichever branch is being
 <strong>merged into</strong> that contains the combined changes from
 both branches. The commit has been highlighted in a separate colour
@@ -1053,7 +1053,7 @@ repository.</p>
 commits can’t be added to it. Create a new commit in the
 <code>experiment</code> branch adjusting the amount of coriander in the
 recipe. Then merge <code>experiment</code> into <code>main</code>.</p>
-<figure><img src="../fig/branch7.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with second merge</div>
+<figure><img src="../fig/branch7.png" alt="Repository with second merge" class="figure mx-auto d-block"><div class="figcaption">Repository with second merge</div>
 </figure>
 </div>
 </div>
@@ -1175,7 +1175,7 @@ of the changes made in a branch</li>
 </div>
 </section></section><section id="aio-03-merge_conflicts"><p>Content from <a href="03-merge_conflicts.html">Merge conflicts</a></p>
 <hr>
-<p>Last updated on 2025-11-13 |
+<p>Last updated on 2026-01-28 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/03-merge_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -1254,7 +1254,7 @@ should be discarded.</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch8.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with merge conflict</div>
+<figure><img src="../fig/branch8.png" alt="Repository with a merge conflict" class="figure mx-auto d-block"><div class="figcaption">Repository with a merge conflict</div>
 </figure><p>Now we try and merge <code>experiment</code> into
 <code>main</code>:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -1367,7 +1367,7 @@ Let’s resolve it by choosing the version from the main branch. Edit
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch9.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with third merge</div>
+<figure><img src="../fig/branch9.png" alt="Repository with third merge" class="figure mx-auto d-block"><div class="figcaption">Repository with third merge</div>
 </figure><div id="now-you-try" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -2161,7 +2161,7 @@ changes</strong> in your current branch to its upstream branch:
 <code>git push</code>.</p></li>
 <li>
 <p>Changes in the staging area will not be synchronised.</p>
-<figure><img src="../fig/push.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Push a branch</div>
+<figure><img src="../fig/push.png" alt="Summary of pushing a branch" class="figure mx-auto d-block"><div class="figcaption">Summary of pushing a branch</div>
 </figure>
 </li>
 <li>
@@ -2171,7 +2171,7 @@ done with <code>main</code> in the example below. The
 <code>--set-upstream</code> flag can be replaced by a shortcut
 <code>-u</code>. So you can use
 <code>git push -u origin BRANCH_NAME</code> instead.</p>
-<figure><img src="../fig/push_u.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Push a branch without upstream yet</div>
+<figure><img src="../fig/push_u.png" alt="Push a branch without an upstream yet" class="figure mx-auto d-block"><div class="figcaption">Push a branch without an upstream yet</div>
 </figure>
 </li>
 <li><p><code>push</code> only operates on your current branch. If you
@@ -2311,7 +2311,7 @@ above.</li>
 directly with <code>git switch BRANCH_NAME</code> which will
 automatically create a local branch with the same name</li>
 </ul>
-<figure><img src="../fig/pull.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Pull remote changes</div>
+<figure><img src="../fig/pull.png" alt="Pull remote changes" class="figure mx-auto d-block"><div class="figcaption">Pull remote changes</div>
 </figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2583,7 +2583,7 @@ the branch containing your changes into the main branch.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>$ git branch more_avocados</code></li>
@@ -3067,7 +3067,7 @@ can be even more useful when combined with pull requests.</p>
 <p>Let’s say we’ve created a new branch that we want to merge into main.
 If we create a pull request but our CI is failing in the new branch,
 we’ll see something like the following:</p>
-<figure><img src="../fig/pr_failing_ci.png" alt="Failing CI" class="figure mx-auto d-block"><div class="figcaption">Panel from GitHub pull request user interface
+<figure><img src="../fig/pr_failing_ci.png" alt="Panel from GitHub pull request user interface showing failing CI checks" class="figure mx-auto d-block"><div class="figcaption">Panel from GitHub pull request user interface
 showing failing CI checks</div>
 </figure><p>GitHub makes the failure of the CI pretty apparent but, by default,
 it will still allow the PR to be merged. At this point the CI is a
@@ -3104,7 +3104,7 @@ merging.</li>
 password.</li>
 </ol>
 <p>Now a CI failure for a pull request looks like this:</p>
-<figure><img src="../fig/pr_protected_failing_ci.png" alt="Failing CI" class="figure mx-auto d-block"><div class="figcaption">Panel from GitHub pull request user interface
+<figure><img src="../fig/pr_protected_failing_ci.png" alt="Panel from GitHub pull request user interface showing failing CI checks with merging blocked due to a branch protection rule" class="figure mx-auto d-block"><div class="figcaption">Panel from GitHub pull request user interface
 showing failing CI checks with merging blocked due to a branch
 protection rule</div>
 </figure><p>Now it’s much harder to get anything past peer review that doesn’t
@@ -3704,16 +3704,16 @@ repository (see the link in the command output). <a href="https://github.com/ale
 example.</a></p>
 <p>If you look in the right-hand pane, under “Releases”, you should now
 see “1 tags”:</p>
-<figure><img src="../fig/releases_repo.png" alt="1 tags" class="figure mx-auto d-block"><div class="figcaption">1 tags</div>
+<figure><img src="../fig/releases_repo.png" alt="Release page showing 1 tags" class="figure mx-auto d-block"><div class="figcaption">Release page showing 1 tags</div>
 </figure><p>This refers to the <code>v0.0.1</code> tag you just pushed. (If there
 are two tags, you may have forgotten to delete the <code>tasty</code>
 tag, which doesn’t matter much.)</p>
 <p>Under “1 tags”, there is a link entitled “Create a new release”.
 Click it and you should see something like the following:</p>
-<figure><img src="../fig/releases_new_release.png" alt="Creating a new release" class="figure mx-auto d-block"><div class="figcaption">Creating a new release</div>
+<figure><img src="../fig/releases_new_release.png" alt="Page for creating a new release" class="figure mx-auto d-block"><div class="figcaption">Creating a new release</div>
 </figure><p>Click “Choose a tag” then select your tag “v0.0.1” from the dropdown
 list:</p>
-<figure><img src="../fig/releases_choose_a_tag.png" alt="Choose your tag" class="figure mx-auto d-block"><div class="figcaption">Choose your tag</div>
+<figure><img src="../fig/releases_choose_a_tag.png" alt="Process of choosing your tag" class="figure mx-auto d-block"><div class="figcaption">Choose your tag</div>
 </figure><p>For the release title, you can just put “v0.0.1” again. Then add a
 description of your choosing. (You can check the “Set as pre-release”
 box if you want to indicate to your users that the recipe isn’t
@@ -3724,7 +3724,7 @@ could upload it.</p>
 <p>When you’re finished, click “Publish release”:</p>
 <figure><img src="../fig/releases_publish.png" alt="Publish your release" class="figure mx-auto d-block"><div class="figcaption">Publish your release</div>
 </figure><p>Now you should be redirected to a page that looks like this:</p>
-<figure><img src="../fig/releases_view.png" alt="View release" class="figure mx-auto d-block"><div class="figcaption">View release</div>
+<figure><img src="../fig/releases_view.png" alt="View release after publishing" class="figure mx-auto d-block"><div class="figcaption">View release</div>
 </figure><p>Congratulations, you have made your first release! You can share the
 link to this page with others if you want to notify them of the release.
 Alternatively, users can find your release from the repo’s main page by
@@ -3840,11 +3840,13 @@ Recipes repository</a> which has the skeleton of the book.
 (<strong>Note</strong>: Click on the green “Use this template” button on
 the top right of the Book of Recipes repository and then select “Create
 a new repository”)</p>
-<figure><img src="../fig/use_this_template.png" title="Use this template" class="img-responsive figure mx-auto d-block" style="float: left; margin-right: 10px; width: 20%;" alt="Use this template"></figure>
+<figure><img src="../fig/use_this_template.png" style="width:40.0%" alt="Use this template" class="figure mx-auto d-block"><div class="figcaption">Use this template</div>
+</figure>
 </li>
 <li><p>Set the owner of the new repository to your own GitHub
 username.</p></li>
-<li><p>Set the name of the repository to “book_of_recipes”.</p></li>
+<li><p>Set the name of the repository to
+<code>book_of_recipes</code>.</p></li>
 <li><p>Set the description to something like “Repository for the
 exercises of the Further Git Course”.</p></li>
 <li><p>Make sure to select the “Public” option for your repository’s

@@ -436,7 +436,7 @@ adding commits is good enough. But chances are that you will want to
 unleash all the power of <code>git</code> at some point and start using
 branches.</p>
 <p>In a linear history, we have something like:</p>
-<figure><img src="../fig/branch1.png" alt="Linear" class="figure mx-auto d-block"><div class="figcaption">Linear git repository</div>
+<figure><img src="../fig/branch1.png" alt="Linear git history" class="figure mx-auto d-block"><div class="figcaption">Linear git history</div>
 </figure><ul><li>Commits are depicted here as little boxes with abbreviated
 hashes.</li>
 <li>Here the branch <code>main</code> points to a commit.</li>
@@ -458,7 +458,7 @@ features.</li>
 </ul><p>The strength of version control is that it permits the researcher to
 <strong>isolate different tracks of work</strong>, which can later be
 merged to create a composite version that contains all changes:</p>
-<figure><img src="../fig/branching_full_example.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Example of commit history with multiple branches
+<figure><img src="../fig/branching_full_example.png" alt="Example of commit history with multiple branches and merges" class="figure mx-auto d-block"><div class="figcaption">Example of commit history with multiple branches
 and merges</div>
 </figure><ul><li>We see branching points and merging points.</li>
 <li>Mainline development is usually carried out in a branch called
@@ -561,7 +561,7 @@ terminal without having to remember a long Git command:</p>
 <p>We have four commits and you can see that we are working on the main
 branch from <code>HEAD -&gt; main</code> next to the most recent commit.
 This can be represented diagrammatically:</p>
-<figure><img src="../fig/branch1.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository before branching</div>
+<figure><img src="../fig/branch1.png" alt="Repository before branching" class="figure mx-auto d-block"><div class="figcaption">Repository before branching</div>
 </figure><p>Let’s create a branch called <code>experiment</code> where we try out
 adding some coriander to <code>ingredients.md</code>.</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -581,7 +581,7 @@ adding some coriander to <code>ingredients.md</code>.</p>
 <p>Notice that the name of our new branch has appeared next to latest
 commit. HEAD is still pointing to main however denoting that we have
 created a new branch but we’re not using it yet. This looks like:</p>
-<figure><img src="../fig/branch2.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository after experiment branch
+<figure><img src="../fig/branch2.png" alt="Repository after experiment branch creation" class="figure mx-auto d-block"><div class="figcaption">Repository after experiment branch
 creation</div>
 </figure><p>To start using the new branch we need to check it out:</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -603,7 +603,7 @@ indicating that we are now working with, and any commits we make will be
 part of the <code>experiment</code> branch. As shown before which branch
 is currently checked out can be confirmed with
 <code>git branch</code>.</p>
-<figure><img src="../fig/branch3.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with HEAD at new experiment
+<figure><img src="../fig/branch3.png" alt="Repository with HEAD at the new experiment branch" class="figure mx-auto d-block"><div class="figcaption">Repository with HEAD at the new experiment
 branch</div>
 </figure><p>Now when we make new commits they will be part of the
 <code>experiment</code> branch. To test this let’s add 1 tbsp coriander
@@ -625,7 +625,7 @@ message “try with some coriander”.</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch4.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on experiment
+<figure><img src="../fig/branch4.png" alt="Repository with one commit on the experiment branch" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on the experiment
 branch</div>
 </figure><p>Note that the main branch is unchanged whilst a new commit (labelled
 <code>e1</code>) has been created as part of the experiment branch.</p>
@@ -664,7 +664,7 @@ ingredient):</p>
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch5.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit on main and
+<figure><img src="../fig/branch5.png" alt="Repository with one commit each on the main and experiment branches" class="figure mx-auto d-block"><div class="figcaption">Repository with one commit each on the main and
 experiment branches</div>
 </figure></section><section><h2 class="section-heading" id="merging">Merging<a class="anchor" aria-label="anchor" href="#merging"></a></h2>
 <hr class="half-width"><p>Now that we have our two separate tracks of work they need to be
@@ -703,7 +703,7 @@ Merge made by the 'ort' strategy.
 * 2bf7ece Added instruction to enjoy
 * ae3255a Adding ingredients and instructions</code></pre>
 </div>
-<figure><img src="../fig/branch6.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with first merge</div>
+<figure><img src="../fig/branch6.png" alt="Repository with first merge" class="figure mx-auto d-block"><div class="figcaption">Repository with first merge</div>
 </figure><p>Merging creates a new commit in whichever branch is being
 <strong>merged into</strong> that contains the combined changes from
 both branches. The commit has been highlighted in a separate colour
@@ -724,7 +724,7 @@ repository.</p>
 commits can’t be added to it. Create a new commit in the
 <code>experiment</code> branch adjusting the amount of coriander in the
 recipe. Then merge <code>experiment</code> into <code>main</code>.</p>
-<figure><img src="../fig/branch7.png" alt="Git collaborative" class="figure mx-auto d-block"><div class="figcaption">Repository with second merge</div>
+<figure><img src="../fig/branch7.png" alt="Repository with second merge" class="figure mx-auto d-block"><div class="figcaption">Repository with second merge</div>
 </figure></div>
 </div>
 </div>
