@@ -20,16 +20,10 @@ exercises: 0
 ## Overview
 
 This course builds on the [Introduction to using Git and GitHub for software
-development][Introduction to using Git and GitHub for software development] course. While it is not a requirement to have completed the introductory
+development][intro-course] course. While it is not a requirement to have completed the introductory
 course, basic familiarity with using Git from the command line is assumed. (Don't worry
 if you're rusty!) You should also have a copy of the `recipe` repository locally. If
-not, please refer to
-
-<!-- markdownlint-disable -->
-
-[the setup instructions][lesson-setup].
-
-<!-- markdownlint-restore -->
+not, please refer to [the setup instructions](../index.md).
 
 This course introduces some of the intermediate-level functionality of Git and GitHub.
 In addition to providing you with a more thorough understanding of Git and how to use it
@@ -77,8 +71,8 @@ style.
 
 
 
-[Introduction to using Git and GitHub for software development]: https://imperialcollegelondon.github.io/rse_introductory_git_course/
-[a handout sheet]: handouts/git-course-handout.pdf
+[intro-course]: https://imperialcollegelondon.github.io/rse_introductory_git_course/
+[a handout sheet]: files/git-course-handout.pdf
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

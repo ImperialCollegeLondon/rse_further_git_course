@@ -30,7 +30,7 @@ knowledge acquired so far.
 ## Making a book of recipes
 
 Together with some colleagues, you are writing a book of recipes for sauces
-and you are using git for version control and GitHub to collaborate in the
+and you are using Git for version control and GitHub to collaborate in the
 writing of the book.
 
 Form groups of 3-4 people and choose one to act as Administrator.
@@ -45,7 +45,7 @@ Form groups of 3-4 people and choose one to act as Administrator.
 
 - Set the name of the repository to "book of recipes".
 
-- Set the description to something like "Repository for the exercises of the Grad School Git Course".
+- Set the description to something like "Repository for the exercises of the Further Git Course".
 
 - Make sure to select the "Public" option for your repository's visibility.
 
@@ -104,7 +104,7 @@ instructions to make sure that your own forks are kept up to date.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Working collaboratively requires coordination - use Issues to discuss with your colleagues who is doing what.
-- Notifications from GitHub are very useful but also overwhelming when there are many contributions - you will need to manage them.
+- Working collaboratively requires coordination -- use Issues to discuss with your colleagues who is doing what.
+- Notifications from GitHub are very useful but also overwhelming when there are many contributions -- you will need to manage them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

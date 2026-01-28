@@ -27,9 +27,9 @@ exercises: 10
 
 ## Access and Permissions
 
-Developer 1 - "Just email me your changes. I'll save them into the master copy."
+Developer 1 -- "Just email me your changes. I'll save them into the master copy."
 
-Developer 2 - "Ok... so why do all of my changes have to go through you?"
+Developer 2 -- "Ok... so why do all of my changes have to go through you?"
 
 [**GitHub**](https://github.com) gives you a central place to collaborate!
 
@@ -40,9 +40,9 @@ Developer 2 - "Ok... so why do all of my changes have to go through you?"
 
 ## Need to Coordinate Efforts
 
-Developer 1 - "I'm still waiting on those changes to the data analysis workflow."
+Developer 1 -- "I'm still waiting on those changes to the data analysis workflow."
 
-Developer 2 - "Huh? I added those a month ago."
+Developer 2 -- "Huh? I added those a month ago."
 
 [**Issues**](https://docs.github.com/en/issues) help keep track of tasks.
 
@@ -53,9 +53,9 @@ Developer 2 - "Huh? I added those a month ago."
 
 ## Different Points of View
 
-Developer 1 - "Here's what I've been working on for the last month."
+Developer 1 -- "Here's what I've been working on for the last month."
 
-Developer 2 - "Hmmm... if we tweak things here then it might be faster."
+Developer 2 -- "Hmmm... if we tweak things here then it might be faster."
 
 [**Pull Requests**](https://docs.github.com/en/pull-requests) allow for easily reviewing collaborators' changes.
 
@@ -72,7 +72,7 @@ Pull requests are a GitHub feature which allows collaborators tell each other ab
 
 The term "Pull Request" may sound counterintuitive because, from your perspective, you're not actually requesting to pull anything. Essentially it means "Hey, I have some changes I would like to contribute to your repo. Please, have a look at them and pull them into your own."
 
-You may see the term `merge request` instead of `pull request`. These are exactly the same thing. Different platforms use different terms but they're both asking the receiver of the request to review those changes prior to merging them.
+You may see the term "merge request" instead of "pull request". These are exactly the same thing. Different platforms use different terms but they're both asking the receiver of the request to review those changes prior to merging them.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -88,14 +88,19 @@ Essentially, the way you use pull requests will depend on what permissions you h
 
 ## About forks
 
-Before we get into understanding pull requests, we should first get to grips with what a fork is, and how it differs from a branch.
+Before we get into understanding pull requests, we should first get to grips with what a fork is,
+and how it differs from a branch.
 
-- By default, a public repository can be seen by anyone but only the owner can make changes e.g. create new commits or branches.
-- `Forking` a repository means creating a copy of it in your own GitHub account.
-- This copy is fully under your control, and you can create branches, push new commits, etc., as you would do with any other of your repos.
-- `fork` is a GitHub concept and not Git.
-- Forks are related to the original repository, and the number of forks a given repository has can be seen in the upper right corner of the repo page.
-- If you have some changes in your fork that you want to contribute to the original repo, you open a `pull request`.
+- By default, a public repository can be seen by anyone but only the owner can make changes e.g.
+  create new commits or branches.
+- "Forking" a repository means creating a copy of it in your own GitHub account.
+- This copy is fully under your control, and you can create branches, push new commits, etc., as you
+  would do with any other of your repos.
+- "Forking" is a GitHub concept and not Git.
+- Forks are related to the original repository, and the number of forks a given repository has can
+  be seen in the upper right corner of the repo page.
+- If you have some changes in your fork that you want to contribute to the original repo, you open a
+  "pull request".
 - You can bring changes from an upstream repository to your local fork.
 
 
@@ -105,13 +110,13 @@ Now let's take a closer look at those two types of development models;
 
 ### 1\. Pull request from a branch within a repository
 
-This type of pull request is used when working with a **shared repository model**. Typically, with this development model, you and your collaborators will have access (and write permission) to a single shared repository. We saw in a previous episode how branches can be used to separate out work on different features of your project. With pull requests, we can request that work done on a feature branch be merged into the `main` branch after a successful review. In fact, we can specify that the work done on our feature branch be merged into *any* branch, not just `main`.
+This type of pull request is used when working with a **shared repository model**. Typically, with this development model, you and your collaborators will have access (and write permission) to a single shared repository. We saw in a previous episode how branches can be used to separate out work on different features of your project. With pull requests, we can request that work done on a feature branch be merged into the main branch after a successful review. In fact, we can specify that the work done on our feature branch be merged into *any* branch, not just `main`.
 
-Pull requests can be created by visiting the `Pull request` tab in the repository.
+Pull requests can be created by visiting the "Pull request" tab in the repository.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Changing *head* and *base* branch
+## Changing "head" and "base" branch
 
 By default, pull requests are based on the parent repository's default branch. You can change both the parent repository and the branch in the drop-down lists. It's important to select the correct order here; the *head branch* contains the changes you would like to make, the *base branch* is where you want the changes to be applied. The arrow between the drop-downs is a useful indicator for the direction of the "pull".
 
@@ -153,7 +158,7 @@ Let's revisit our `recipe` repository.
 
 ## Dive deeper
 
-For a deeper dive into this "feature branch workflow", have a read of the Atlassian example - [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+For a deeper dive into this "feature branch workflow", have a read of the Atlassian example -- [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -200,7 +205,7 @@ As with the **shared repository model**, Atlassian has a nice [Forking Workflow]
 
 ## Closing GitHub Issues
 
-The introductory course - [Using GitHub Issues](https://imperialcollegelondon.github.io/rse_introductory_git_course/l3-01-issues/index.html) - describes how issues work on GitHub, but one handy functionality that is specific to pull requests is being able to automatically close an issue from a pull request.
+The introductory course -- [Using GitHub Issues](https://imperialcollegelondon.github.io/rse_introductory_git_course/l3-01-issues/index.html) -- describes how issues work on GitHub, but one handy functionality that is specific to pull requests is being able to automatically close an issue from a pull request.
 
 If a PR tackles a particular issue, you can automatically close that issue
 when the PR is merged by indicating `Close #ISSUE_NUMBER` in any commit
@@ -214,9 +219,9 @@ message of the PR or in a comment within the PR.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Forks and pull requests are GitHub concepts, not git.
-- Pull request can be opened to branches on your own repository or any other fork.
-- Some branches are restricted, meaning that PR cannot be open against them.
+- Pull requests can be opened to branches on your own repository or any other fork.
+- Some branches are restricted, meaning that PRs cannot be opened against them.
 - Merging a PR does not delete the original branch, just modifies the target one.
-- PR are often created to solve specific issues.
+- PRs are often created to solve specific issues.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
