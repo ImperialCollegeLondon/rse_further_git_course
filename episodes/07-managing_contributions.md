@@ -214,9 +214,9 @@ message of the PR or in a comment within the PR.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Forks and pull requests are GitHub concepts, not git.
-- Pull request can be opened to branches on your own repository or any other fork.
+- Pull requests can be opened to branches on your own repository or any other fork.
 - Some branches are restricted, meaning that PR cannot be open against them.
 - Merging a PR does not delete the original branch, just modifies the target one.
-- PR are often created to solve specific issues.
+- PRs are often created to solve specific issues.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

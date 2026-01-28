@@ -23,7 +23,7 @@ exercises: 15
 ## Rewriting history with Git
 
 While version control is useful to keep track of changes made to a piece of work over
-time, it also lets you to modify the timeline of commits. There are several totally
+time, it also lets you modify the timeline of commits. There are several totally
 legitimate reasons why you might want to do that, from keeping the commit history clean
 of unsuccessful attempts to do something to incorporate work done by someone else.
 
@@ -47,7 +47,8 @@ It is not rare that, while you are working on some feature, you need to check so
 else in another branch. Very often this is the case when you want to try some
 contributor's code as part of a pull request review process (see next episodes). You
 can commit the work you are doing, but if it is not in a state ready to be committed,
-what would you do? Or you start working on a branch only to realise that it is not the one that you were planning to work on?
+what would you do? Or what if you start working on a branch only to realise that it is
+not the one that you were planning to work on?
 
 `git stash` is the answer. It lets you put your current, uncommitted work aside in a
 special state, turning the working directory back to the way it was in the last commit.
