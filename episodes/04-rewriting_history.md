@@ -58,47 +58,47 @@ nothing had happened.
 
 The following are the `git stash` commands needed to make this happen:
 
-Stash the current state of the repository, giving some message to remind yourself what
-was this about. The working directory becomes identical to the last commit.
+- Stash the current state of the repository, giving some message to remind yourself what
+  this was about. The working directory becomes identical to the last commit.
 
-```bash
-git stash save "Some informative message"
-```
+  ```bash
+  git stash save "Some informative message"
+  ```
 
-List the stashes available in reverse chronological order (last one stashed goes on
-top).
+- List the stashes available in reverse chronological order (last one stashed goes on
+  top).
 
-```bash
-git stash list
-```
+  ```bash
+  git stash list
+  ```
 
-Extract the **last stash** of the list, updating the working directory
-with its content.
+- Extract the **last stash** of the list, updating the working directory with its
+  content.
 
-```bash
-git stash pop
-```
+  ```bash
+  git stash pop
+  ```
 
-Extract the stash with the given number from the list, updating the working directory
-with its content.
+- Extract the stash with the given number from the list, updating the working directory
+  with its content.
 
-```bash
-git stash pop stash@{NUMBER}
-```
+  ```bash
+  git stash pop stash@{NUMBER}
+  ```
 
-Apply the **last stash** without removing it from the list, so you can apply it to
-other branches, if needed.
+- Apply the **last stash** without removing it from the list, so you can apply it to
+  other branches, if needed.
 
-```bash
-git stash apply
-```
+  ```bash
+  git stash apply
+  ```
 
-Apply the given stash without removing it from the list, so you can apply it to
-other branches, if needed.
+- Apply the given stash without removing it from the list, so you can apply it to
+  other branches, if needed.
 
-```bash
-git stash apply stash@{NUMBER}
-```
+  ```bash
+  git stash apply stash@{NUMBER}
+  ```
 
 If you want more information, you can [read this article on Git
 stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash).
