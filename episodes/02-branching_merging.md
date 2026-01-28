@@ -69,7 +69,7 @@ version that contains all changes:
 ![Example of commit history with multiple branches and merges](fig/branching_full_example.png){alt='Git collaborative'}
 
 - We see branching points and merging points.
-- Main line development is often called `main`.
+- Mainline development is usually carried out in a branch called `main`.
 - Other than this convention there is nothing special about `main`, it is just
   a branch.
 - Commits form a directed acyclic graph (arrows point from parent commits to

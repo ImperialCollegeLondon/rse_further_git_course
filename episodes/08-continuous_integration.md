@@ -275,7 +275,7 @@ rule". We can use this to put two restrictions in place:
 
 1. No code can be pushed directly to the `main` branch, it must always be added via pull
   request.
-2. All CI workflows must succeed in order for PR's to be allowed to merge.
+2. All CI workflows must succeed in order for PRs to be allowed to merge.
 
 Combined together these rules mean that **no code can end up in the `main` branch if it
 did not successfully pass through CI first**. Creating a cast iron guarantee that all
@@ -283,7 +283,7 @@ code that has been accepted into the `main` branch meets a certain standard is v
 powerful.
 
 Let's see how to create a branch protection rule and how this changes the behaviour of
-PR's:
+PRs:
 
 1. Go to the "Settings" tab and select "Branches" from the left-hand side.
 2. Select "Add classic branch protection rule".
@@ -322,7 +322,7 @@ usage of GitHub Actions. In brief:
   organisation to benefit. Details of how to join the organisation can be found at the
   [Gain Access to Imperial College London GitHub organisation][join-github-org] article.
 - Billing varies depending on the operating system used by your jobs. Running on Windows
-  or MacOS is more expensive.
+  or macOS is more expensive.
 
 ## Ways to use CI
 
@@ -442,7 +442,7 @@ jobs:
 
 If we put together a few things we've seen so far, we can start to build more realistic
 and useful workflows. The below example is taken from a template for Python
-repositories (see [Github Python Poetry Template Repository][poetry]).
+repositories (see [GitHub Python Poetry Template Repository][poetry]).
 
 ```yaml
 name: Test and build  # workflows can have a name that appears in the GitHub UI

@@ -30,7 +30,7 @@ knowledge acquired so far.
 ## Making a book of recipes
 
 Together with some colleagues, you are writing a book of recipes for sauces
-and you are using git for version control and GitHub to collaborate in the
+and you are using Git for version control and GitHub to collaborate in the
 writing of the book.
 
 Form groups of 3-4 people and choose one to act as Administrator.
