@@ -23,7 +23,7 @@ exercises: 15
 ## Rewriting history with Git
 
 While version control is useful to keep track of changes made to a piece of work over
-time, it also lets you to modify the timeline of commits. There are several totally
+time, it also lets you modify the timeline of commits. There are several totally
 legitimate reasons why you might want to do that, from keeping the commit history clean
 of unsuccessful attempts to do something to incorporate work done by someone else.
 
@@ -47,7 +47,8 @@ It is not rare that, while you are working on some feature, you need to check so
 else in another branch. Very often this is the case when you want to try some
 contributor's code as part of a pull request review process (see next episodes). You
 can commit the work you are doing, but if it is not in a state ready to be committed,
-what would you do? Or you start working on a branch only to realise that it is not the one that you were planning to work on?
+what would you do? Or what if you start working on a branch only to realise that it is
+not the one that you were planning to work on?
 
 `git stash` is the answer. It lets you put your current, uncommitted work aside in a
 special state, turning the working directory back to the way it was in the last commit.
@@ -57,47 +58,47 @@ nothing had happened.
 
 The following are the `git stash` commands needed to make this happen:
 
-Stash the current state of the repository, giving some message to remind yourself what
-was this about. The working directory becomes identical to the last commit.
+- Stash the current state of the repository, giving some message to remind yourself what
+  this was about. The working directory becomes identical to the last commit.
 
-```bash
-git stash save "Some informative message"
-```
+  ```bash
+  git stash save "Some informative message"
+  ```
 
-List the stashes available in reverse chronological order (last one stashed goes on
-top).
+- List the stashes available in reverse chronological order (last one stashed goes on
+  top).
 
-```bash
-git stash list
-```
+  ```bash
+  git stash list
+  ```
 
-Extract the **last stash** of the list, updating the working directory
-with its content.
+- Extract the **last stash** of the list, updating the working directory with its
+  content.
 
-```bash
-git stash pop
-```
+  ```bash
+  git stash pop
+  ```
 
-Extract the stash with the given number from the list, updating the working directory
-with its content.
+- Extract the stash with the given number from the list, updating the working directory
+  with its content.
 
-```bash
-git stash pop stash@{NUMBER}
-```
+  ```bash
+  git stash pop stash@{NUMBER}
+  ```
 
-Apply the **last stash** without removing it from the list, so you can apply it to
-other branches, if needed.
+- Apply the **last stash** without removing it from the list, so you can apply it to
+  other branches, if needed.
 
-```bash
-git stash apply
-```
+  ```bash
+  git stash apply
+  ```
 
-Apply the given stash without removing it from the list, so you can apply it to
-other branches, if needed.
+- Apply the given stash without removing it from the list, so you can apply it to
+  other branches, if needed.
 
-```bash
-git stash apply stash@{NUMBER}
-```
+  ```bash
+  git stash apply stash@{NUMBER}
+  ```
 
 If you want more information, you can [read this article on Git
 stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash).
@@ -122,7 +123,7 @@ stashes changes in either case.
 This is the simplest method of rewriting history: it lets you amend the last commit you
 made, maybe adding some files you forgot to stage or fixing a typo in the commit message.
 
-After you have made those last minute changes - and `staged` them, if needed - all you
+After you have made those last minute changes -- and `staged` them, if needed -- all you
 need to do to amend the last commit while keeping the same commit message is:
 
 ```bash
@@ -160,7 +161,7 @@ detailed description.
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 For details on how to choose which text editor Git will use, see [the setup
-instructions](lesson-setup).
+instructions](../index.md).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -178,7 +179,7 @@ git reset --soft HEAD^
 ```
 
 This resets the staging area to match the most recent commit, but leaves the working
-directory unchanged - so no information is lost. Now you can review the files you
+directory unchanged -- so no information is lost. Now you can review the files you
 modified, make more changes or whatever you like. When you are ready, you stage and
 commit your files, as usual. You can go back 2 commits, 3, etc with `HEAD^2`,
 `HEAD^3`... but the further you go, the more chances there are to leave commits

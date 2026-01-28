@@ -20,7 +20,7 @@ exercises: 5
 - How and when should I release a new version of my code?
 - What is the difference between major and minor version changes?
 - How can I effectively communicate what has changed between versions?
-- How can I publish a release on Github?
+- How can I publish a release on GitHub?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
