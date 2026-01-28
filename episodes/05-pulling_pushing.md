@@ -42,7 +42,7 @@ in sync.
   ![Push a branch without upstream yet](fig/push_u.png){alt='Git collaborative'}
 
 - `push` only operates on your current branch. If you want to push another
-  branch, you have to `checkout` that branch first.
+  branch, you have to `switch` to that branch first.
 - If the upstream branch has changes you do not have in the local branch, the
   command will fail, requesting you to pull those changes first.
 
