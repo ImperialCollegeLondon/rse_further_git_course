@@ -371,7 +371,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Rewriting history with Git</h1>
-        <p>Last updated on 2025-11-13 |
+        <p>Last updated on 2026-01-28 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/04-rewriting_history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -413,7 +413,7 @@ collaborators</li>
 </div>
 <section><h2 class="section-heading" id="rewriting-history-with-git">Rewriting history with Git<a class="anchor" aria-label="anchor" href="#rewriting-history-with-git"></a></h2>
 <hr class="half-width"><p>While version control is useful to keep track of changes made to a
-piece of work over time, it also lets you to modify the timeline of
+piece of work over time, it also lets you modify the timeline of
 commits. There are several totally legitimate reasons why you might want
 to do that, from keeping the commit history clean of unsuccessful
 attempts to do something to incorporate work done by someone else.</p>
@@ -437,8 +437,8 @@ to check something else in another branch. Very often this is the case
 when you want to try some contributor’s code as part of a pull request
 review process (see next episodes). You can commit the work you are
 doing, but if it is not in a state ready to be committed, what would you
-do? Or you start working on a branch only to realise that it is not the
-one that you were planning to work on?</p>
+do? Or what if you start working on a branch only to realise that it is
+not the one that you were planning to work on?</p>
 <p><code>git stash</code> is the answer. It lets you put your current,
 uncommitted work aside in a special state, turning the working directory
 back to the way it was in the last commit. Then, you can easily switch
@@ -447,21 +447,26 @@ go back to work, you can recover the stashed work and continue as if
 nothing had happened.</p>
 <p>The following are the <code>git stash</code> commands needed to make
 this happen:</p>
+<ul><li>
 <p>Stash the current state of the repository, giving some message to
-remind yourself what was this about. The working directory becomes
+remind yourself what this was about. The working directory becomes
 identical to the last commit.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> stash save <span class="st">"Some informative message"</span></span></code></pre>
 </div>
-<p>List the stashes available in reverse chronological order (last one
-stashed goes on top).</p>
+</li>
+<li>
+<p>List the stashes available in reverse chronological order (last
+one stashed goes on top).</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre>
 </div>
+</li>
+<li>
 <p>Extract the <strong>last stash</strong> of the list, updating the
 working directory with its content.</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -469,28 +474,35 @@ working directory with its content.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> stash pop</span></code></pre>
 </div>
-<p>Extract the stash with the given number from the list, updating the
-working directory with its content.</p>
+</li>
+<li>
+<p>Extract the stash with the given number from the list, updating
+the working directory with its content.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> stash pop stash@{NUMBER}</span></code></pre>
 </div>
-<p>Apply the <strong>last stash</strong> without removing it from the
-list, so you can apply it to other branches, if needed.</p>
+</li>
+<li>
+<p>Apply the <strong>last stash</strong> without removing it from
+the list, so you can apply it to other branches, if needed.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> stash apply</span></code></pre>
 </div>
-<p>Apply the given stash without removing it from the list, so you can
-apply it to other branches, if needed.</p>
+</li>
+<li>
+<p>Apply the given stash without removing it from the list, so you
+can apply it to other branches, if needed.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{NUMBER}</span></code></pre>
 </div>
-<p>If you want more information, you can <a href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash" class="external-link">read
+</li>
+</ul><p>If you want more information, you can <a href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash" class="external-link">read
 this article on Git stash</a>.</p>
 <div id="practice-stashing" class="callout discussion">
 <div class="callout-square">
@@ -518,8 +530,8 @@ either case.</p>
 <p>This is the simplest method of rewriting history: it lets you amend
 the last commit you made, maybe adding some files you forgot to stage or
 fixing a typo in the commit message.</p>
-<p>After you have made those last minute changes - and
-<code>staged</code> them, if needed - all you need to do to amend the
+<p>After you have made those last minute changes – and
+<code>staged</code> them, if needed – all you need to do to amend the
 last commit while keeping the same commit message is:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -567,7 +579,7 @@ description.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>For details on how to choose which text editor Git will use, see <a href="lesson-setup">the setup instructions</a>.</p>
+<p>For details on how to choose which text editor Git will use, see <a href="index.html">the setup instructions</a>.</p>
 </div>
 </div>
 </div>
@@ -588,7 +600,7 @@ work with collaborators.</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD^</span></code></pre>
 </div>
 <p>This resets the staging area to match the most recent commit, but
-leaves the working directory unchanged - so no information is lost. Now
+leaves the working directory unchanged – so no information is lost. Now
 you can review the files you modified, make more changes or whatever you
 like. When you are ready, you stage and commit your files, as usual. You
 can go back 2 commits, 3, etc with <code>HEAD^2</code>,
@@ -1027,8 +1039,8 @@ vs. Rebasing</a>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/04-rewriting_history.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/04-rewriting_history.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-11-13",
-  "datePublished": "2026-01-27"
+  "dateModified": "2026-01-28",
+  "datePublished": "2026-01-28"
 }
 
   </script><script>

@@ -374,7 +374,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using GitHub actions for continuous integration</h1>
-        <p>Last updated on 2025-11-13 |
+        <p>Last updated on 2026-01-28 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/08-continuous_integration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -425,10 +425,10 @@ development</li>
 <div id="individual-styles-and-preferences" class="callout-inner">
 <h3 class="callout-title">Individual styles and preferences</h3>
 <div class="callout-content">
-<p>Developer 1 - “Tabs!”</p>
-<p>Developer 2 - “Spaces!”</p>
-<p>Developer 1 - “TABS!”</p>
-<p>Developer 2 - “SPACES!”</p>
+<p>Developer 1 – “Tabs!”</p>
+<p>Developer 2 – “Spaces!”</p>
+<p>Developer 1 – “TABS!”</p>
+<p>Developer 2 – “SPACES!”</p>
 <p><a href="https://docs.github.com/en/actions" class="external-link">GitHub Actions</a>
 automatically runs checks on your code.</p>
 </div>
@@ -637,31 +637,31 @@ create a <code>workflows</code> directory within that.</p></li>
 <ol start="4" style="list-style-type: decimal"><li><p>Stage and commit <code>ci.yml</code> then push the repository to
 GitHub.</p></li>
 <li><p>Your first CI run should have been triggered! Quickly, go to your
-repository on GitHub and select the <code>Actions</code> tab. You should
-see a workflow with a glowing amber dot next to the commit message you
+repository on GitHub and select the “Actions” tab. You should see a
+workflow with a glowing amber dot next to the commit message you
 provided. This means that the workflow is running.</p></li>
 <li><p>Click on the commit message. You now get a breakdown of the
-individual jobs within your workflow. It’s only one job in this case -
-<code>markdownlint</code> - click on it to see its progress. You can see
+individual jobs within your workflow. It’s only one job in this case –
+<code>markdownlint</code> – click on it to see its progress. You can see
 the individual steps, and the output that they produce as they
 run.</p></li>
 <li><p>Before long the workflow will complete but, alas, it should be a
 failure. Go back to the front page of the repository by clicking the
-<code>Code</code> tab. You should see your commit marked with a red
-cross to indicate that it failed the CI. You should also receive a
-notification (after a few minutes) via the email address associated with
-your GitHub account.</p></li>
-<li><p>Return to the <code>Actions</code> tab and open the failed
-workflow. You should see a handy summary of the errors that were
-encountered during the <code>markdownlint</code> job. You now need to
-correct both <code>ingredients.md</code> and
-<code>instructions.md</code> so that the CI will pass. Hint: see <a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041---first-line-in-a-file-should-be-a-top-level-heading" class="external-link">markdownlint-cli:
+“Code” tab. You should see your commit marked with a red cross to
+indicate that it failed the CI. You should also receive a notification
+(after a few minutes) via the email address associated with your GitHub
+account.</p></li>
+<li><p>Return to the “Actions” tab and open the failed workflow. You
+should see a handy summary of the errors that were encountered during
+the <code>markdownlint</code> job. You now need to correct both
+<code>ingredients.md</code> and <code>instructions.md</code> so that the
+CI will pass. Hint: see <a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md041---first-line-in-a-file-should-be-a-top-level-heading" class="external-link">markdownlint-cli:
 Rule MD041</a>.</p></li>
 <li><p>Once you’ve modified the files stage, commit and push once again.
 Your next CI run should succeed. If it doesn’t then try modifying the
 files again.</p></li>
-<li><p>Once the CI is passing, go back to the <code>Code</code> tab and
-you should see a nice green tick next to your latest commit.</p></li>
+<li><p>Once the CI is passing, go back to the “Code” tab and you should
+see a nice green tick next to your latest commit.</p></li>
 </ol></div>
 </div>
 </div>
@@ -683,7 +683,7 @@ some policy in the form of a “branch protection rule”. We can use this
 to put two restrictions in place:</p>
 <ol style="list-style-type: decimal"><li>No code can be pushed directly to the <code>main</code> branch, it
 must always be added via pull request.</li>
-<li>All CI workflows must succeed in order for PR’s to be allowed to
+<li>All CI workflows must succeed in order for PRs to be allowed to
 merge.</li>
 </ol><p>Combined together these rules mean that <strong>no code can end up in
 the <code>main</code> branch if it did not successfully pass through CI
@@ -691,22 +691,21 @@ first</strong>. Creating a cast iron guarantee that all code that has
 been accepted into the <code>main</code> branch meets a certain standard
 is very powerful.</p>
 <p>Let’s see how to create a branch protection rule and how this changes
-the behaviour of PR’s:</p>
-<ol style="list-style-type: decimal"><li>Go to the <code>Settings</code> tab and select <code>Branches</code>
-from the left-hand side.</li>
-<li>Select <code>Add classic branch protection rule</code>.</li>
-<li>Set <code>main</code> as the <code>Branch name pattern</code>. Check
-the box for <code>Require a pull request before merging</code> and in
-the options that appear below it, you can select the number of approvals
-required for merging (default is 1).</li>
-<li>Also check the box for
-<code>Require status checks to pass before merging</code>. In the extra
-options that appear beneath, check
-<code>Require branches to be up to date before merging</code>. Using the
-search bar, find and select the names of any CI jobs that must pass to
-allow merging.</li>
-<li>Scroll down and press <code>Create</code>. GitHub may ask you to
-confirm your password.</li>
+the behaviour of PRs:</p>
+<ol style="list-style-type: decimal"><li>Go to the “Settings” tab and select “Branches” from the left-hand
+side.</li>
+<li>Select “Add classic branch protection rule”.</li>
+<li>Set <code>main</code> as the “Branch name pattern”. Check the box
+for “Require a pull request before merging” and in the options that
+appear below it, you can select the number of approvals required for
+merging (default is 1).</li>
+<li>Also check the box for “Require status checks to pass before
+merging”. In the extra options that appear beneath, check “Require
+branches to be up to date before merging”. Using the search bar, find
+and select the names of any CI jobs that must pass to allow
+merging.</li>
+<li>Scroll down and press “Create”. GitHub may ask you to confirm your
+password.</li>
 </ol><p>Now a CI failure for a pull request looks like this:</p>
 <figure><img src="fig/pr_protected_failing_ci.png" alt="Failing CI" class="figure mx-auto d-block"><div class="figcaption">Panel from GitHub pull request user interface
 showing failing CI checks with merging blocked due to a branch
@@ -736,7 +735,7 @@ organisation to benefit. Details of how to join the organisation can be
 found at the <a href="https://servicemgt.imperial.ac.uk/ask?id=kb_article_view&amp;sysparm_article=KB0012428" class="external-link">Gain
 Access to Imperial College London GitHub organisation</a> article.</li>
 <li>Billing varies depending on the operating system used by your jobs.
-Running on Windows or MacOS is more expensive.</li>
+Running on Windows or macOS is more expensive.</li>
 </ul></div>
 </section><section><h2 class="section-heading" id="ways-to-use-ci">Ways to use CI<a class="anchor" aria-label="anchor" href="#ways-to-use-ci"></a></h2>
 <hr class="half-width"><p>Now that we’ve set up and configured GitHub Actions, what can we use
@@ -860,7 +859,7 @@ be downloaded and used by other users or services.</p>
 <h3 id="a-realistic-example">A Realistic Example<a class="anchor" aria-label="anchor" href="#a-realistic-example"></a></h3>
 <p>If we put together a few things we’ve seen so far, we can start to
 build more realistic and useful workflows. The below example is taken
-from a template for Python repositories (see <a href="https://github.com/ImperialCollegeLondon/poetry_template_2/blob/main/.github/workflows/ci.yml" class="external-link">Github
+from a template for Python repositories (see <a href="https://github.com/ImperialCollegeLondon/poetry_template_2/blob/main/.github/workflows/ci.yml" class="external-link">GitHub
 Python Poetry Template Repository</a>).</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -993,8 +992,8 @@ Pull Request</li>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/08-continuous_integration.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/08-continuous_integration.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-11-13",
-  "datePublished": "2026-01-27"
+  "dateModified": "2026-01-28",
+  "datePublished": "2026-01-28"
 }
 
   </script><script>

@@ -372,7 +372,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Managing contributions to code</h1>
-        <p>Last updated on 2025-11-13 |
+        <p>Last updated on 2026-01-28 |
 
         <a href="https://github.com/SaranjeetKaur/rse_further_git_course/edit/main/episodes/07-managing_contributions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -423,9 +423,9 @@ code?</li>
 <div id="access-and-permissions" class="callout-inner">
 <h3 class="callout-title">Access and Permissions</h3>
 <div class="callout-content">
-<p>Developer 1 - “Just email me your changes. I’ll save them into the
+<p>Developer 1 – “Just email me your changes. I’ll save them into the
 master copy.”</p>
-<p>Developer 2 - “Ok… so why do all of my changes have to go through
+<p>Developer 2 – “Ok… so why do all of my changes have to go through
 you?”</p>
 <p><a href="https://github.com" class="external-link"><strong>GitHub</strong></a> gives you a
 central place to collaborate!</p>
@@ -440,9 +440,9 @@ central place to collaborate!</p>
 <div id="need-to-coordinate-efforts" class="callout-inner">
 <h3 class="callout-title">Need to Coordinate Efforts</h3>
 <div class="callout-content">
-<p>Developer 1 - “I’m still waiting on those changes to the data
+<p>Developer 1 – “I’m still waiting on those changes to the data
 analysis workflow.”</p>
-<p>Developer 2 - “Huh? I added those a month ago.”</p>
+<p>Developer 2 – “Huh? I added those a month ago.”</p>
 <p><a href="https://docs.github.com/en/issues" class="external-link"><strong>Issues</strong></a>
 help keep track of tasks.</p>
 </div>
@@ -456,9 +456,9 @@ help keep track of tasks.</p>
 <div id="different-points-of-view" class="callout-inner">
 <h3 class="callout-title">Different Points of View</h3>
 <div class="callout-content">
-<p>Developer 1 - “Here’s what I’ve been working on for the last
+<p>Developer 1 – “Here’s what I’ve been working on for the last
 month.”</p>
-<p>Developer 2 - “Hmmm… if we tweak things here then it might be
+<p>Developer 2 – “Hmmm… if we tweak things here then it might be
 faster.”</p>
 <p><a href="https://docs.github.com/en/pull-requests" class="external-link"><strong>Pull
 Requests</strong></a> allow for easily reviewing collaborators’
@@ -499,10 +499,10 @@ perspective, you’re not actually requesting to pull anything.
 Essentially it means “Hey, I have some changes I would like to
 contribute to your repo. Please, have a look at them and pull them into
 your own.”</p>
-<p>You may see the term <code>merge request</code> instead of
-<code>pull request</code>. These are exactly the same thing. Different
-platforms use different terms but they’re both asking the receiver of
-the request to review those changes prior to merging them.</p>
+<p>You may see the term “merge request” instead of “pull request”. These
+are exactly the same thing. Different platforms use different terms but
+they’re both asking the receiver of the request to review those changes
+prior to merging them.</p>
 </div>
 </div>
 </div>
@@ -530,20 +530,18 @@ personal repository.</p>
 <p>Before we get into understanding pull requests, we should first get
 to grips with what a fork is, and how it differs from a branch.</p>
 <ul><li>By default, a public repository can be seen by anyone but only the
-owner can make changes e.g. create new commits or branches.</li>
-<li>
-<code>Forking</code> a repository means creating a copy of it in
-your own GitHub account.</li>
+owner can make changes e.g. create new commits or branches.</li>
+<li>“Forking” a repository means creating a copy of it in your own
+GitHub account.</li>
 <li>This copy is fully under your control, and you can create branches,
 push new commits, etc., as you would do with any other of your
 repos.</li>
-<li>
-<code>fork</code> is a GitHub concept and not Git.</li>
+<li>“Forking” is a GitHub concept and not Git.</li>
 <li>Forks are related to the original repository, and the number of
 forks a given repository has can be seen in the upper right corner of
 the repo page.</li>
 <li>If you have some changes in your fork that you want to contribute to
-the original repo, you open a <code>pull request</code>.</li>
+the original repo, you open a “pull request”.</li>
 <li>You can bring changes from an upstream repository to your local
 fork.</li>
 </ul></div>
@@ -559,19 +557,18 @@ and your collaborators will have access (and write permission) to a
 single shared repository. We saw in a previous episode how branches can
 be used to separate out work on different features of your project. With
 pull requests, we can request that work done on a feature branch be
-merged into the <code>main</code> branch after a successful review. In
-fact, we can specify that the work done on our feature branch be merged
-into <em>any</em> branch, not just <code>main</code>.</p>
-<p>Pull requests can be created by visiting the
-<code>Pull request</code> tab in the repository.</p>
+merged into the main branch after a successful review. In fact, we can
+specify that the work done on our feature branch be merged into
+<em>any</em> branch, not just <code>main</code>.</p>
+<p>Pull requests can be created by visiting the “Pull request” tab in
+the repository.</p>
 <div id="changing-head-and-base-branch" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
 <div id="changing-head-and-base-branch" class="callout-inner">
-<h3 class="callout-title">Changing <em>head</em> and <em>base</em>
-branch</h3>
+<h3 class="callout-title">Changing “head” and “base” branch</h3>
 <div class="callout-content">
 <p>By default, pull requests are based on the parent repository’s
 default branch. You can change both the parent repository and the branch
@@ -631,7 +628,7 @@ click the “Create pull request” button. <img src="../fig/pr_title_descriptio
 <h3 class="callout-title">Dive deeper</h3>
 <div class="callout-content">
 <p>For a deeper dive into this “feature branch workflow”, have a read of
-the Atlassian example - <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow" class="external-link">Git
+the Atlassian example – <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow" class="external-link">Git
 Feature Branch Workflow</a></p>
 </div>
 </div>
@@ -725,8 +722,8 @@ information on how to make a good review.</li>
 <div id="closing-github-issues" class="callout-inner">
 <h3 class="callout-title">Closing GitHub Issues</h3>
 <div class="callout-content">
-<p>The introductory course - <a href="https://imperialcollegelondon.github.io/rse_introductory_git_course/l3-01-issues/index.html" class="external-link">Using
-GitHub Issues</a> - describes how issues work on GitHub, but one handy
+<p>The introductory course – <a href="https://imperialcollegelondon.github.io/rse_introductory_git_course/l3-01-issues/index.html" class="external-link">Using
+GitHub Issues</a> – describes how issues work on GitHub, but one handy
 functionality that is specific to pull requests is being able to
 automatically close an issue from a pull request.</p>
 <p>If a PR tackles a particular issue, you can automatically close that
@@ -744,13 +741,13 @@ comment within the PR.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul><li>Forks and pull requests are GitHub concepts, not git.</li>
-<li>Pull request can be opened to branches on your own repository or any
-other fork.</li>
-<li>Some branches are restricted, meaning that PR cannot be open against
-them.</li>
+<li>Pull requests can be opened to branches on your own repository or
+any other fork.</li>
+<li>Some branches are restricted, meaning that PRs cannot be opened
+against them.</li>
 <li>Merging a PR does not delete the original branch, just modifies the
 target one.</li>
-<li>PR are often created to solve specific issues.</li>
+<li>PRs are often created to solve specific issues.</li>
 </ul></div>
 </div>
 </div>
@@ -815,8 +812,8 @@ target one.</li>
   "url": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/07-managing_contributions.html",
   "identifier": "https://SaranjeetKaur.github.io/rse_further_git_course/instructor/07-managing_contributions.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2025-11-13",
-  "datePublished": "2026-01-27"
+  "dateModified": "2026-01-28",
+  "datePublished": "2026-01-28"
 }
 
   </script><script>
