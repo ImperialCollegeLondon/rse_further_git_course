@@ -45,7 +45,7 @@ Form groups of 3-4 people and choose one to act as Administrator.
 
 - Set the name of the repository to "book\_of\_recipes".
 
-- Set the description to something like "Repository for the exercises of the Grad School Git Course".
+- Set the description to something like "Repository for the exercises of the Further Git Course".
 
 - Make sure to select the "Public" option for your repository's visibility.
 
