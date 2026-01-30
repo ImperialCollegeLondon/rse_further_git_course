@@ -274,7 +274,7 @@ take things further by implementing some policy in the form of a "branch protect
 rule". We can use this to put two restrictions in place:
 
 1. No code can be pushed directly to the `main` branch, it must always be added via pull
-  request.
+   request.
 2. All CI workflows must succeed in order for PRs to be allowed to merge.
 
 Combined together these rules mean that **no code can end up in the `main` branch if it
