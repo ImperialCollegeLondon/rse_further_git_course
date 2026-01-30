@@ -129,7 +129,7 @@ on:
 ```
 
 This will additionally trigger the workflow to run when a pull request is created. The
-"push" and "pull\_request" triggers are probably the most commonly used however, there
+`push` and `pull_request` triggers are probably the most commonly used however, there
 are a great many available (see [GitHub Docs: Events that trigger
 workflows][actions-triggers]). This is an example of where GitHub Actions goes further
 than most CI systems as you can automate pretty much any behaviour in a repository.
