@@ -129,7 +129,7 @@ on:
 ```
 
 This will additionally trigger the workflow to run when a pull request is created. The
-"push" and "pull\_request" triggers are probably the most commonly used however, there
+`push` and `pull_request` triggers are probably the most commonly used however, there
 are a great many available (see [GitHub Docs: Events that trigger
 workflows][actions-triggers]). This is an example of where GitHub Actions goes further
 than most CI systems as you can automate pretty much any behaviour in a repository.
@@ -274,7 +274,7 @@ take things further by implementing some policy in the form of a "branch protect
 rule". We can use this to put two restrictions in place:
 
 1. No code can be pushed directly to the `main` branch, it must always be added via pull
-  request.
+   request.
 2. All CI workflows must succeed in order for PRs to be allowed to merge.
 
 Combined together these rules mean that **no code can end up in the `main` branch if it
