@@ -312,8 +312,8 @@ copy of a repository.
 
 ### Removing branches once you are done with them is good practice
 
-Over time, you will accumulate lots of branches to implement different features in you
-code. It is good practice to remove them once they have fulfil their purpose. You can do
+Over time, you will accumulate lots of branches to implement different features in your
+code. It is good practice to remove them once they have fulfilled their purpose. You can do
 that using the `-D` flag with the `git branch` command:
 
 ```bash

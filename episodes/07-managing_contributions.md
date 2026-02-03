@@ -66,7 +66,7 @@ Developer 2 -- "Hmmm... if we tweak things here then it might be faster."
 
 Pull requests are a GitHub feature which allows collaborators tell each other about changes that have been pushed to a branch in a repository. Similar to **issues**, an open pull request can contain discussions about the requested changes and allows collaborators to review proposed amendments and follow-up commits before changes are either rejected or accepted and merged into the base branch.
 
-::::::::::::::::::::::::::::::::::::::  objectives
+::::::::::::::::::::::::::::::::::::::  discussion
 
 ## Why the name?
 
