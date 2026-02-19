@@ -30,7 +30,7 @@ knowledge acquired so far.
 ## Making a book of recipes
 
 Together with some colleagues, you are writing a book of recipes for sauces
-and you are using git for version control and GitHub to collaborate in the
+and you are using Git for version control and GitHub to collaborate in the
 writing of the book.
 
 Form groups of 3-4 people and choose one to act as Administrator.
@@ -39,13 +39,13 @@ Form groups of 3-4 people and choose one to act as Administrator.
 
 - Create a new repository using the template [Book of Recipes repository](https://github.com/ImperialCollegeLondon/book_of_recipes) which has the skeleton of the book. (**Note**: Click on the green  "Use this template" button on the top right of the Book of Recipes repository and then select "Create a new repository")
 
-  ![](fig/use_this_template.png "Use this template"){alt='Use this template' class="img-responsive" style="float: left; margin-right: 10px; width: 20%;"}
+  ![Use this template](fig/use_this_template.png){alt='Use this template' width=40%}
 
 - Set the owner of the new repository to your own GitHub username.
 
-- Set the name of the repository to "book\_of\_recipes".
+- Set the name of the repository to `book_of_recipes`.
 
-- Set the description to something like "Repository for the exercises of the Grad School Git Course".
+- Set the description to something like "Repository for the exercises of the Further Git Course".
 
 - Make sure to select the "Public" option for your repository's visibility.
 
@@ -104,7 +104,7 @@ instructions to make sure that your own forks are kept up to date.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Working collaboratively requires coordination - use Issues to discuss with your colleagues who is doing what.
-- Notifications from GitHub are very useful but also overwhelming when there are many contributions - you will need to manage them.
+- Working collaboratively requires coordination -- use Issues to discuss with your colleagues who is doing what.
+- Notifications from GitHub are very useful but also overwhelming when there are many contributions -- you will need to manage them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

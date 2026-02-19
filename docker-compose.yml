@@ -5,11 +5,9 @@ services:
       WORKBENCH_PROFILE: "local"
     ports:
       - 127.0.0.1:4321:4321
-    entrypoint: ["/bin/bash"]
+    entrypoint: ["/bin/sh"]
     command:
       - -c
-      - |
-        sleep 10
-        Rscript -e 'sandpaper::serve("/home/rstudio/lessons/rse_further_git_course", host="0.0.0.0")'
+      - Rscript -e 'sandpaper::serve("/home/rstudio/lessons/rse_further_git_course", host="0.0.0.0")'
     volumes:
       - ./:/home/rstudio/lessons/rse_further_git_course
