@@ -12,7 +12,6 @@ concurrency:
   group: pr-${{ github.event.workflow_run.pull_requests[0].number }}
   cancel-in-progress: true
 
-
 jobs:
   # Pull requests are valid if:
   #  - they match the sha of the workflow run head commit
@@ -30,12 +29,12 @@ jobs:
       number: ${{ steps.get-pr.outputs.NUM }}
       msg: ${{ steps.check-pr.outputs.MSG }}
     steps:
-      - name: 'Download PR artifact'
+      - name: "Download PR artifact"
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
           run: ${{ github.event.workflow_run.id }}
-          name: 'pr'
+          name: "pr"
 
       - name: "Get PR Number"
         if: ${{ steps.dl.outputs.success == 'true' }}
@@ -81,19 +80,19 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: 'Checkout md outputs'
+      - name: "Checkout md outputs"
         uses: actions/checkout@v4
         with:
           ref: md-outputs
           path: built
           fetch-depth: 1
 
-      - name: 'Download built markdown'
+      - name: "Download built markdown"
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
           run: ${{ github.event.workflow_run.id }}
-          name: 'built'
+          name: "built"
 
       - if: ${{ steps.dl.outputs.success == 'true' }}
         run: unzip built.zip
@@ -127,12 +126,12 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: 'Download comment artifact'
+      - name: "Download comment artifact"
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
           run: ${{ github.event.workflow_run.id }}
-          name: 'diff'
+          name: "diff"
 
       - if: ${{ steps.dl.outputs.success == 'true' }}
         run: unzip ${{ github.workspace }}/diff.zip
@@ -158,14 +157,14 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: 'Check for spoofing'
+      - name: "Check for spoofing"
         id: dl
         uses: carpentries/actions/download-workflow-artifact@main
         with:
           run: ${{ github.event.workflow_run.id }}
-          name: 'built'
+          name: "built"
 
-      - name: 'Alert if spoofed'
+      - name: "Alert if spoofed"
         id: spoof
         if: ${{ steps.dl.outputs.success == 'true' }}
         run: |

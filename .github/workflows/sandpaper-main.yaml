@@ -6,15 +6,15 @@ on:
       - main
       - master
   schedule:
-    - cron: '0 0 * * 2'
+    - cron: "0 0 * * 2"
   workflow_dispatch:
     inputs:
       name:
-        description: 'Who triggered this build?'
+        description: "Who triggered this build?"
         required: true
-        default: 'Maintainer (via GitHub)'
+        default: "Maintainer (via GitHub)"
       reset:
-        description: 'Reset cached markdown files'
+        description: "Reset cached markdown files"
         required: false
         default: false
         type: boolean
@@ -33,7 +33,6 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       RENV_PATHS_ROOT: ~/.local/share/renv/
     steps:
-
       - name: "Checkout Lesson"
         uses: actions/checkout@v4
 

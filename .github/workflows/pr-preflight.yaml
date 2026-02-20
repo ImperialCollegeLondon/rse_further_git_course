@@ -2,10 +2,8 @@ name: "Pull Request Preflight Check"
 
 on:
   pull_request_target:
-    branches:
-      ["main"]
-    types:
-      ["opened", "synchronize", "reopened"]
+    branches: ["main"]
+    types: ["opened", "synchronize", "reopened"]
 
 jobs:
   test-pr:
