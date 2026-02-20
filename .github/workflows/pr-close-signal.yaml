@@ -2,7 +2,8 @@ name: "Bot: Send Close Pull Request Signal"
 
 on:
   pull_request:
-    types: [closed]
+    types:
+      [closed]
 
 jobs:
   send-close-signal:

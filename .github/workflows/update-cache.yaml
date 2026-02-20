@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: "Who triggered this build (enter github username to tag yourself)?"
+        description: 'Who triggered this build (enter github username to tag yourself)?'
         required: true
-        default: "monthly run"
+        default: 'monthly run'
   schedule:
     # Run every tuesday
-    - cron: "0 0 * * 2"
+    - cron: '0 0 * * 2'
 
 jobs:
   preflight:
@@ -74,6 +74,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       RENV_PATHS_ROOT: ~/.local/share/renv/
     steps:
+
       - name: "Checkout Lesson"
         uses: actions/checkout@v4
 
