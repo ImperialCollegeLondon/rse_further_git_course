@@ -60,30 +60,43 @@ first.
 
 Please follow the relevant instructions depending on your operating system.
 
-:::::::::::::::: spoiler
+:::::::::::::::: tab
 
 ### Windows
 
-- Download the Git for Windows [installer](https://git-for-windows.github.io/).
-- Run the installer and follow the steps below:
-  - Click on "Next" four times (two times if you've previously installed Git). You don't need to change anything in the Information, location, components, and start menu screens.
-  - From the dropdown menu select "Use the nano editor by default" and click on "Next".
-  - Select "Override the default branch name for new repositories" and use inclusive terms like "main" (Refer: [The new Git default branch name](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/))
-  - Ensure that "Git from the command line and also from 3rd-party software" is selected and click on "Next". (If you don't do this Git Bash will not work properly, requiring you to remove the Git Bash installation, re-run the installer and to select the "Git from the command line and also from 3rd-party software" option.)
-  - Ensure that "Use bundled OpenSSH" is selected and click on "Next".
-  - Ensure that "Use the native Windows Secure Channel library" is selected and click on "Next".
-  - Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and click on "Next".
-  - Ensure that "Use Windows' default console window" is selected and click on "Next".
-  - Ensure that "Fast-forward or merge" is selected and click on "Next".
-  - Ensure that "Git Credential Manager" is selected and click on "Next".
-  - Ensure that "Enable file system caching" is selected and click on "Next".
-  - Ensure to select "Enable experimental built-in file system monitor" and click on "Install".
-  - Click on "Finish".
-- If your "HOME" environment variable is not set (or you don't know what this is):
-  - Open command prompt (Open Start Menu then type `cmd` and press [Enter])
-  - Type the following line into the command prompt window exactly as shown: `setx HOME "%USERPROFILE%"`
-  - Press [Enter], you should see `SUCCESS: Specified value was saved`.
-  - Quit command prompt by typing `exit` then pressing [Enter]
+Download the Git for Windows [installer](https://git-for-windows.github.io/).
+
+Run the installer and follow the steps below:
+
+- Click on "Next" four times (two times if you've previously installed Git). You don't
+  need to change anything in the Information, location, components, and start menu
+  screens.
+- From the dropdown menu select "Use the nano editor by default" and click on "Next".
+- Select "Override the default branch name for new repositories" and use inclusive terms
+  like "main" (Refer: [The new Git default branch name](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/))
+- Ensure that "Git from the command line and also from 3rd-party software" is selected
+  and click on "Next". (If you don't do this Git Bash will not work properly, requiring
+  you to remove the Git Bash installation, re-run the installer and to select the "Git
+  from the command line and also from 3rd-party software" option.)
+- Ensure that "Use bundled OpenSSH" is selected and click on "Next".
+- Ensure that "Use the native Windows Secure Channel library" is selected and click on
+  "Next".
+- Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and
+  click on "Next".
+- Ensure that "Use Windows' default console window" is selected and click on "Next".
+- Ensure that "Fast-forward or merge" is selected and click on "Next".
+- Ensure that "Git Credential Manager" is selected and click on "Next".
+- Ensure that "Enable file system caching" is selected and click on "Next".
+- Ensure to select "Enable experimental built-in file system monitor" and click on
+  "Install".
+- Click on "Finish".
+
+If your "HOME" environment variable is not set (or you don't know what this is):
+
+- Open command prompt (Open Start Menu then type `cmd` and press [Enter])
+- Type the following line into the command prompt window exactly as shown: `setx HOME "%USERPROFILE%"`
+- Press [Enter], you should see `SUCCESS: Specified value was saved`.
+- Quit command prompt by typing `exit` then pressing [Enter]
 
 This will provide you with both Git and Bash via the program Git Bash. You
 should be able to launch Git Bash from the Start Menu. Within the window that
@@ -93,10 +106,6 @@ output similar to that below:
 ```output
 git version 2.40.0.windows-1
 ```
-
-::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
 
 ### MacOS
 
@@ -135,10 +144,6 @@ click) on the .pkg file, click Open, and click Open on the pop up window. After
 installing Git, there will not be anything in your `/Applications` folder, as
 Git is a command line program. **For older versions of OS X (10.5-10.8)** use
 the most recent available installer labelled "snow-leopard".
-
-::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
 
 ### Linux
 
