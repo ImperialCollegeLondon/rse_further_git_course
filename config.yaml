@@ -66,15 +66,15 @@ contact: "rse-team@imperial.ac.uk"
 
 # Order of episodes in your lesson
 episodes:
-  - 1-course_overview.md
-  - 2-collaborating_with_git.md
-  - 3-branching_merging.md
-  - 4-merge_conflicts.md
-  - 5-rewriting_history.md
-  - 6-pulling_pushing.md
-  - 7-first_session_end.md
-  - 8-managing_contributions.md
-  - 9-continuous_integration.md
+  - 01-course_overview.md
+  - 02-collaborating_with_git.md
+  - 03-branching_merging.md
+  - 04-merge_conflicts.md
+  - 05-rewriting_history.md
+  - 06-pulling_pushing.md
+  - 07-first_session_end.md
+  - 08-managing_contributions.md
+  - 09-continuous_integration.md
   - 10-releases_tags.md
   - 11-collaborative_development.md
   - 12-second_session_end.md
