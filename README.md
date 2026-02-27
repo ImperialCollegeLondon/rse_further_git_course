@@ -1,6 +1,6 @@
 # Intermediate Git and GitHub for Effective Collaboration
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository contains materials taught as part of the Imperial College
@@ -63,6 +63,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/cc-a"><img src="https://avatars.githubusercontent.com/u/16690296?v=4?s=100" width="100px;" alt="Christopher Cave-Ayland"/><br /><sub><b>Christopher Cave-Ayland</b></sub></a><br /><a href="#content-cc-a" title="Content">🖋</a> <a href="#example-cc-a" title="Examples">💡</a> <a href="#infra-cc-a" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AdrianDAlessandro"><img src="https://avatars.githubusercontent.com/u/40875798?v=4?s=100" width="100px;" alt="Adrian D'Alessandro"/><br /><sub><b>Adrian D'Alessandro</b></sub></a><br /><a href="#content-AdrianDAlessandro" title="Content">🖋</a> <a href="#example-AdrianDAlessandro" title="Examples">💡</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/TinyMarsh"><img src="https://avatars.githubusercontent.com/u/13540127?v=4?s=100" width="100px;" alt="Ryan"/><br /><sub><b>Ryan</b></sub></a><br /><a href="#content-TinyMarsh" title="Content">🖋</a> <a href="#example-TinyMarsh" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://dandavies99.github.io"><img src="https://avatars.githubusercontent.com/u/5871253?v=4?s=100" width="100px;" alt="Dan Davies"/><br /><sub><b>Dan Davies</b></sub></a><br /><a href="#content-dandavies99" title="Content">🖋</a> <a href="#example-dandavies99" title="Examples">💡</a></td>
     </tr>
   </tbody>
 </table>
