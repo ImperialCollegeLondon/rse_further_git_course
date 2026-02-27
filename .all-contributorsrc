@@ -16,6 +16,17 @@
         "content",
         "example"
       ]
+    },
+    {
+      "login": "SaranjeetKaur",
+      "name": "Saranjeet Kaur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28556616?v=4",
+      "profile": "https://github.com/SaranjeetKaur",
+      "contributions": [
+        "content",
+        "example",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
