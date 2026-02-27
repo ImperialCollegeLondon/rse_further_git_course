@@ -34,13 +34,13 @@ life_cycle: "stable"
 license: "CC-BY 4.0"
 
 # Link to the source repository for this lesson
-source: "https://github.com/SaranjeetKaur/rse_further_git_course"
+source: "https://github.com/ImperialCollegeLondon/rse_further_git_course"
 
 # Default branch of your lesson
 branch: "main"
 
 # Who to contact if there are any issues
-contact: "rse-team@imperial.ac.uk"
+contact: "ict-rse-team@imperial.ac.uk"
 
 # Navigation ------------------------------------------------
 #
@@ -94,5 +94,5 @@ profiles:
 # sandpaper and varnish versions) should live
 
 carpentry_description: Lesson Description
-url: "https://SaranjeetKaur.github.io/rse_further_git_course"
+url: "https://imperialcollegelondon.github.io/rse_further_git_course/"
 lang: en
