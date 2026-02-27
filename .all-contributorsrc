@@ -37,6 +37,17 @@
         "content",
         "example"
       ]
+    },
+    {
+      "login": "cc-a",
+      "name": "Christopher Cave-Ayland",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16690296?v=4",
+      "profile": "https://github.com/cc-a",
+      "contributions": [
+        "content",
+        "example",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
