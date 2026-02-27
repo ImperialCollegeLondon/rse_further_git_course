@@ -7,10 +7,22 @@
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/01-collaborating_with_git.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/01-course_overview.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/02-branching_merging.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/02-collaborating_with_git.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/03-branching_merging.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/03-merge_conflicts.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/04-merge_conflicts.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/04-rewriting_history.html</loc>
@@ -19,7 +31,16 @@
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/05-pulling_pushing.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/05-rewriting_history.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/06-first_session_end.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/06-pulling_pushing.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/07-first_session_end.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/07-managing_contributions.html</loc>
@@ -28,13 +49,28 @@
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/08-continuous_integration.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/08-managing_contributions.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/09-continuous_integration.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/09-releases_tags.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/10-collaborative_development.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/10-releases_tags.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/11-collaborative_development.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/11-second_session_end.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/12-second_session_end.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/404.html</loc>
@@ -61,10 +97,22 @@
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/01-collaborating_with_git.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/01-course_overview.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/02-branching_merging.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/02-collaborating_with_git.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/03-branching_merging.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/03-merge_conflicts.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/04-merge_conflicts.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/04-rewriting_history.html</loc>
@@ -73,7 +121,16 @@
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/05-pulling_pushing.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/05-rewriting_history.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/06-first_session_end.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/06-pulling_pushing.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/07-first_session_end.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/07-managing_contributions.html</loc>
@@ -82,13 +139,28 @@
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/08-continuous_integration.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/08-managing_contributions.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/09-continuous_integration.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/09-releases_tags.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/10-collaborative_development.html</loc>
   </url>
   <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/10-releases_tags.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/11-collaborative_development.html</loc>
+  </url>
+  <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/11-second_session_end.html</loc>
+  </url>
+  <url>
+    <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/12-second_session_end.html</loc>
   </url>
   <url>
     <loc>https://imperialcollegelondon.github.io/rse_further_git_course/instructor/404.html</loc>
