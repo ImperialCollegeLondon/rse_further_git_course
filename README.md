@@ -36,10 +36,6 @@ This indicates that the maintainers will welcome a pull request fixing this issu
 
 This lesson is maintained by the Imperial College Research Computing Service
 
-## Authors
-
-A list of contributors to the lesson can be found in <AUTHORS>
-
 ## Citation
 
 To cite this lesson, please consult with <CITATION>
