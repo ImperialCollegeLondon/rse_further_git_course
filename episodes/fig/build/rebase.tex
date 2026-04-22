@@ -1,0 +1,35 @@
+\documentclass{article}
+
+\usepackage{subcaption}
+\usepackage{gitdags}
+\usepackage[papersize={5.1in, 1.7in}, margin={0.1in, 0.1in}]{geometry}
+\usetikzlibrary{arrows,positioning}
+\tikzgraphsset{
+  nudge/.style={/tikz/shift={#1}},
+  nudge down1/.style={nudge=(90:#1)},
+  nudge down1/.default=1.1,
+}
+
+\begin{document}
+
+\begin{figure}
+  \begin{tikzpicture}
+    \tikzstyle{node}=[align=center, draw, rounded corners]
+
+    \gitDAG[grow right sep = 3em, branch down = 3em] {
+      c1 -- c2 -- [dotted] {[nudge down1] f1 -- [dotted] f2}
+    };
+    \gitbranch {feature} {above=of f2} {f2}
+    \node[DAGcommit, fill = gray!20] at (f1) {f1};
+    \node[DAGcommit, fill = gray!20] at (f2) {f2};
+    \node[DAGref, fill=gray!20] at (feature) {feature};
+
+    \gitDAG[grow right sep = 3em, branch down = 3em] {
+      c1 -- c2 -- c3 -- c4 -- c5 -- {[nudge down1] f1 -- f2}
+    };
+    \gitbranch {main} {below=of c5} {c5}
+    \gitbranch {feature} {above=of f2} {f2}
+  \end{tikzpicture}
+\end{figure}
+
+\end{document}
