@@ -2,7 +2,7 @@
 
 \usepackage{subcaption}
 \usepackage{gitdags}
-\usepackage[papersize={4.4in, 6in}, margin={0.1in, 0.1in}]{geometry}
+\usepackage[papersize={4.4in, 5.4in}, margin={0.1in, 0.1in}]{geometry}
 \usetikzlibrary{arrows,positioning}
 \tikzgraphsset{
   nudge/.style={/tikz/shift={#1}},
@@ -20,7 +20,7 @@
     \tikzstyle{arrow}=[->, >=stealth, thick]
     \tikzstyle{smalllabel}=[label, black, font=\footnotesize]
 
-    \node (top_container) [container, minimum width=22.5em, minimum height=17em] {};
+    \node (top_container) [container, minimum width=22.5em, minimum height=14.5em] {};
     \gitDAG[grow right sep = 3em, branch up = 3em] {
       c2 [below left=-11em and -3.5em of top_container]
       -- c3 [below left=-11em and -3.5em of top_container]
@@ -29,14 +29,13 @@
     \gitbranch {main} {above=of c3} {c3}
     \gitbranch {feature1} {below=of f1} {f1}
     \gitHEAD {below=of feature1} {feature1}
-    \node[node, above=4em of c2] {LOCAL};
     \gitbranch {origin/main} {above right=1.4em and 8em of c3} {c3}
     \draw[DAGrefedge] (origin/main)
     -- node[smalllabel, above, sloped, anchor=south] {tracks} (main);
 
 
     \node (bottom_container) [
-      container, minimum width=25.5em, minimum height=17em, below=8em of top_container
+      container, minimum width=25.5em, minimum height=14.5em, below=8em of top_container
     ] {};
     \gitDAG[grow right sep = 3em, branch up = 3em]{
       c2 [below left=-11em and -3.5em of bottom_container]
@@ -52,7 +51,6 @@
 
     \draw[DAGrefedge] (origin/main)
     -- node[smalllabel, above, sloped, anchor=south] {tracks} (main);
-    \node[node, above=4em of c2] {LOCAL};
 
     \draw[DAGrefedge] (origin/feature1)
     -- node[smalllabel, above, sloped, anchor=south] {tracks} (feature1);
@@ -70,6 +68,5 @@
 
   \end{tikzpicture}
 \end{figure}
-
 
 \end{document}
