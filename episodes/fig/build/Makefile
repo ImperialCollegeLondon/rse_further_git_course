@@ -10,4 +10,3 @@ $(IMAGES): %: ../%.png
 
 %.pdf: %.tex
 	pdflatex $<
-	rm -f $*.aux $*.log
