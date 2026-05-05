@@ -3,10 +3,13 @@ IMAGES := branch1 branch2 branch3 branch4 branch5 branch6 branch7 branch8 branch
 
 all: $(IMAGES)
 
-$(IMAGES): %: ../%.png
+$(IMAGES): %: ../%.png ../%-dark.png
 
 ../%.png: %.pdf
 	magick -density 192 $< $@
 
 %.pdf: %.tex
-	pdflatex $<
+	sed 's/@@COLOUR_VAR@@/black/g' $< | pdflatex -jobname=$*
+
+%-dark.pdf: %.tex
+	sed 's/@@COLOUR_VAR@@/white/g' $< | pdflatex -jobname=$*-dark
