@@ -12,7 +12,7 @@
     \tikzstyle{container}=[rectangle, draw=orange, rounded corners]
     \tikzstyle{node}=[align=center, draw, rounded corners]
     \tikzstyle{arrow}=[->, >=stealth, thick]
-    \tikzstyle{smalllabel}=[label, black, font=\footnotesize]
+    \tikzstyle{smalllabel}=[label, @@COLOUR_VAR@@, font=\footnotesize]
 
     \node (top_container) [container, minimum width=22em, minimum height=8.5em] {};
     \gitDAG[grow right sep = 3em] {
@@ -44,9 +44,9 @@
     \draw[DAGrefedge] (origin/main)
     -- node[smalllabel, above, sloped, anchor=south] {tracks} (main);
 
-    \draw[arrow] ([shift={(-3em,0)}]top_container.south)
-    -- node[anchor=east] {\texttt{git pull}}
-    node[anchor=west, text width=12em, align=left] {
+    \draw[arrow, draw=@@COLOUR_VAR@@] ([shift={(-3em,0)}]top_container.south)
+    -- node[anchor=east, @@COLOUR_VAR@@] {\texttt{git pull}}
+    node[anchor=west, text width=12em, align=left, @@COLOUR_VAR@@] {
       \setlength{\leftmargini}{1.5em}
       \begin{itemize}
         \item Updates main with c4 in origin/main
