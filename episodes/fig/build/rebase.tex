@@ -54,9 +54,9 @@
     \gitbranch {main} {below=of c5} {c5}
     \gitbranch {feature} {above=of f2} {f2}
 
-    \draw[draw=COLOUR_VAR, arrow] ([shift={(-3em,0)}]top_container.south)
-    -- node[anchor=east, COLOUR_VAR] {\texttt{git rebase main}}
-    node[anchor=west, text width=12em, align=left, COLOUR_VAR] {
+    \draw[draw=@@COLOUR_VAR@@, arrow] ([shift={(-3em,0)}]top_container.south)
+    -- node[anchor=east, @@COLOUR_VAR@@] {\texttt{git rebase main}}
+    node[anchor=west, text width=12em, align=left, @@COLOUR_VAR@@] {
       \setlength{\leftmargini}{1.5em}
       \begin{itemize}
         \item Moves the base of feature branch to main

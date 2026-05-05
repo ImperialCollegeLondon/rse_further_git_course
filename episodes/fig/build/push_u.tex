@@ -18,7 +18,7 @@
     \tikzstyle{container}=[rectangle, draw=orange, rounded corners]
     \tikzstyle{node}=[align=center, draw, rounded corners]
     \tikzstyle{arrow}=[->, >=stealth, thick]
-    \tikzstyle{smalllabel}=[label, COLOUR_VAR, font=\footnotesize]
+    \tikzstyle{smalllabel}=[label, @@COLOUR_VAR@@, font=\footnotesize]
 
     \node (top_container) [container, minimum width=22.5em, minimum height=14.5em] {};
     \gitDAG[grow right sep = 3em, branch up = 3em] {
@@ -55,9 +55,9 @@
     \draw[DAGrefedge] (origin/feature1)
     -- node[smalllabel, above, sloped, anchor=south] {tracks} (feature1);
 
-    \draw[arrow, draw=COLOUR_VAR] (top_container.south)
-    -- node[anchor=east, COLOUR_VAR] {\texttt{git push -u origin feature1}}
-    node[anchor=west, text width=18em, align=left, COLOUR_VAR] {
+    \draw[arrow, draw=@@COLOUR_VAR@@] (top_container.south)
+    -- node[anchor=east, @@COLOUR_VAR@@] {\texttt{git push -u origin feature1}}
+    node[anchor=west, text width=18em, align=left, @@COLOUR_VAR@@] {
       \setlength{\leftmargini}{1.5em}
       \begin{itemize}
         \item Creates origin/feature1

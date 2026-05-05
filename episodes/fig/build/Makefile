@@ -9,7 +9,7 @@ $(IMAGES): %: ../%.png ../%-dark.png
 	magick -density 192 $< $@
 
 %.pdf: %.tex
-	sed 's/COLOUR_VAR/black/g' $< | pdflatex -jobname=$*
+	sed 's/@@COLOUR_VAR@@/black/g' $< | pdflatex -jobname=$*
 
 %-dark.pdf: %.tex
-	sed 's/COLOUR_VAR/white/g' $< | pdflatex -jobname=$*-dark
+	sed 's/@@COLOUR_VAR@@/white/g' $< | pdflatex -jobname=$*-dark
