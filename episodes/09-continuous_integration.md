@@ -331,7 +331,9 @@ Now that we've set up and configured GitHub Actions, what can we use it for? The
 Marketplace][GitHub MarketPlace] is a good place to get ideas but the number of available actions can be
 overwhelming.
 
-### Enforce Style and Formatting
+::::::::::::::::: tab
+
+### Style and Formatting
 
 One of the simplest uses of CI is to enforce common style and formatting standards to
 code. The below workflow runs [Flake8] to check that all Python code in the repository
@@ -398,10 +400,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
-          python-version: "3.10"
+          python-version: "3.13"
       - run: pip install -r requirements-dev.txt
       - run: pytest .
 ```
@@ -422,75 +424,102 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get image metadata
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v6
         with:
           images: ghcr.io/${{ github.repository }}
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
 ```
 
-### A Realistic Example
+### Real Example
 
 If we put together a few things we've seen so far, we can start to build more realistic
 and useful workflows. The below example is taken from a template for Python
-repositories (see [GitHub Python Poetry Template Repository][poetry]).
+repositories (see [GitHub Python uv Template Repository][uv]).
 
 ```yaml
-name: Test and build  # workflows can have a name that appears in the GitHub UI
-on: [push, pull_request, release]
+name: Test (uv)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
 jobs:
-  qa:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      # pre-commit is a useful tool to setup and run all of your QA tools at once
-      # see https://pre-commit.com/
-      - uses: pre-commit/action@v3.0.0
-
-  # this job checks that any links included in markdown files (such as the README) work
-  check-links:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
-        name: Check links in markdown files  # individual steps can also have names
-        with:
-          use-quiet-mode: 'yes'
-          use-verbose-mode: 'yes'
-
-  test:
-    needs: qa
-    runs-on: ${{ matrix.os }}  # example of how jobs can be parameterised
+  test-uv:
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
-      matrix:  # here we use a matrix to test our project on different operating systems
-        os: [ windows-latest, ubuntu-latest, macos-latest ]
-        python-version: [ 3.9 ]
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        python-version: ['3.14']
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Poetry
-      uses: abatilo/actions-poetry@v2.1.6
-      with:
-        poetry-version: 1.1.14
-    - name: Install dependencies
-      run: poetry install
-    - name: Run tests
-      run: poetry run pytest
+      - uses: actions/checkout@v7
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          prune-cache: false
+          python-version: ${{ matrix.python-version }}
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run unit tests
+        run: uv run pytest
+
+      - name: Create project from template
+        # Choose default options
+        run: uv run cookiecutter . --no-input packaging=uv rse_team_as_coauthor=true use_bsd3_license=true
+
+      - name: Install project dependencies
+        working-directory: my_project
+        run: |
+          git init
+          uv sync --all-groups
+
+      - name: Run mypy
+        working-directory: my_project
+        run: uv run mypy .
+
+      - name: Run tests
+        working-directory: my_project
+        run: uv run pytest
+
+      - name: Run pre-commit hooks for project
+        working-directory: my_project
+        run: |
+          git add .
+          uv run pre-commit run -a
+
+      - name: Test docs build successfully
+        working-directory: my_project
+        run: uv run mkdocs build --strict
+
+      - name: Test build is successful
+        working-directory: my_project
+        run: uv build
 ```
+
+:::::::::::::::::::::
 
 [GitHub Actions]: https://docs.github.com/en/actions
 [GitLab CI/CD]: https://docs.gitlab.com/ee/ci/
@@ -510,7 +539,7 @@ jobs:
 [github-org]: https://github.com/ImperialCollegeLondon
 [join-github-org]: https://servicemgt.imperial.ac.uk/ask?id=kb_article_view&sysparm_article=KB0012428
 [Flake8]: https://flake8.pycqa.org/
-[poetry]: https://github.com/ImperialCollegeLondon/poetry_template_2/blob/main/.github/workflows/ci.yml
+[uv]: https://github.com/ImperialCollegeLondon/python-template/blob/main/.github/workflows/ci-uv.yml
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
