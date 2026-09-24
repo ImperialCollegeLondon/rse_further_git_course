@@ -218,9 +218,9 @@ markdown files against a set of criteria.
     markdownlint:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v7
         - name: markdownlint-cli
-          uses: nosborn/github-action-markdown-cli@v3.2.0
+          uses: nosborn/github-action-markdown-cli@v3.5.0
           with:
             files: .
   ```
