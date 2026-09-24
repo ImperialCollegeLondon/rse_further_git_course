@@ -24,7 +24,7 @@ exercises: 10
 
 ## Motivation for branches
 
-::::::::::::::::::::::::::::::::::::::  discussion
+:::::::::::::::::::::::::::::::::::::: discussion
 
 ## Differing Goals and Objectives
 
@@ -76,15 +76,15 @@ version that contains all changes:
   child commits).
 - Commits are **relative** to the preceding (parent) commit. Whilst
   Git can be described as taking "snapshots" of your project this is
-  slightly misleading. Git actually records *the changes made since the last
-  commit*. The difference is subtle but powerful, it makes commands like `git revert` possible.
+  slightly misleading. Git actually records _the changes made since the last
+  commit_. The difference is subtle but powerful, it makes commands like `git revert` possible.
 
 A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it is useful to think that a
 branch tells the story of a feature, e.g. "fast sequence extraction" or "Python
 interface" or "fixing bug in matrix inversion algorithm".
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Starting point
 
@@ -120,13 +120,13 @@ git branch
 In the following we will learn how to create branches, how to switch between
 them and how to merge changes from different branches.
 
-***
+---
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## A useful alias
 
-We will now define an [*alias* in Git](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases),
+We will now define an [_alias_ in Git](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases),
 to be able to nicely visualise branch structure in the terminal without having to
 remember a long Git command:
 
@@ -302,7 +302,7 @@ combining the changes automatically, combining the two edits made to the same
 file for instance. Note that the experiment branch is still present in the
 repository.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Now you try
 
@@ -312,7 +312,7 @@ the amount of coriander in the recipe. Then merge `experiment` into `main`.
 
 ![Repository with second merge](fig/branch7.png){alt='Repository with second merge'}
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -377,14 +377,35 @@ git merge <name>         # merge branch <name> (to current branch)
 
 These commands can be used in a typical workflow that looks like the below:
 
-```bash
-$ git switch -c new-feature  # create branch, switch to it
-$ git commit                 # work, work, work, ...
-                             # test
-                             # feature is ready
-$ git switch main            # switch to main
-$ git merge new-feature      # merge work to main
-$ git branch -d new-feature  # remove branch
+```mermaid
+---
+config:
+  xyChart:
+    showDataLabel: true
+---
+flowchart TD
+
+  accTitle: {Typical flow diagram when working with git locally.}
+  accDescr: {Sequence of git commands of a typical workflow: git switch -c new-feature, git stage, git commit, test the new feature, git switch main, git merge new-feature and git branch -d new-feature to delete the new-feature branch.}
+
+  A["git switch -c new-feature<br/>(create branch, switch to it)"] --> B2["git stage"]
+  B2 --> B1["git commit"]
+  B1 -->|Work Loop<br/>work, work, work...| B2
+
+  B1 --> C["Test<br/>Feature is ready"]
+  C --> D["git switch main<br/>(switch to main)"]
+  D --> E["git merge new-feature<br/>(merge work into main)"]
+  E --> F["git branch -d new-feature<br/>(remove branch)"]
+  F -->|Start next feature| A
+
+  style A fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+  style B1 fill:#fff9c4,stroke:#fbc02d,stroke-width:2px
+  style B2 fill:#ffe0b2,stroke:#f57c00,stroke-width:2px
+  style C fill:#f0f4c3,stroke:#afb42b,stroke-width:2px
+  style D fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+  style E fill:#c8e6c9,stroke:#388e3c,stroke-width:2px
+  style F fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px
+
 ```
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
