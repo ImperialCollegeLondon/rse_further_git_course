@@ -1,6 +1,6 @@
 services:
   workbench:
-    image: carpentries/workbench-docker:v0.2.2
+    image: carpentries/workbench-docker:v0.2.7
     environment:
       WORKBENCH_PROFILE: "local"
     ports:
