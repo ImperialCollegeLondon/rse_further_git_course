@@ -226,23 +226,18 @@ git graph
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Summary
-
-Let us pause for a moment and summarise what we have learned:
-
-- You might come across situations where incompatible sets of changes
-  need to be combined.
-- If you don't want to perform a merge (or try it again later) then
-  you can use `git merge --abort`.
-- To resolve a merge conflict, edit the conflicted file into the state
-  that you would like to keep, then stage and commit it.
-- In the conflicted file, the tags `<<<<<<< HEAD`, `=======`
-  and `>>>>>>> branch-name` indicate which branch each version came from.
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Merge conflicts result when Git fails to merge files automatically because of mutually incompatible changes
-- Merge conflicts must be resolved by manually editing files to specify the desired changes
-- After resolving a merge conflict you must finalise the merge with `git stage` and `git commit`
+- You might come across situations where mutually incompatible sets of changes
+  need to be combined. In such situations, Git fails to merge files automatically
+  resulting in a merge conflict.
+- Merge conflicts must be resolved by manually editing the conflicted files to
+specify the desired changes or into a state that you would like to keep.
+- In the conflicted file, the tags `<<<<<<< HEAD`, `=======`
+  and `>>>>>>> branch-name` indicate which branch each version came from.
+- After resolving a merge conflict you must finalise the merge with
+`git stage` and `git commit`.
+- If you don't want to perform a merge (or try it again later) then
+  you can use `git merge --abort`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
