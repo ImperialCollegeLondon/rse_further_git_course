@@ -171,7 +171,7 @@ git graph
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Now you try
+## Now you try (10 minutes)
 
 You should now be on the `main` branch. Try creating another merge conflict of your
 own and resolving it.

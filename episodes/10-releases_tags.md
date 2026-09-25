@@ -217,7 +217,7 @@ Deleted tag 'tasty' (was 5cb4883)
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Exercise: Try creating your own tag
+## Exercise: Try creating your own tag (2 minutes)
 
 Now try it yourself. Choose a different commit and give it a label using `git tag`.
 Confirm that you can check out this commit. Once you have finished, delete it.
@@ -337,7 +337,7 @@ your release from the repo's main page by clicking on "Releases".
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Exercise: Publish another release
+## Exercise: Publish another release (3 minutes)
 
 Now try creating another release corresponding to a newer version of the recipe,
 following the same steps you did for `v0.0.1`.
