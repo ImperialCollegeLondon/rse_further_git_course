@@ -1162,7 +1162,7 @@ of the changes made in a branch</li>
 </div>
 </section></section><section id="aio-04-merge_conflicts"><p>Content from <a href="04-merge_conflicts.html">Merge conflicts</a></p>
 <hr>
-<p>Last updated on 2026-02-27 |
+<p>Last updated on 2026-09-25 |
 
         <a href="https://github.com/ImperialCollegeLondon/rse_further_git_course/edit/main/episodes/04-merge_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1428,22 +1428,6 @@ graph:</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
-</h2>
-<hr class="half-width">
-<p>Let us pause for a moment and summarise what we have learned:</p>
-<ul>
-<li>You might come across situations where incompatible sets of changes
-need to be combined.</li>
-<li>If you don’t want to perform a merge (or try it again later) then
-you can use <code>git merge --abort</code>.</li>
-<li>To resolve a merge conflict, edit the conflicted file into the state
-that you would like to keep, then stage and commit it.</li>
-<li>In the conflicted file, the tags
-<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code> and
-<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</code> indicate which
-branch each version came from.</li>
-</ul>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1452,13 +1436,20 @@ branch each version came from.</li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Merge conflicts result when Git fails to merge files automatically
-because of mutually incompatible changes</li>
-<li>Merge conflicts must be resolved by manually editing files to
-specify the desired changes</li>
+<li>You might come across situations where mutually incompatible sets of
+changes need to be combined. In such situations, Git fails to merge
+files automatically resulting in a merge conflict.</li>
+<li>Merge conflicts must be resolved by manually editing the conflicted
+files to specify the desired changes or into a state that you would like
+to keep.</li>
+<li>In the conflicted file, the tags
+<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code> and
+<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</code> indicate which
+branch each version came from.</li>
 <li>After resolving a merge conflict you must finalise the merge with
-<code>git stage</code> and <code>git commit</code>
-</li>
+<code>git stage</code> and <code>git commit</code>.</li>
+<li>If you don’t want to perform a merge (or try it again later) then
+you can use <code>git merge --abort</code>.</li>
 </ul>
 </div>
 </div>

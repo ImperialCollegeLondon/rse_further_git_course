@@ -460,13 +460,20 @@ of the changes made in a branch</li>
 </ul></section><section id="04-merge_conflicts"><h2 class="section-heading"><a href="04-merge_conflicts.html">Merge conflicts</a></h2>
 <hr class="half-width">
 <ul>
-<li>Merge conflicts result when Git fails to merge files automatically
-because of mutually incompatible changes</li>
-<li>Merge conflicts must be resolved by manually editing files to
-specify the desired changes</li>
+<li>You might come across situations where mutually incompatible sets of
+changes need to be combined. In such situations, Git fails to merge
+files automatically resulting in a merge conflict.</li>
+<li>Merge conflicts must be resolved by manually editing the conflicted
+files to specify the desired changes or into a state that you would like
+to keep.</li>
+<li>In the conflicted file, the tags
+<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code> and
+<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</code> indicate which
+branch each version came from.</li>
 <li>After resolving a merge conflict you must finalise the merge with
-<code>git stage</code> and <code>git commit</code>
-</li>
+<code>git stage</code> and <code>git commit</code>.</li>
+<li>If you don’t want to perform a merge (or try it again later) then
+you can use <code>git merge --abort</code>.</li>
 </ul></section><section id="05-rewriting_history"><h2 class="section-heading"><a href="05-rewriting_history.html">Rewriting history with Git</a></h2>
 <hr class="half-width">
 <ul>
