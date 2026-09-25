@@ -63,8 +63,8 @@ flowchart TD
   E:::rebaseStyle
 
   click A "#set-aside-your-work-safely-with-stash"
-  click B "#amend"
-  click C "#reset"
+  click B "#modify-the-latest-commit-with-amend"
+  click C "#move-or-undo-commits-with-reset"
   click D "#reset-vs-revert"
   click E "#incorporate-past-commits-with-rebase"
 
@@ -153,7 +153,7 @@ stashes changes in either case.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Amend
+### Modify the latest commit with `amend`
 
 This is the simplest method of rewriting history: it lets you amend the last commit you
 made, maybe adding some files you forgot to stage or fixing a typo in the commit message.
@@ -200,7 +200,7 @@ instructions](../index.md).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Reset
+### Move or undo commits with `reset`
 
 The next level of complexity rewriting history is `reset`: it lets you redo the last (or
 last few) commit(s) you made so you can incorporate more changes, fix an error you have
