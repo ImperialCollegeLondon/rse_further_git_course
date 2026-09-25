@@ -33,7 +33,8 @@ Together with some colleagues, you are writing a book of recipes for sauces
 and you are using Git for version control and GitHub to collaborate in the
 writing of the book.
 
-Form groups of 3-4 people and choose one to act as Administrator.
+Form groups of 3-4 people and choose one person to act as the Administrator. Please note that this
+is a learning opportunity for all, so when the Administrator is setting up the repository, let the other group members watch and learn. When it is time to work on your own, you can do so in parallel. If certain steps are to be performed sequentially, then try to look at what steps the other person is doing. If you are working in parallel, then please feel free to focus on your own thing.
 
 **Housekeeping** (Administrator's task):
 
@@ -61,7 +62,7 @@ Now, start collaborating!
 
 **Forking and cloning** (Contributor's task):
 
-- Fork the Administrator's repository and clone it locally.
+- Fork the Administrator's repository and clone the fork locally.
 
 **Creating new issues** (to be done by everyone):
 
@@ -89,18 +90,13 @@ Now, start collaborating!
 
 - When all the recipes by the Contributors are added, create a new release.
 
+- **Keeping your fork in sync with the original repo** (Contributor's task): During this process, the Administrator's repository will be updated with new content. The individual (Contributors') forks will be outdated as you contribute content to the Administrator's repository (for example, if your or someone else's PR is merged on the Administrator's repository, you will see that the fork is out of sync). Follow these instructions to make sure that your own forks are kept up to date.
+
+  - [Configuring a remote for a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork)
+  - [Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
+
+- If your group finishes the exercise early, you can switch roles and repeat the exercise with different people acting as Administrator and Contributors.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Bonus: Keeping your fork in sync with the original repo
-
-In the previous exercise, the individual forks will be outdated as you
-contribute content to the Administrator's repository (for example, if your or someone else's PR is merged on the Administrator's repository, you will see that the fork is out of sync). Follow these
-instructions to make sure that your own forks are kept up to date.
-
-- [Configuring a remote for a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork)
-- [Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
-
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
