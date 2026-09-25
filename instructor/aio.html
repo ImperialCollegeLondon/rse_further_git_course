@@ -1055,7 +1055,7 @@ recipe. Then merge <code>experiment</code> into <code>main</code>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1822,7 +1822,7 @@ to totally erase them.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>First, we check how far back we need to go with
 <code>git graph</code>:</p>
@@ -1937,7 +1937,7 @@ it to have a cleaner history.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2035,7 +2035,7 @@ indicating that the guacamole needs to be served cold.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>After the following commands (and modifications to the files) the
 repository history should look like the graph below:</p>
@@ -2267,7 +2267,7 @@ the <code>spicy</code> branch and pushing changes to it.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3790,7 +3790,7 @@ users what a new version number means</li>
 </div>
 </section></section><section id="aio-11-collaborative_development"><p>Content from <a href="11-collaborative_development.html">Collaborative development</a></p>
 <hr>
-<p>Last updated on 2026-02-27 |
+<p>Last updated on 2026-09-25 |
 
         <a href="https://github.com/ImperialCollegeLondon/rse_further_git_course/edit/main/episodes/11-collaborative_development.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -3842,7 +3842,14 @@ into practice all the knowledge acquired so far.</p>
 <p>Together with some colleagues, you are writing a book of recipes for
 sauces and you are using Git for version control and GitHub to
 collaborate in the writing of the book.</p>
-<p>Form groups of 3-4 people and choose one to act as Administrator.</p>
+<p>Form groups of 3-4 people and choose one person to act as the
+Administrator. Please note that this is a learning opportunity for all,
+so when the Administrator is setting up the repository, let the other
+group members watch and learn. When it is time to work on your own, you
+can do so in parallel. If certain steps are to be performed
+sequentially, then try to look at what steps the other person is doing.
+If you are working in parallel, then please feel free to focus on your
+own thing.</p>
 <p><strong>Housekeeping</strong> (Administrator’s task):</p>
 <ul>
 <li>
@@ -3874,7 +3881,7 @@ point of the book.</li>
 </ul>
 <p><strong>Forking and cloning</strong> (Contributor’s task):</p>
 <ul>
-<li>Fork the Administrator’s repository and clone it locally.</li>
+<li>Fork the Administrator’s repository and clone the fork locally.</li>
 </ul>
 <p><strong>Creating new issues</strong> (to be done by everyone):</p>
 <ul>
@@ -3914,26 +3921,31 @@ passing.</li>
 </ul>
 <p><strong>Creating a new release</strong> (Administrator’s task):</p>
 <ul>
-<li>When all the recipes by the Contributors are added, create a new
-release.</li>
-</ul>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="bonus-keeping-your-fork-in-sync-with-the-original-repo">Bonus: Keeping your fork in sync with the original repo<a class="anchor" aria-label="anchor" href="#bonus-keeping-your-fork-in-sync-with-the-original-repo"></a>
-</h2>
-<hr class="half-width">
-<p>In the previous exercise, the individual forks will be outdated as
-you contribute content to the Administrator’s repository (for example,
-if your or someone else’s PR is merged on the Administrator’s
-repository, you will see that the fork is out of sync). Follow these
-instructions to make sure that your own forks are kept up to date.</p>
+<li><p>When all the recipes by the Contributors are added, create a new
+release.</p></li>
+<li>
+<p><strong>Keeping your fork in sync with the original repo</strong>
+(Contributor’s task): During this process, the Administrator’s
+repository will be updated with new content. The individual
+(Contributors’) forks will be outdated as you contribute content to the
+Administrator’s repository (for example, if your or someone else’s PR is
+merged on the Administrator’s repository, you will see that the fork is
+out of sync). Follow these instructions to make sure that your own forks
+are kept up to date.</p>
 <ul>
 <li><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork" class="external-link">Configuring
 a remote for a fork</a></li>
 <li><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork" class="external-link">Syncing
 a fork</a></li>
 </ul>
+</li>
+<li><p>If your group finishes the exercise early, you can switch roles
+and repeat the exercise with different people acting as Administrator
+and Contributors.</p></li>
+</ul>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
