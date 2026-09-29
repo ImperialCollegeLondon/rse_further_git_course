@@ -196,7 +196,7 @@ have a red cross.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Adding CI to Your Recipe
+## Adding CI to Your Recipe (10 minutes)
 
 Let's look at adding some useful CI to the recipe repository. We're working with
 Markdown files so it would be helpful to enforce a consistent style to avoid
