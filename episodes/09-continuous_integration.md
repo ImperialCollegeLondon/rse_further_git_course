@@ -87,9 +87,11 @@ flowchart TB
   end
 
   E[Approve<br>& Merge]
+  F[Fix Issues]
   A2[...]
 
-  A --> B --> C --> D --> E
+  A --> B --> C --> D --> |Pass| E
+  D --> |Fail| F --> |Push| D
   E -.->|Next feature<br>cycle| A2
 
   classDef local fill:#a8dadc,stroke:#1d3557,stroke-width:2px,color:#1d3557,font-weight:bold;
