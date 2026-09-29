@@ -27,7 +27,7 @@ knowledge acquired so far.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Making a book of recipes
+## Making a book of recipes (30 minutes)
 
 Together with some colleagues, you are writing a book of recipes for sauces
 and you are using Git for version control and GitHub to collaborate in the

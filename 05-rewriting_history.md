@@ -140,7 +140,7 @@ stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash).
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Practice stashing
+## Practice stashing (3 minutes)
 
 Now try using `git stash` with the recipe repository. For example:
 
@@ -193,7 +193,7 @@ detailed description.
 
 <!-- markdownlint-disable-next-line -->
 
-::::::::::::::::::::::::::::::::::::::: challenge
+::::::::::::::::::::::::::::::::::::::: callout
 
 For details on how to choose which text editor Git will use, see [the setup
 instructions](../index.md).
@@ -260,7 +260,7 @@ very different use cases.
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Don't mess with the salt
+## Don't mess with the salt (5 minutes)
 
 Let's put this into practice! After all the work done in the previous episode adjusting
 the amount of salt, you conclude that it was nonsense and you should keep the original
@@ -357,7 +357,7 @@ git branch -D BRANCH_NAME
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Getting rid of the experiment
+## Getting rid of the experiment (2 minutes)
 
 As we are done with the `experiment` branch, let's delete it to have a cleaner history.
 
@@ -425,7 +425,7 @@ rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Practice rebasing
+## Practice rebasing (5 minutes)
 
 We are going to practice rebasing in a simple scenario with the recipe repository.
 We need to do some preparatory work first:
