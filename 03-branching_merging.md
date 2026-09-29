@@ -312,6 +312,16 @@ the amount of coriander in the recipe. Then merge `experiment` into `main`.
 
 ![Repository with second merge](fig/branch7.png){alt='Repository with second merge'}
 
+:::::::::::: hint
+
+- Check on which branch you are.
+- After you have made changes to any file(s), remember
+to stage and commit them.
+- Use meaningful commit messages.
+- Remember to run `git merge` from the branch that you want the changes to be "merged into" and not from the branch that has those changes.
+
+:::::::::::::::::
+
 :::::::::::::::  solution
 
 ## Solution
