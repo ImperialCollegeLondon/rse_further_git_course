@@ -318,8 +318,7 @@ the amount of coriander in the recipe. Then merge `experiment` into `main`.
 - After you have made changes to any file(s), remember
 to stage and commit them.
 - Use meaningful commit messages.
-- Remember to merge in the branch that you want to have it
-merged (move to the appropriate branch before merging)
+- Remember to run `git merge` from the branch that you want the changes to be "merged into" and not from the branch that has those changes.
 
 :::::::::::::::::
 
