@@ -40,11 +40,6 @@ example:
 The commands available ot manipulate history and the working directory in a safe way are:
 
 ```mermaid
----
-config:
-  xyChart:
-    showDataLabel: true
----
 flowchart TD
 
   accTitle: {Git commands to manipulate the working directory and git history.}
