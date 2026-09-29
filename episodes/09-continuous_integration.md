@@ -24,7 +24,7 @@ exercises: 10
 
 ## Motivation for CI
 
-::::::::::::::::::::::::::::::::::::::  discussion
+:::::::::::::::::::::::::::::::::::::: discussion
 
 ## Individual styles and preferences
 
@@ -67,18 +67,60 @@ We're going to look at how to setup and use GitHub Actions for the following rea
 - It is hosted online without the need to register for additional services/accounts.
 - The College has invested in a Licence for GitHub that brings additional benefits.
 
+```mermaid
+flowchart TB
+
+  accTitle: {Typical development workflow using a CI/CD pipeline.}
+  accDescr: {Development workflow from local development, pushing the changes to GitHub, opening a pull request, automatically runnig the CI/CD pipeline in GitHub Actions, approving, merging and back at local development.}
+
+  A[Local Development]
+  B[Push]
+  C[Open PR]
+
+  subgraph D[Automatically triggered CI/CD Pipeline]
+      direction TB
+      D1[Testing]
+      D2[QA Checks]
+      D3[Build Docs]
+      D4[Build Executables]
+      D5[...]
+  end
+
+  E[Approve<br>& Merge]
+  A2[...]
+
+  A --> B --> C --> D --> E
+  E -.->|Next feature<br>cycle| A2
+
+  classDef local fill:#a8dadc,stroke:#1d3557,stroke-width:2px,color:#1d3557,font-weight:bold;
+  classDef push fill:#f1faee,stroke:#457b9d,stroke-width:2px,color:#1d3557,font-weight:bold;
+  classDef pr fill:#ffe066,stroke:#e09f3e,stroke-width:2px,color:#3a2e00,font-weight:bold;
+  classDef cicd fill:#f4978e,stroke:#b23a48,stroke-width:2px,color:#3a0d10,font-weight:bold;
+  classDef release fill:#90be6d,stroke:#386641,stroke-width:2px,color:#1a2e05,font-weight:bold;
+  classDef subtask fill:#fde2e1,stroke:#b23a48,stroke-width:1.5px,color:#3a0d10;
+  classDef invisible fill:none,stroke:none;
+
+  class A local;
+  class B push;
+  class C pr;
+  class D cicd;
+  class E release;
+  class D1,D2,D3,D4,D5 subtask;
+  class A2 invisible;
+```
+
 ## Introduction to GitHub Actions
 
 There are two requirements to use GitHub Actions:
 
 1. You must have a repository on GitHub with Actions enabled. This is the default in the
-  majority of circumstances but Actions may be initially disabled on a fork. You can
-  check by going to the Actions Settings in the GitHub user interface (under Settings
-  \-> Actions -> General).
+   majority of circumstances but Actions may be initially disabled on a fork. You can
+   check by going to the Actions Settings in the GitHub user interface (under Settings
+   \-> Actions -> General).
 2. Your repository must contain a workflow file in the directory `.github/workflows`. A
-  workflow file contains the instructions that specify when your CI should run and what
-  to do when it runs. You can have as many workflow files as you want and they will all
-  run simultaneously.
+   workflow file contains the instructions that specify when your CI should run and what
+   to do when it runs. You can have as many workflow files as you want and they will all
+   run simultaneously.
 
 ### Configuring and Running GitHub Actions
 
@@ -98,7 +140,7 @@ jobs:
 This roughly translates to the following: "When I push new code to GitHub, use the
 Ubuntu operating system to checkout the code and then run the specified command".
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## YAML File Format
 
@@ -160,9 +202,9 @@ multiple different operating systems with different versions of Python. See [Git
 Docs: Using a matrix for your jobs][matrix] for more information.
 
 ```yaml
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo 'hello world'
+steps:
+  - uses: actions/checkout@v3
+  - run: echo 'hello world'
 ```
 
 Individual steps within a job define the actual work to be carried out. The workflow
@@ -194,7 +236,7 @@ but instead generated an error, then the CI run is considered to have failed. Su
 CI runs are marked in the GitHub UI with a green tick next to the commit; failed runs
 have a red cross.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Adding CI to Your Recipe (10 minutes)
 
@@ -205,54 +247,54 @@ differences between authors. Well do this by adding a workflow that runs the
 markdown files against a set of criteria.
 
 1. Create a `.github` directory in your project then create a `workflows` directory
-  within that.
+   within that.
 
 2. Create a file called `ci.yml` in the `workflows` directory.
 
 3. Add the following contents to `ci.yml`:
 
-  ```yaml
-  on:
-    - push
-  jobs:
-    markdownlint:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: markdownlint-cli
-          uses: nosborn/github-action-markdown-cli@v3.2.0
-          with:
-            files: .
-  ```
+```yaml
+on:
+  - push
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: markdownlint-cli
+        uses: nosborn/github-action-markdown-cli@v3.2.0
+        with:
+          files: .
+```
 
 4. Stage and commit `ci.yml` then push the repository to GitHub.
 
 5. Your first CI run should have been triggered! Quickly, go to your repository on
-  GitHub and select the "Actions" tab. You should see a workflow with a glowing amber
-  dot next to the commit message you provided. This means that the workflow is
-  running.
+   GitHub and select the "Actions" tab. You should see a workflow with a glowing amber
+   dot next to the commit message you provided. This means that the workflow is
+   running.
 
 6. Click on the commit message. You now get a breakdown of the individual jobs within
-  your workflow. It's only one job in this case -- `markdownlint` -- click on it to see
-  its progress. You can see the individual steps, and the output that they produce as
-  they run.
+   your workflow. It's only one job in this case -- `markdownlint` -- click on it to see
+   its progress. You can see the individual steps, and the output that they produce as
+   they run.
 
 7. Before long the workflow will complete but, alas, it should be a failure. Go back
-  to the front page of the repository by clicking the "Code" tab. You should see your
-  commit marked with a red cross to indicate that it failed the CI. You should also
-  receive a notification (after a few minutes) via the email address associated with
-  your GitHub account.
+   to the front page of the repository by clicking the "Code" tab. You should see your
+   commit marked with a red cross to indicate that it failed the CI. You should also
+   receive a notification (after a few minutes) via the email address associated with
+   your GitHub account.
 
 8. Return to the "Actions" tab and open the failed workflow. You should see a handy
-  summary of the errors that were encountered during the `markdownlint` job. You now
-  need to correct both `ingredients.md` and `instructions.md` so that the CI will
-  pass. Hint: see [markdownlint-cli: Rule MD041][md041].
+   summary of the errors that were encountered during the `markdownlint` job. You now
+   need to correct both `ingredients.md` and `instructions.md` so that the CI will
+   pass. Hint: see [markdownlint-cli: Rule MD041][md041].
 
 9. Once you've modified the files stage, commit and push once again. Your next CI run
-  should succeed. If it doesn't then try modifying the files again.
+   should succeed. If it doesn't then try modifying the files again.
 
 10. Once the CI is passing, go back to the "Code" tab and you should see a nice green
-  tick next to your latest commit.
+    tick next to your latest commit.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -449,7 +491,7 @@ and useful workflows. The below example is taken from a template for Python
 repositories (see [GitHub Python Poetry Template Repository][poetry]).
 
 ```yaml
-name: Test and build  # workflows can have a name that appears in the GitHub UI
+name: Test and build # workflows can have a name that appears in the GitHub UI
 on: [push, pull_request, release]
 jobs:
   qa:
@@ -466,33 +508,33 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
-        name: Check links in markdown files  # individual steps can also have names
+        name: Check links in markdown files # individual steps can also have names
         with:
-          use-quiet-mode: 'yes'
-          use-verbose-mode: 'yes'
+          use-quiet-mode: "yes"
+          use-verbose-mode: "yes"
 
   test:
     needs: qa
-    runs-on: ${{ matrix.os }}  # example of how jobs can be parameterised
+    runs-on: ${{ matrix.os }} # example of how jobs can be parameterised
     strategy:
       fail-fast: false
-      matrix:  # here we use a matrix to test our project on different operating systems
-        os: [ windows-latest, ubuntu-latest, macos-latest ]
-        python-version: [ 3.9 ]
+      matrix: # here we use a matrix to test our project on different operating systems
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        python-version: [3.9]
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Poetry
-      uses: abatilo/actions-poetry@v2.1.6
-      with:
-        poetry-version: 1.1.14
-    - name: Install dependencies
-      run: poetry install
-    - name: Run tests
-      run: poetry run pytest
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2.1.6
+        with:
+          poetry-version: 1.1.14
+      - name: Install dependencies
+        run: poetry install
+      - name: Run tests
+        run: poetry run pytest
 ```
 
 [GitHub Actions]: https://docs.github.com/en/actions
