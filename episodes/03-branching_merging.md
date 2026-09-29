@@ -304,7 +304,7 @@ repository.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Now you try
+## Now you try (10 minutes)
 
 As the experiment branch is still present there is no reason further commits
 can't be added to it. Create a new commit in the `experiment` branch adjusting
