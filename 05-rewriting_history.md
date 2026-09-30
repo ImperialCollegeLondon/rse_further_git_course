@@ -263,6 +263,11 @@ amount. You could obviously just create a new commit with the correct amount of 
 that will leave your poor attempts to improve the recipe in the commit history, so you
 decide to totally erase them.
 
+NOTE: Using `reset` here is OK because you want to undo the most recent commits and you
+have not shared this work with others, yet. However, if the changes you want to erase were
+further in the past or already pushed to GitHub (see next episode), `revert` (or just
+manually create a new commit), would be the right choice, instead of `reset`.
+
 ::::::::::::::: solution
 
 ## Solution
