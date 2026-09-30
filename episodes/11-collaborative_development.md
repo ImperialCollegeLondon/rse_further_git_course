@@ -79,7 +79,7 @@ Now, start collaborating!
 **Working on a branch, pushing the changes, and opening a PR** (Contributor's tasks):
 
 - Create a branch and work on the recipes you have been assigned. Practice the concepts learnt in previous episodes about making the changes locally and pushing those changes back to the remote repository.
-- When ready, open a PR to the Administrator's repo and request their review.
+- When ready, open a PR to the Administrator's repo and request their review. NOTE: Remember that you will not be able to request a specific reviewer when creating a PR from a fork.
 
 **Reviewing and Merging PRs** (Administrator's tasks):
 
