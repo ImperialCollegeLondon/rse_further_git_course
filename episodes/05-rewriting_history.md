@@ -40,11 +40,6 @@ example:
 The commands available ot manipulate history and the working directory in a safe way are:
 
 ```mermaid
----
-config:
-  xyChart:
-    showDataLabel: true
----
 flowchart TD
 
   accTitle: {Git commands to manipulate the working directory and git history.}
@@ -63,8 +58,8 @@ flowchart TD
   E:::rebaseStyle
 
   click A "#set-aside-your-work-safely-with-stash"
-  click B "#amend"
-  click C "#reset"
+  click B "#modify-the-latest-commit-with-amend"
+  click C "#move-or-undo-commits-with-reset"
   click D "#reset-vs-revert"
   click E "#incorporate-past-commits-with-rebase"
 
@@ -140,7 +135,7 @@ stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash).
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Practice stashing
+## Practice stashing (3 minutes)
 
 Now try using `git stash` with the recipe repository. For example:
 
@@ -153,7 +148,7 @@ stashes changes in either case.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Amend
+### Modify the latest commit with `amend`
 
 This is the simplest method of rewriting history: it lets you amend the last commit you
 made, maybe adding some files you forgot to stage or fixing a typo in the commit message.
@@ -193,14 +188,14 @@ detailed description.
 
 <!-- markdownlint-disable-next-line -->
 
-::::::::::::::::::::::::::::::::::::::: challenge
+::::::::::::::::::::::::::::::::::::::: callout
 
 For details on how to choose which text editor Git will use, see [the setup
 instructions](../index.md).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Reset
+### Move or undo commits with `reset`
 
 The next level of complexity rewriting history is `reset`: it lets you redo the last (or
 last few) commit(s) you made so you can incorporate more changes, fix an error you have
@@ -260,7 +255,7 @@ very different use cases.
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Don't mess with the salt
+## Don't mess with the salt (5 minutes)
 
 Let's put this into practice! After all the work done in the previous episode adjusting
 the amount of salt, you conclude that it was nonsense and you should keep the original
@@ -357,7 +352,7 @@ git branch -D BRANCH_NAME
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Getting rid of the experiment
+## Getting rid of the experiment (2 minutes)
 
 As we are done with the `experiment` branch, let's delete it to have a cleaner history.
 
@@ -425,7 +420,7 @@ rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Practice rebasing
+## Practice rebasing (5 minutes)
 
 We are going to practice rebasing in a simple scenario with the recipe repository.
 We need to do some preparatory work first:

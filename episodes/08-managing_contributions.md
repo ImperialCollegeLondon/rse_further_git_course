@@ -125,7 +125,7 @@ By default, pull requests are based on the parent repository's default branch. Y
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Now you try
+## Now you try (10 minutes)
 
 Let's revisit our `recipe` repository.
 

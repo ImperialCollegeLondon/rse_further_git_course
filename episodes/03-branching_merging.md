@@ -304,7 +304,7 @@ repository.
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Now you try
+## Now you try (10 minutes)
 
 As the experiment branch is still present there is no reason further commits
 can't be added to it. Create a new commit in the `experiment` branch adjusting
@@ -312,7 +312,17 @@ the amount of coriander in the recipe. Then merge `experiment` into `main`.
 
 ![Repository with second merge](fig/branch7.png){alt='Repository with second merge'}
 
-::::::::::::::: solution
+:::::::::::: hint
+
+- Check on which branch you are.
+- After you have made changes to any file(s), remember
+to stage and commit them.
+- Use meaningful commit messages.
+- Remember to run `git merge` from the branch that you want the changes to be "merged into" and not from the branch that has those changes.
+
+:::::::::::::::::
+
+:::::::::::::::  solution
 
 ## Solution
 
