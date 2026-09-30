@@ -78,6 +78,6 @@ style.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Code along with the presenter.
-- Ask questions!
+- **Ask questions!**
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
