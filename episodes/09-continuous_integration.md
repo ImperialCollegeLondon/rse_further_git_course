@@ -355,7 +355,10 @@ rule.
 Despite concerted efforts to look like your best mate, GitHub is in fact trying to make
 money. At the end of the day GitHub Actions uses computational power which costs (even
 if you are owned by Microsoft). The practical upshot is that there are limits on the
-usage of GitHub Actions. In brief:
+usage of GitHub Actions. Moreover, they consume energy which, depending on where the
+servers are running, mean carbon emissions. Both aspects are [briefly discussed in this
+poster](https://doi.org/10.5281/zenodo.12754189). Hence, consider the following when using
+GitHub atcions:
 
 - Current usage limits and billing policies can be found at [GitHub Docs: About billing
   for GitHub Actions][billing].
