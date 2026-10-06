@@ -265,7 +265,7 @@ decide to totally erase them.
 
 NOTE: Using `reset` here is OK because you want to undo the most recent commits and you
 have not shared this work with others, yet. However, if the changes you want to erase were
-further in the past or already pushed to GitHub (see next episode), `revert` (or just
+further in the past or already pushed to GitHub (see next episode), then instead of using `reset`, `revert` or just
 manually creating a new commit, would be the right choice.
 
 ::::::::::::::: solution
