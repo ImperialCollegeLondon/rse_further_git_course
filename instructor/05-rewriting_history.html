@@ -387,7 +387,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Rewriting history with Git</h1>
-        <p>Last updated on 2026-09-30 |
+        <p>Last updated on 2026-10-06 |
 
         <a href="https://github.com/ImperialCollegeLondon/rse_further_git_course/edit/main/episodes/05-rewriting_history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -714,6 +714,12 @@ and you should keep the original amount. You could obviously just create
 a new commit with the correct amount of salt, but that will leave your
 poor attempts to improve the recipe in the commit history, so you decide
 to totally erase them.</p>
+<p>NOTE: Using <code>reset</code> here is OK because you want to undo
+the most recent commits and you have not shared this work with others,
+yet. However, if the changes you want to erase were further in the past
+or already pushed to GitHub (see next episode), then instead of using
+<code>reset</code>, <code>revert</code> or just manually creating a new
+commit, would be the right choice.</p>
 </div>
 </div>
 </div>
@@ -722,7 +728,7 @@ to totally erase them.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>First, we check how far back we need to go with
 <code>git graph</code>:</p>
@@ -836,7 +842,7 @@ it to have a cleaner history.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -931,7 +937,7 @@ indicating that the guacamole needs to be served cold.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>After the following commands (and modifications to the files) the
 repository history should look like the graph below:</p>
@@ -1086,7 +1092,7 @@ vs. Rebasing</a>
   "url": "https://imperialcollegelondon.github.io/rse_further_git_course/instructor/05-rewriting_history.html",
   "identifier": "https://imperialcollegelondon.github.io/rse_further_git_course/instructor/05-rewriting_history.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2026-09-30",
+  "dateModified": "2026-10-06",
   "datePublished": "2026-10-06"
 }
 
