@@ -123,6 +123,15 @@ By default, pull requests are based on the parent repository's default branch. Y
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::::: instructor
+
+## Demo of opening a PR
+
+Opening a PR has a lot of moving parts, to it might be confusing and things might fail in a variaty of places. To help students with their challenge below, go through the process of creating a PR. Depending on the branch currently active (`main` or `spicy`) the process might vary slightly.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Now you try (10 minutes)
