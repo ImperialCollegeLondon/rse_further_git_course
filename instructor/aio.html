@@ -1082,7 +1082,7 @@ recipe. Then merge <code>experiment</code> into <code>main</code>.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <ul>
 <li>Check on which branch you are.</li>
@@ -1102,7 +1102,7 @@ changes.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1877,7 +1877,7 @@ commit, would be the right choice.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>First, we check how far back we need to go with
 <code>git graph</code>:</p>
@@ -1992,7 +1992,7 @@ it to have a cleaner history.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2090,7 +2090,7 @@ indicating that the guacamole needs to be served cold.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>After the following commands (and modifications to the files) the
 repository history should look like the graph below:</p>
@@ -2322,7 +2322,7 @@ the <code>spicy</code> branch and pushing changes to it.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2426,7 +2426,7 @@ If there are conflicts, you will have to resolve them.</li>
         </div>
 <p>Please mark your attendance for this first session.</p></section><section id="aio-08-managing_contributions"><p>Content from <a href="08-managing_contributions.html">Managing contributions to code</a></p>
 <hr>
-<p>Last updated on 2026-09-29 |
+<p>Last updated on 2026-10-07 |
 
         <a href="https://github.com/ImperialCollegeLondon/rse_further_git_course/edit/main/episodes/08-managing_contributions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 25 minutes</p>
@@ -2751,7 +2751,15 @@ Workflow</a> example if you want a deeper dive.</p>
 <ul>
 <li>When opening a PR, you can request it to be reviewed by someone
 else, so there is another pair of eyes making sure that your
-contribution is correct and does not introduce any bugs.</li>
+contribution is correct and does not introduce any bugs.
+<ul>
+<li>NOTE: When creating a PR from a fork (see the previous section),
+probably you will not be able to choose a reviewer, as you are an
+external contributor. In those cases, typically, the repository
+maintainers are notified of a new PR and they choose who should be
+reviewing it.</li>
+</ul>
+</li>
 <li>Reviewers can just comment on the PR, approve it, or request changes
 before it can be approved.</li>
 <li>Some repositories might require the approval of one or more
@@ -3891,7 +3899,7 @@ users what a new version number means</li>
 </div>
 </section></section><section id="aio-11-collaborative_development"><p>Content from <a href="11-collaborative_development.html">Collaborative development</a></p>
 <hr>
-<p>Last updated on 2026-09-29 |
+<p>Last updated on 2026-10-07 |
 
         <a href="https://github.com/ImperialCollegeLondon/rse_further_git_course/edit/main/episodes/11-collaborative_development.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -4010,7 +4018,8 @@ Practice the concepts learnt in previous episodes about making the
 changes locally and pushing those changes back to the remote
 repository.</li>
 <li>When ready, open a PR to the Administrator’s repo and request their
-review.</li>
+review. NOTE: Remember that you will not be able to request a specific
+reviewer when creating a PR from a fork.</li>
 </ul>
 <p><strong>Reviewing and Merging PRs</strong> (Administrator’s
 tasks):</p>
@@ -4123,8 +4132,8 @@ attendance for this second session.</p></section>
   "url": "https://imperialcollegelondon.github.io/rse_further_git_course/instructor/aio.html",
   "identifier": "https://imperialcollegelondon.github.io/rse_further_git_course/instructor/aio.html",
   "dateCreated": "2019-12-11",
-  "dateModified": "2026-10-06",
-  "datePublished": "2026-10-06"
+  "dateModified": "2026-10-07",
+  "datePublished": "2026-10-07"
 }
 
   </script><script>
