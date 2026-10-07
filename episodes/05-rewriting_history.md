@@ -24,7 +24,7 @@ exercises: 15
 
 ## What justifies rewriting history?
 
-Make this question and either
+Ask this question and either
 leave it open ended or offer a few options. Can take the form of a
 Mentimeter poll, if that is being used:
 
