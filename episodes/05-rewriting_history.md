@@ -20,6 +20,22 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::: instructor
+
+## What justifies rewriting history?
+
+Make this question and either
+leave it open ended or offer a few options. Can take the form of a
+Mentimeter poll, if that is being used:
+
+- You just made a commit, but realise there are other changes you forgot to include: **Yes**
+- You just made one or more commits, but then changed your mind and want to remove this change from your history: **Yes**
+- You want to “move” one or more commits so they are based on top of some other work (e.g. new changes made to the main branch): **Yes**
+- You want to change authorship of other’s work: **No**, not a valid reason
+- You want to change a past commit that introduced an error: **No**, because you create a new commit with a fix
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Rewriting history with Git
 
 While version control is useful to keep track of changes made to a piece of work over
