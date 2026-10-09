@@ -123,9 +123,18 @@ By default, pull requests are based on the parent repository's default branch. Y
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::::: instructor
+
+## Demo of opening a PR
+
+Opening a PR has a lot of moving parts to it. It might be confusing and things might fail in a variety of places. To help students with their challenge below, go through the process of creating a PR. Depending on the branch currently active (`main` or `spicy`) the process might vary slightly.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Now you try
+## Now you try (10 minutes)
 
 Let's revisit our `recipe` repository.
 
@@ -191,6 +200,7 @@ As with the **shared repository model**, Atlassian has a nice [Forking Workflow]
 ### Requesting reviewers
 
 - When opening a PR, you can request it to be reviewed by someone else, so there is another pair of eyes making sure that your contribution is correct and does not introduce any bugs.
+  - NOTE: When creating a PR from a fork (see the previous section), probably you will not be able to choose a reviewer, as you are an external contributor. In those cases, typically, the repository maintainers are notified of a new PR and they choose who should be reviewing it.
 - Reviewers can just comment on the PR, approve it, or request changes before it can be approved.
 - Some repositories might require the approval of one or more reviewers before the changes can be merged into the target branch. This can be set up by the repository manager(s) as a [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule).
 - Only maintainers of the target repository can merge a PR.
