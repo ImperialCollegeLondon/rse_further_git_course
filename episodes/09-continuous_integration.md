@@ -491,79 +491,41 @@ jobs:
 ### Real Example
 
 If we put together a few things we've seen so far, we can start to build more realistic
-and useful workflows. The below example is taken from a template for Python
-repositories (see [GitHub Python uv Template Repository][uv]).
+and useful workflows. The below example is for a Python project managed with [uv] (see the [example-repo]). It has two jobs that run in parallel: one runs the project's QA tools via [pre-commit] and [pre-commit-lite], and the other runs type checking and tests.
 
 ```yaml
-name: Test (uv)
+name: pre-commit and uv checks
 
 on:
   push:
     branches: [main]
   pull_request:
-  workflow_dispatch:
 
 jobs:
-  test-uv:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        python-version: ['3.14']
-
+  pre-commit:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          enable-cache: true
-          prune-cache: false
-          python-version: ${{ matrix.python-version }}
-
       - uses: actions/setup-python@v7
         with:
-          python-version: ${{ matrix.python-version }}
-          cache: pip
+          python-version: 3.x
+      - uses: pre-commit/action@v3.0.1
+      - uses: pre-commit-ci/lite-action@v1.2.0
+        if: always()
 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
       - name: Install dependencies
         run: uv sync
-
-      - name: Run unit tests
-        run: uv run pytest
-
-      - name: Create project from template
-        # Choose default options
-        run: uv run cookiecutter . --no-input packaging=uv rse_team_as_coauthor=true use_bsd3_license=true
-
-      - name: Install project dependencies
-        working-directory: my_project
-        run: |
-          git init
-          uv sync --all-groups
-
-      - name: Run mypy
-        working-directory: my_project
+      - name: Type check
         run: uv run mypy .
-
       - name: Run tests
-        working-directory: my_project
         run: uv run pytest
-
-      - name: Run pre-commit hooks for project
-        working-directory: my_project
-        run: |
-          git add .
-          uv run pre-commit run -a
-
-      - name: Test docs build successfully
-        working-directory: my_project
-        run: uv run mkdocs build --strict
-
-      - name: Test build is successful
-        working-directory: my_project
-        run: uv build
 ```
 
 :::::::::::::::::::::
@@ -586,7 +548,10 @@ jobs:
 [github-org]: https://github.com/ImperialCollegeLondon
 [join-github-org]: https://servicemgt.imperial.ac.uk/ask?id=kb_article_view&sysparm_article=KB0012428
 [Flake8]: https://flake8.pycqa.org/
-[uv]: https://github.com/ImperialCollegeLondon/python-template/blob/main/.github/workflows/ci-uv.yml
+[uv]: https://docs.astral.sh/uv/
+[pre-commit]: https://pre-commit.com/
+[pre-commit-lite]: https://pre-commit.ci/lite.html
+[example-repo]: https://github.com/ImperialCollegeLondon/python-uv-exemplar-template
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
