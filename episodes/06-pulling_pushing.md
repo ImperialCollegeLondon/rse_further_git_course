@@ -78,7 +78,7 @@ To https://github.com/username/recipe.git
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Now you try
+## Now you try (5 minutes)
 
 You should now be on the `main` branch. Try switching to the `spicy`
 branch and pushing changes to it.

@@ -20,6 +20,22 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::: instructor
+
+## What justifies rewriting history?
+
+Ask this question and either
+leave it open ended or offer a few options. Can take the form of a
+Mentimeter poll, if that is being used:
+
+- You just made a commit, but realise there are other changes you forgot to include: **Yes**
+- You just made one or more commits, but then changed your mind and want to remove this change from your history: **Yes**
+- You want to “move” one or more commits so they are based on top of some other work (e.g. new changes made to the main branch): **Yes**
+- You want to change authorship of other’s work: **No**, not a valid reason
+- You want to change a past commit that introduced an error: **No**, because you create a new commit with a fix
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Rewriting history with Git
 
 While version control is useful to keep track of changes made to a piece of work over
@@ -37,9 +53,39 @@ example:
 - You want to "move" one or more commits so they are based on top of some other work
   (e.g. new changes made to the `main` branch)
 
-This episode explores some of the commands `git` offers to manipulate the commit history
-for your benefit and that of your collaborators. But, first, we will look at another
-useful command.
+The commands available ot manipulate history and the working directory in a safe way are:
+
+```mermaid
+flowchart TD
+
+  accTitle: {Git commands to manipulate the working directory and git history.}
+  accDescr: {Clickable bosxes for the commands stash, amend, rever, reset and rebase.}
+
+  A(["STASH"])
+  B(["AMEND"])
+  C(["RESET"])
+  D(["REVERT"])
+  E(["REBASE"])
+
+  A:::stashStyle
+  B:::amendStyle
+  C:::revertStyle
+  D:::resetStyle
+  E:::rebaseStyle
+
+  click A "#set-aside-your-work-safely-with-stash"
+  click B "#modify-the-latest-commit-with-amend"
+  click C "#move-or-undo-commits-with-reset"
+  click D "#reset-vs-revert"
+  click E "#incorporate-past-commits-with-rebase"
+
+  classDef stashStyle fill:#eef2ff,stroke:#818cf8,color:#222,rx:15,ry:15,padding:50px
+  classDef amendStyle fill:#f0fdfa,stroke:#2dd4bf,color:#222,rx:15,ry:15,padding:50px
+  classDef revertStyle fill:#f5f3ff,stroke:#a78bfa,color:#222,rx:15,ry:15,padding:50px
+  classDef resetStyle fill:#fff7ed,stroke:#fb923c,color:#222,rx:15,ry:15,padding:50px
+  classDef rebaseStyle fill:#fefce8,stroke:#facc15,color:#222,rx:15,ry:15,padding:50px
+
+```
 
 ### Set aside your work safely with `stash`
 
@@ -103,9 +149,9 @@ The following are the `git stash` commands needed to make this happen:
 If you want more information, you can [read this article on Git
 stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash).
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Practice stashing
+## Practice stashing (3 minutes)
 
 Now try using `git stash` with the recipe repository. For example:
 
@@ -118,7 +164,7 @@ stashes changes in either case.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Amend
+### Modify the latest commit with `amend`
 
 This is the simplest method of rewriting history: it lets you amend the last commit you
 made, maybe adding some files you forgot to stage or fixing a typo in the commit message.
@@ -142,7 +188,7 @@ Note that this will replace the previous commit with a new one -- the commit has
 be different -- so this approach must not be used if the commit was already pushed to
 the remote repository and shared with collaborators.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Edit commit message with your editor
 
@@ -158,14 +204,14 @@ detailed description.
 
 <!-- markdownlint-disable-next-line -->
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: callout
 
 For details on how to choose which text editor Git will use, see [the setup
 instructions](../index.md).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Reset
+### Move or undo commits with `reset`
 
 The next level of complexity rewriting history is `reset`: it lets you redo the last (or
 last few) commit(s) you made so you can incorporate more changes, fix an error you have
@@ -204,7 +250,7 @@ Otherwise, to go back in time to a specific commit, you would do:
 git reset --hard COMMIT_HASH
 ```
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## `reset` vs `revert`
 
@@ -223,9 +269,9 @@ very different use cases.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Don't mess with the salt
+## Don't mess with the salt (5 minutes)
 
 Let's put this into practice! After all the work done in the previous episode adjusting
 the amount of salt, you conclude that it was nonsense and you should keep the original
@@ -233,7 +279,12 @@ amount. You could obviously just create a new commit with the correct amount of 
 that will leave your poor attempts to improve the recipe in the commit history, so you
 decide to totally erase them.
 
-:::::::::::::::  solution
+NOTE: Using `reset` here is OK because you want to undo the most recent commits and you
+have not shared this work with others, yet. However, if the changes you want to erase were
+further in the past or already pushed to GitHub (see next episode), then instead of using `reset`, `revert` or just
+manually creating a new commit, would be the right choice.
+
+::::::::::::::: solution
 
 ## Solution
 
@@ -297,7 +348,7 @@ to that before starting the salty adventure.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Changing History Can Have Unexpected Consequences
 
@@ -320,13 +371,13 @@ that using the `-D` flag with the `git branch` command:
 git branch -D BRANCH_NAME
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Getting rid of the experiment
+## Getting rid of the experiment (2 minutes)
 
 As we are done with the `experiment` branch, let's delete it to have a cleaner history.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -388,9 +439,9 @@ the feature branch have been recreated after the last commit of the main branch.
 For a very thorough description about how this process works, read this [article on Git
 rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Practice rebasing
+## Practice rebasing (5 minutes)
 
 We are going to practice rebasing in a simple scenario with the recipe repository.
 We need to do some preparatory work first:
@@ -410,7 +461,7 @@ really complicated).
 So let's use `git rebase` to bring the `spicy` branch as it it would have been
 branched off `main` after indicating that the guacamole needs to be served cold.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
