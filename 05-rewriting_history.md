@@ -20,22 +20,6 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: instructor
-
-## What justifies rewriting history?
-
-Ask this question and either
-leave it open ended or offer a few options. Can take the form of a
-Mentimeter poll, if that is being used:
-
-- You just made a commit, but realise there are other changes you forgot to include: **Yes**
-- You just made one or more commits, but then changed your mind and want to remove this change from your history: **Yes**
-- You want to “move” one or more commits so they are based on top of some other work (e.g. new changes made to the main branch): **Yes**
-- You want to change authorship of other’s work: **No**, not a valid reason
-- You want to change a past commit that introduced an error: **No**, because you create a new commit with a fix
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## Rewriting history with Git
 
 While version control is useful to keep track of changes made to a piece of work over
@@ -43,15 +27,27 @@ time, it also lets you modify the timeline of commits. There are several totally
 legitimate reasons why you might want to do that, from keeping the commit history clean
 of unsuccessful attempts to do something to incorporate work done by someone else.
 
-There are a number of reasons why you may need to change your commit history, for
-example:
+:::::::::::::::::::::::::::::::::::::::: challenge
 
-- You have already made a commit, but realise there are other changes you forgot to
-  include
-- You made a commit, but then changed your mind and want to remove this change from your
-  history
-- You want to "move" one or more commits so they are based on top of some other work
-  (e.g. new changes made to the `main` branch)
+## What justifies rewriting history?
+
+1. You just made a commit, but realise there are other changes you forgot to include.
+2. You just made one or more commits, but then changed your mind and want to remove this change from your history.
+3. You want to “move” one or more commits so they are based on top of some other work (e.g. new changes made to the main branch).
+4. You want to change authorship of other’s work.
+5. You want to change a past commit that introduced an error.
+
+:::::::::::::::::::::::::::::::::::::::: solution
+
+1. Yes, use `amend` (as long has you have not share them with other people already, otherwise just add another commit).
+2. Yes, use `reset` (as long has you have not shared them with other people already, otherwise use `revert`).
+3. Yes, use `rebase`.
+4. No. This is never a valid reason. One of the points of version control is to know who did what.
+5. No. You should create a new commit with a fix.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The commands available ot manipulate history and the working directory in a safe way are:
 
