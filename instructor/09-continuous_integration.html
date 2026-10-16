@@ -833,7 +833,7 @@ actions can be overwhelming.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>One of the simplest uses of CI is to enforce common style and
 formatting standards to code. The below workflow runs <a href="https://flake8.pycqa.org/" class="external-link">Flake8</a> to check that all Python
 code in the repository conforms to the PEP8 style guide. Having this
@@ -855,7 +855,7 @@ style and appearance.</p>
 <span id="cb8-11"><a href="#cb8-11" tabindex="-1" aria-label="code-block-8-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> py-actions/flake8@v2</span></span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>Depending on your project you may have a compile or build step needed
 to make the software usable. An example is given below of building a
 project using the CMake toolchain. Common compilers (e.g. gcc, g++) and
@@ -885,7 +885,7 @@ operating systems and compilers to ensure broad compatibility.</p>
 <span id="cb9-15"><a href="#cb9-15" tabindex="-1" aria-label="code-block-9-15"></a>          make all</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
+<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
 <p>Writing tests is an important best practice for software development.
 Even better is incorporating tests into your CI so you know they pass in
 a newly checked-out repository on another computer.</p>
@@ -908,7 +908,7 @@ project:</p>
 <span id="cb10-12"><a href="#cb10-12" tabindex="-1" aria-label="code-block-10-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pytest .</span></span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-4" class="tab-pane" aria-labelledby="nav-tab-1-4" role="tabpanel">
+<div id="nav-tabpanel-1-4" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-4">
 <p>Once we’ve accepted changes into our repository it can then be useful
 to trigger a publish action. The below workflow builds and publishes a
 Docker image only when new commits are added to the <code>main</code>
@@ -942,7 +942,7 @@ be downloaded and used by other users or services.</p>
 <span id="cb11-22"><a href="#cb11-22" tabindex="-1" aria-label="code-block-11-22"></a><span class="at">          </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> ${{ steps.meta.outputs.tags }}</span></span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-5" class="tab-pane" aria-labelledby="nav-tab-1-5" role="tabpanel">
+<div id="nav-tabpanel-1-5" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-5">
 <p>If we put together a few things we’ve seen so far, we can start to
 build more realistic and useful workflows. The below example is for a
 Python project managed with <a href="https://docs.astral.sh/uv/" class="external-link">uv</a>
@@ -1072,7 +1072,7 @@ Pull Request</li>
   "identifier": "https://imperialcollegelondon.github.io/rse_further_git_course/instructor/09-continuous_integration.html",
   "dateCreated": "2019-12-11",
   "dateModified": "2026-10-14",
-  "datePublished": "2026-10-14"
+  "datePublished": "2026-10-16"
 }
 
   </script><script>
