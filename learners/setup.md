@@ -200,6 +200,7 @@ git config --global core.editor nano
 <!-- markdown-link-check-disable-next-line -->
 
 [intro-course]: https://imperialcollegelondon.github.io/rse_introductory_git_course/
+[commit-history]: https://imperialcollegelondon.github.io/rse_introductory_git_course/03-committing_history.html
 [configure-repo]: https://imperialcollegelondon.github.io/rse_introductory_git_course/06-remote_repositories.html#configuring-repositories
 [remote-repo-lesson]: https://imperialcollegelondon.github.io/rse_introductory_git_course/06-remote_repositories.html
 [installer-list]: https://sourceforge.net/projects/git-osx-installer/files/
