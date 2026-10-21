@@ -32,8 +32,8 @@ If you **have not** completed the intro course:
 - Download [this zip archive](files/recipe_with_history.zip) that contains the `recipe`
   repo with some previous commit history that will be used in the session.
 - Extract it into your home directory.
-- [Create a repository][commit-history] on your personal GitHub account and set it as
-  the remote for this `recipe` repository you have locally.
+- Create a repository on your personal GitHub account and [set it as
+  the remote][configure-repo] for this `recipe` repository you have locally.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -201,6 +201,7 @@ git config --global core.editor nano
 
 [intro-course]: https://imperialcollegelondon.github.io/rse_introductory_git_course/
 [commit-history]: https://imperialcollegelondon.github.io/rse_introductory_git_course/03-committing_history.html
+[configure-repo]: https://imperialcollegelondon.github.io/rse_introductory_git_course/06-remote_repositories.html#configuring-repositories
 [remote-repo-lesson]: https://imperialcollegelondon.github.io/rse_introductory_git_course/06-remote_repositories.html
 [installer-list]: https://sourceforge.net/projects/git-osx-installer/files/
 [nano]: https://www.nano-editor.org
